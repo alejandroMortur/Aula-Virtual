@@ -32,9 +32,9 @@ docker run --name miservidor -d -p 8080:80 -v $(pwd):/var/www/html php:7.0-apach
 Ejecuta el siguiente comando en la línea de comandos:
 
 ```bash
-docker run --name miservidor -d -p 8080:80 -v %cd%:/usr/share/nginx/html nginx
+docker run --name miservidor -d -p 8080:80 -v ${pwd}:/usr/share/nginx/html nginx
 
-docker run --name miservidor -d -p 8080:80 -v %cd%:/var/www/html php:7.0-apache
+docker run --name miservidor -d -p 8080:80 -v ${pwd}:/var/www/html php:7.0-apache
 
 ```
 

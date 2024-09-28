@@ -11,3 +11,37 @@ Aula-Virtual es un proyecto web diseñado para facilitar el aprendizaje en líne
 - **Recursos Multimedia** 🎥: Integración de imágenes, videos y audios para enriquecer el contenido del curso.
 - **Interacción** 💬: Sección para foros y comentarios donde estudiantes y profesores pueden interactuar.
 - **Accesibilidad** 📱: Diseño responsive que se adapta a diferentes dispositivos y tamaños de pantalla.
+
+## Instrucciones para Crear Contenedores y Ejecutar la Página Web
+
+A continuación, se presentan los comandos necesarios para crear contenedores de Docker y ejecutar la aplicación web en sistemas operativos Windows y Linux.
+
+### 1. Crear Contenedor Nginx
+
+#### Para Linux
+
+Ejecuta el siguiente comando en la terminal:
+
+```bash
+docker run --name miservidor -d -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx
+
+docker run --name miservidor -d -p 8080:80 -v $(pwd):/var/www/html php:7.0-apache
+```
+### Para windows
+
+Ejecuta el siguiente comando en la línea de comandos:
+
+```bash
+docker run --name miservidor -d -p 8080:80 -v %cd%:/usr/share/nginx/html nginx
+
+docker run --name miservidor -d -p 8080:80 -v %cd%:/var/www/html php:7.0-apache
+
+```
+
+### Acceder a la Aplicación
+
+Después de ejecutar los comandos anteriores, podrás acceder a la aplicación web abriendo un navegador y dirigiéndote a la siguiente dirección:
+
+```bash
+http://localhost:8080/index.html
+```

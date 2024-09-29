@@ -1,3 +1,7 @@
+/*
+    Main function that calls other functions to verify the user and password
+    if both are correct then it will acept the user
+*/
 function valueData(){
 
     let user = document.getElementById("user").value;
@@ -21,6 +25,10 @@ function valueData(){
 
 }
 
+/*
+    Function that verify if both password are equal, in the future
+    it will verify if the password pass al the security requirements
+*/
 function verifyPassword(password, password2){
 
     if(password == password2)return 1
@@ -28,6 +36,9 @@ function verifyPassword(password, password2){
 
 }
 
+/*
+    Function that will verify if the user name pass al the security requirements
+*/
 function verifyUser(user){
 
     return 0

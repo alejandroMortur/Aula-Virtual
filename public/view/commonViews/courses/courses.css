@@ -1,0 +1,51 @@
+
+/*Css for the img in the cards*/
+img {
+
+    width: 100%; /* The image takes up 100% of the container's width */
+    height: 100px;  /* Fixed height for the image */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    object-fit: cover;  /* Crops the image to fill the container while maintaining its aspect ratio */
+
+    }
+
+/* Style for the container of the cards (currently using a table) */ 
+table {
+
+    margin-top: 20px;
+    margin-left: 8%;
+
+}
+
+/* Style for rows in the table that act as cards */
+tr {
+
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    width: 300px; /* Width of each card */
+    height: auto; /* Automatic height to adjust to content */
+    background-color: rgba(78, 78, 78, 0.604);
+    display: inline-block; /* Allows rows to be displayed next to each other */
+    margin: 20px; /* Space between the cards */
+    color: white;/* Text color within the cards */
+
+}
+
+/* Style for cells in the card */
+td {
+
+    display: block; /* Stack <td> elements vertically */
+    width: 100%; /* Full width of the card */
+    padding: 10px; /* Internal spacing for each cell */
+    border: 2px solid black;
+    box-sizing: border-box; 
+
+}
+
+/* Style for the body of the page */
+body{
+
+    background-image: url('/public/assets/img/background/hackground1.jpeg');
+
+}

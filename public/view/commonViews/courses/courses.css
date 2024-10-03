@@ -14,7 +14,8 @@ img {
 table {
 
     margin-top: 20px;
-    margin-left: 8%;
+    background-color: rgba(35, 34, 34, 0.735);
+    border-radius: 20px;
 
 }
 
@@ -27,7 +28,8 @@ tr {
     height: auto; /* Automatic height to adjust to content */
     background-color: rgba(78, 78, 78, 0.604);
     display: inline-block; /* Allows rows to be displayed next to each other */
-    margin: 20px; /* Space between the cards */
+    margin-left: 7%; /* Space between the cards */
+    margin-top: 2%; /* Space on top of the cards */
     color: white;/* Text color within the cards */
 
 }

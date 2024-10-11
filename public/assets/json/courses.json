@@ -1,0 +1,27 @@
+[
+    {
+        "image" : "/public/assets/img/courses/dam.jpeg",
+        "title" : "Desarrollo de aplicaciones multiplataforma",
+        "description" : "Aprende a diseñar y desarrollar aplicaciones que funcionen de manera nativa en diferentes sistemas operativos (Android, iOS, Windows, etc.)."
+    },
+    {
+        "image" : "/public/assets/img/courses/daw.jpg",
+        "title" : "Desarrollo de aplicaciones web",
+        "description" :"Domina las tecnologías más populares para crear aplicaciones web interactivas y dinámicas, como HTML, CSS, JavaScript, y frameworks como Angular, React o Django."
+    },
+    {
+        "image" : "/public/assets/img/courses/big-data.jpg",
+        "title" :  "Big data",
+        "description" :"Adquiere habilidades en el manejo de grandes volúmenes de datos, con el proposito de procesar, analizar y extraer información valiosa que guíe la toma de decisiones en entornos empresariales."
+    },
+    {
+        "image" : "/public/assets/img/courses/machine_learning.jpg",
+        "title" : "Desarrollo de Inteligencia Artificial",
+        "description" :"Explora los principios fundamentales de la inteligencia artificial, incluyendo aprendizaje automático, redes neuronales y procesamiento de lenguaje natural, utilizando lenguajes como Python y librerías como TensorFlow y PyTorch para construir modelos inteligentes."
+    },
+    {
+        "image" : "/public/assets/img/courses/asir.jpg",
+        "title" : "Administración de Sistemas Informáticos en Red",
+        "description" :"Aprende a configurar, gestionar y mantener redes y sistemas informáticos, garantizando la seguridad, disponibilidad y eficiencia, utilizando sistemas operativos como Linux y Windows Server, y herramientas de virtualización y gestión de redes."
+    }
+]

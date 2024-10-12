@@ -3,35 +3,27 @@
     and then in inyects it in a HTML table.
 */
 
-//adaptar para leer json cursos por ahora
-function printCourses(){
+function printCourses() {
 
-   let coursesHTML = "<table>";
+    let coursesHTML = "<table>";
 
-    for(const element of courses){
+    coursesList.forEach(element => {
+        
+        coursesHTML += `<tr onclick="clickCard()">
+                            <td><img src='${element["image"]}'></td>
+                            <td><p>${element["title"]}</p></td>
+                            <td><p>${element["description"]}</p></td>
+                        </tr>`;
 
-        coursesHTML += "</tr>";
-
-        for(let y = 0; y < 4; ++y){
-
-            if(y == 0){
-
-                coursesHTML += `<td><img src='${element[y]}'></td>`;
-
-            }else{
-
-                coursesHTML += `<td><p>${element[y]}<p></td>`;
-
-            }
-
-        }
-
-        coursesHTML += "</tr>";
-
-    }
+    });
 
     coursesHTML += "</table>";
-
     document.getElementById('courses').innerHTML += coursesHTML;
+
+}
+
+function clickCard() {
+
+    window.location.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
 
 }

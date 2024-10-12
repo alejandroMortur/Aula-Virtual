@@ -6,18 +6,26 @@
     <title>Cursos</title>
     <script src="courses.js"></script>
     <script src="/public/assets/js/menu.js"></script>
-    <link rel="stylesheet" type="text/css" href="courses.css?v=1.0" />
+    <script src="/public/assets/js/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="courses.css" />
 </head>
 <body>
 
     <script>
         
-        window.onload = function() {
-            
+        let coursesList = []
+
+        async function init() {
+
+            let loader = new Loader();  
+            coursesList = await loader.loadDataCourses(); 
+
             loadMenu();
             printCourses();
 
-        };
+        }
+
+        window.onload = init;
 
     </script>
 

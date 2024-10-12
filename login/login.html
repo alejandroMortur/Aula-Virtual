@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Aula Virtual</title>
+    <script src="/public/assets/js/loader.js"></script>
     <script src="login.js"></script>
 </head>
-<body>
+<body> 
+
+    <script>
+
+        let usersList = []; // Inicializa usersList
+
+        async function init() {
+            let loader = new Loader();  
+            usersList = await loader.loadDataUser(); 
+
+            console.log(usersList)
+        }
+
+        window.onload = init;
+
+    </script>
     
     <form>
-
         <h1>Login:</h1>
 
         <p>
@@ -22,9 +37,7 @@
             <button type="button" onclick="valueData()" name="enviar">Enviar</button>
             <button type="reset"  name="enviar">Limpiar</button>
         </p>
-
     </form>
-
 
 </body>
 </html>

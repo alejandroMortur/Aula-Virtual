@@ -1,27 +1,26 @@
 [
     {
-        "image" : "/public/assets/img/courses/dam.jpeg",
-        "title" : "Desarrollo de aplicaciones multiplataforma",
-        "description" : "Aprende a diseñar y desarrollar aplicaciones que funcionen de manera nativa en diferentes sistemas operativos (Android, iOS, Windows, etc.)."
+        "image": "/public/assets/img/courses/dwec.png",
+        "title": "Desarrollo web en entorno cliente",
+        "description": "Adquiere habilidades en el diseño y desarrollo de aplicaciones web que operen de manera eficiente en navegadores. Aprenderás a utilizar tecnologías esenciales como HTML, CSS y JavaScript, así como a implementar frameworks populares que facilitan la creación de interfaces de usuario responsivas y dinámicas.",
+        "id": 1
     },
     {
-        "image" : "/public/assets/img/courses/daw.jpg",
-        "title" : "Desarrollo de aplicaciones web",
-        "description" :"Domina las tecnologías más populares para crear aplicaciones web interactivas y dinámicas, como HTML, CSS, JavaScript, y frameworks como Angular, React o Django."
+        "image": "/public/assets/img/courses/diw.jpeg",
+        "title": "Diseño de interfaces web",
+        "description": "Conviértete en un experto en la creación de interfaces de usuario atractivas y funcionales. Este curso cubre las mejores prácticas en UX/UI y el uso de herramientas de diseño, además de enseñarte a trabajar con HTML, CSS y JavaScript para implementar interactividad y accesibilidad en aplicaciones web.",
+        "id": 2
     },
     {
-        "image" : "/public/assets/img/courses/big-data.jpg",
-        "title" :  "Big data",
-        "description" :"Adquiere habilidades en el manejo de grandes volúmenes de datos, con el proposito de procesar, analizar y extraer información valiosa que guíe la toma de decisiones en entornos empresariales."
+        "image": "/public/assets/img/courses/daw.jpg",
+        "title": "Despliegue de aplicaciones web",
+        "description": "Aprende los fundamentos del despliegue de aplicaciones web en entornos de producción. Este curso abarca conceptos clave como la gestión de servidores, bases de datos y la integración continua, además de técnicas para optimizar el rendimiento y la escalabilidad de las aplicaciones utilizando herramientas modernas.",
+        "id": 3
     },
     {
-        "image" : "/public/assets/img/courses/machine_learning.jpg",
-        "title" : "Desarrollo de Inteligencia Artificial",
-        "description" :"Explora los principios fundamentales de la inteligencia artificial, incluyendo aprendizaje automático, redes neuronales y procesamiento de lenguaje natural, utilizando lenguajes como Python y librerías como TensorFlow y PyTorch para construir modelos inteligentes."
-    },
-    {
-        "image" : "/public/assets/img/courses/asir.jpg",
-        "title" : "Administración de Sistemas Informáticos en Red",
-        "description" :"Aprende a configurar, gestionar y mantener redes y sistemas informáticos, garantizando la seguridad, disponibilidad y eficiencia, utilizando sistemas operativos como Linux y Windows Server, y herramientas de virtualización y gestión de redes."
+        "image": "/public/assets/img/courses/dwes.png",
+        "title": "Desarrollo web en entorno servidor",
+        "description": "Sumérgete en la gestión y el desarrollo de aplicaciones en el lado del servidor. Este curso incluye la configuración de servidores web, el manejo de bases de datos y la implementación de APIs RESTful, con énfasis en la seguridad y el rendimiento utilizando tecnologías como Node.js, Express y bases de datos SQL y NoSQL.",
+        "id": 4
     }
 ]

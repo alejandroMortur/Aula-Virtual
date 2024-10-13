@@ -10,7 +10,7 @@ function printCourses() {
     coursesList.forEach(element => {
         
         coursesHTML += `<tr onclick="clickCard()">
-                            <td><img src='${element["image"]}'></td>
+                            <td><img src='${element["image"]}' id="header"></td>
                             <td><p>${element["title"]}</p></td>
                             <td><p>${element["description"]}</p></td>
                         </tr>`;

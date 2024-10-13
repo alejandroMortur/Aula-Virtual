@@ -1,6 +1,6 @@
 
 /*Css for the img in the cards*/
-img {
+#header {
 
     width: 100%; /* The image takes up 100% of the container's width */
     height: 100px;  /* Fixed height for the image */

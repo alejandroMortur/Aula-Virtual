@@ -13,10 +13,10 @@ form{
     align-items: center; /* Centers elements vertically */
     flex-direction: column; /* Arranges elements in a column */
     justify-content: center; /* Centers elements horizontally */
-    border: 2px solid black; /* Adds a black border */
-    width: 35%; /* Sets the width of the form to 35% of the parent container */
-    height: 80%; /* Sets the height to 80% of the parent */
-    margin-top: 5%; /* Adds top margin */
+    border: 2px solid black; 
+    width: 35%; 
+    height: 80%; 
+    margin-top: 5%; 
     background: rgba(4, 40, 68, 0.85); /* Adds a semi-transparent dark blue background */
 }
 

@@ -1,0 +1,91 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    background-size: cover; /* Ensures the background image covers the whole body */
+    background-position: center 40%; /* Moves the background image down by 20px */
+    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Sets the background image */
+}
+
+form{
+    display: flex;
+    align-items: center; /* Centers elements vertically */
+    flex-direction: column; /* Arranges elements in a column */
+    justify-content: center; /* Centers elements horizontally */
+    border: 2px solid black; /* Adds a black border */
+    width: 35%; /* Sets the width of the form to 35% of the parent container */
+    height: 80%; /* Sets the height to 80% of the parent */
+    margin-top: 5%; /* Adds top margin */
+    background: rgba(4, 40, 68, 0.85); /* Adds a semi-transparent dark blue background */
+}
+
+img{
+    width: 40%; 
+    height: 30%; 
+    border-radius: 50%; /* Makes the image circular */
+}
+
+#content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white; /* Text color set to white */
+    width: 98%; /* Takes up almost the full width */
+    height: 98%; /* Takes up almost the full height */
+    box-shadow: 0px 1px 5px rgb(0, 0, 0);
+}
+
+#title{
+    font-size: 50px; 
+    font-weight: bold; /* Boldens the title */
+}
+
+#fields {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px; 
+    margin-bottom: 10px; /* Adds space below each field */
+}
+
+#fields label {
+    width: 120px; /* Fixed width for labels */
+    text-align: right; /* Aligns label text to the right */
+}
+
+#fields>input {
+    border: 3px solid black; 
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623);
+    width: 70%; /* Input width set to 70% */
+    height: 30px; /* Sets the input height */
+    margin-left: 10px; 
+    background: rgba(4, 40, 68, 0.85); 
+    font-size: 20px; 
+    color: white; 
+    transition: all 0.3s ease-in-out; /* Smooth transition when focused */
+}
+
+#fields>input:focus {
+    width: 80%; /* Increases width when input is focused */
+    height: 45px; /* Increases height on focus */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Increases shadow on focus */
+}
+
+#buttonsLine {
+    display: flex;
+    justify-content: space-between; /* Spaces buttons evenly */
+    flex-wrap: nowrap; /* Prevents wrapping of the buttons */
+    gap: 30px; /* Adds space between buttons */
+    margin-top: 5%; 
+}
+
+#buttonsLine > button {
+    box-shadow: 0px 1px 5px rgb(0, 0, 0); 
+    width: 170px; /* Sets a fixed width for buttons */
+    padding: 10px 20px; /* Adds padding inside buttons */
+    height: 50px; /* Sets button height */
+    background: rgba(4, 40, 68, 0.85); /* Dark semi-transparent background for buttons */
+    color: white; 
+}

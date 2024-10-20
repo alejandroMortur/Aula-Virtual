@@ -1,12 +1,28 @@
-function loadMenu(){
+function loadMenu(currentUser){
 
-    let HTMLMenu = `<p><img src="">
-                    <a href="./public/view/commonViews/aboutUs/aboutUs.html" class="boton">Sobre nosotros</a>
-                    <a href="./public/view/commonViews/courses/courses.html" class="boton">Cursos</a>
-                    <a href="./public/view/auth/login/login.html" class="boton">Login</a>
-                    <a href="./public/view/auth/register/register.html" class="boton">Registro</a>
-                    <img src="">usuario</p>`;
+    let Fullname = currentUser.Name+" "+currentUser.SureName;
+
+    let HTMLMenu = `
+                    <header>
+                    <div id="Left">
+                        <img src="/public/assets/icons/logo.jpg">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/public/view/commonViews/courses/courses.html" class="boton">Cursos</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="Right">
+                        <img id="profilePicture" src="${currentUser.Image}"><p>${Fullname}</p>
+                    </div>
+                    </header>
+                    `;
 
         document.getElementById('menu').innerHTML += HTMLMenu;
+
+
+
 
 }

@@ -9,6 +9,9 @@ function valueData(){
 
             window.location.href = "/public/view/commonViews/courses/courses.html";
 
+            // Guardar el objeto en sessionStorage
+            sessionStorage.setItem("user", JSON.stringify(element));
+
         }else{
 
             console.log("Error!! usuario o contraseña incorrectos");

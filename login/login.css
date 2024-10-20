@@ -1,91 +1,130 @@
-body{
-    font-family: "Open Sans", sans-serif;
-    height: 100vh; /* Sets the height of the body to 100% of the viewport height */
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
+body {
+
+    font-family: "Open Sans", sans-serif; /* Fuente para el cuerpo de la página */
+    height: 100vh; /* Altura completa de la ventana del navegador */
+    display: flex; /* Utiliza flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Imagen de fondo */
     background-size: cover; /* Ensures the background image covers the whole body */
     background-position: center 40%; /* Moves the background image down by 20px */
-    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Sets the background image */
+    margin: 0; /* Elimina márgenes predeterminados */
+
 }
 
-form{
-    display: flex;
-    align-items: center; /* Centers elements vertically */
-    flex-direction: column; /* Arranges elements in a column */
-    justify-content: center; /* Centers elements horizontally */
-    border: 2px solid black; 
-    width: 35%; 
-    height: 80%; 
-    margin-top: 5%; 
-    background: rgba(4, 40, 68, 0.85); /* Adds a semi-transparent dark blue background */
+form {
+
+    display: flex; /* Utiliza flexbox para organizar el contenido del formulario */
+    flex-direction: column; /* Organiza elementos en columna */
+    border: 2px solid black; /* Borde del formulario */
+    width: 80%; /* Reduce el ancho del formulario */
+    max-width: 350px; /* Ancho máximo del formulario */
+    min-width: 250px; /* Asegura que no se encoja demasiado */
+    padding: 20px; /* Espaciado interno del formulario */
+    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente */
+
 }
 
-img{
-    width: 40%; 
-    height: 30%; 
-    border-radius: 50%; /* Makes the image circular */
+img {
+
+    width: 120px; /* Ancho de la imagen */
+    height: 120px; /* Altura de la imagen */
+    display: block; /* Muestra la imagen como bloque */
+    margin: 0 auto 20px auto; /* Centra la imagen y agrega margen inferior */
+    border-radius: 50%; /* Hace la imagen circular */
+
 }
 
-#content{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    color: white; /* Text color set to white */
-    width: 98%; /* Takes up almost the full width */
-    height: 98%; /* Takes up almost the full height */
-    box-shadow: 0px 1px 5px rgb(0, 0, 0);
+#content {
+
+    display: flex; /* Utiliza flexbox para organizar el contenido */
+    flex-direction: column; /* Organiza elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    color: white; /* Color del texto */
+    width: 100%; /* Ancho completo */
+
 }
 
-#title{
-    font-size: 50px; 
-    font-weight: bold; /* Boldens the title */
+#title {
+
+    font-size: 1.8em; /* Tamaño de la fuente del título */
+    font-weight: bold; /* Negrita para el título */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+
 }
 
 #fields {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 30px; 
-    margin-bottom: 10px; /* Adds space below each field */
+
+    width: 100%; /* Ancho completo para los campos */
+    display: flex; /* Utiliza flexbox para organizar los campos */
+    flex-direction: column; /* Organiza los campos en columna */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+
 }
 
 #fields label {
-    width: 120px; /* Fixed width for labels */
-    text-align: right; /* Aligns label text to the right */
+
+    font-size: 1em; /* Tamaño de la etiqueta */
+    margin-bottom: 5px; /* Margen inferior para separar de los campos */
+    color: white; /* Color del texto de la etiqueta */
+
 }
 
-#fields>input {
-    border: 3px solid black; 
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623);
-    width: 70%; /* Input width set to 70% */
-    height: 30px; /* Sets the input height */
-    margin-left: 10px; 
-    background: rgba(4, 40, 68, 0.85); 
-    font-size: 20px; 
-    color: white; 
-    transition: all 0.3s ease-in-out; /* Smooth transition when focused */
+#fields input {
+
+    width: 80%; /* Ancho de los campos de entrada */
+    padding: 10px; /* Espaciado interno de los campos */
+    margin: 10px auto; /* Centrado con margen */
+    border: 2px solid black; /* Borde de los campos */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623); /* Sombra de los campos */
+    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente */
+    color: white; /* Color del texto de los campos */
+    font-size: 1em; /* Tamaño de la fuente de los campos */
+    transition: all 0.7s ease-in-out; /* Transición suave para todos los cambios */
+
 }
 
-#fields>input:focus {
-    width: 80%; /* Increases width when input is focused */
-    height: 45px; /* Increases height on focus */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Increases shadow on focus */
+#fields input:focus {
+
+    height: 45px; /* Aumenta la altura al enfocarse */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Aumenta la sombra al enfocarse */
+    border-color: #00ffcc; /* Cambia el color del borde al enfocarse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del input */
+
 }
 
 #buttonsLine {
-    display: flex;
-    justify-content: space-between; /* Spaces buttons evenly */
-    flex-wrap: nowrap; /* Prevents wrapping of the buttons */
-    gap: 30px; /* Adds space between buttons */
-    margin-top: 5%; 
+
+    display: flex; /* Utiliza flexbox para organizar los botones */
+    justify-content: space-between; /* Espacio entre botones */
+    width: 100%; /* Ancho completo */
+    gap: 10px; /* Espacio entre botones */
+
 }
 
-#buttonsLine > button {
-    box-shadow: 0px 1px 5px rgb(0, 0, 0); 
-    width: 170px; /* Sets a fixed width for buttons */
-    padding: 10px 20px; /* Adds padding inside buttons */
-    height: 50px; /* Sets button height */
-    background: rgba(4, 40, 68, 0.85); /* Dark semi-transparent background for buttons */
-    color: white; 
+#buttonsLine button {
+
+    flex: 1; /* Hace que cada botón ocupe el mismo espacio */
+    padding: 10px; /* Espaciado interno de los botones */
+    border: none; /* Sin borde predeterminado */
+    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente para los botones */
+    color: white; /* Color del texto de los botones */
+    box-shadow: 0px 1px 5px rgb(0, 0, 0); /* Sombra de los botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transición para cambios de fondo y escala */
+
+}
+
+#buttonsLine button:hover {
+
+    background-color: rgba(60, 80, 100, 0.85); /* Cambia el color de fondo al pasar el ratón */
+
+}
+
+#buttonsLine button:active {
+
+    transform: scale(0.98); /* Efecto de presión al hacer clic */
+
 }

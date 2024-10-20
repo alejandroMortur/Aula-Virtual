@@ -1,4 +1,4 @@
-# Aula-Virtual 🎓
+# Virtual-Academy 🎓
 
 ## Description
 

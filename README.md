@@ -1,35 +1,35 @@
 # Aula-Virtual 🎓
 
-## Descripción
+## Description
 
-Aula-Virtual es un proyecto web diseñado para facilitar el aprendizaje en línea, proporcionando un entorno interactivo y accesible para estudiantes y profesores. La plataforma incluye diversas funcionalidades que permiten la gestión de cursos, materiales educativos y la interacción entre usuarios.
+Aula-Virtual is a web project designed to facilitate online learning, providing an interactive and accessible environment for students and teachers. The platform includes various features that allow the management of courses, educational materials, and user interaction.
 
-## Características
+## Features
 
-- **Interfaz Intuitiva** 🌐: Una interfaz fácil de usar que permite a los usuarios navegar por los cursos y materiales sin dificultad.
-- **Gestión de Cursos** 📚: Los profesores pueden crear, editar y gestionar cursos, así como subir recursos multimedia.
-- **Recursos Multimedia** 🎥: Integración de imágenes, videos y audios para enriquecer el contenido del curso.
-- **Interacción** 💬: Sección para foros y comentarios donde estudiantes y profesores pueden interactuar.
-- **Accesibilidad** 📱: Diseño responsive que se adapta a diferentes dispositivos y tamaños de pantalla.
+- **Intuitive Interface** 🌐: A user-friendly interface that allows users to navigate through courses and materials with ease.
+- **Course Management** 📚: Teachers can create, edit, and manage courses, as well as upload multimedia resources.
+- **Multimedia Resources** 🎥: Integration of images, videos, and audio to enrich the course content.
+- **Interaction** 💬: A section for forums and comments where students and teachers can interact.
+- **Accessibility** 📱: A responsive design that adapts to different devices and screen sizes.
 
-## Instrucciones para Crear Contenedores y Ejecutar la Página Web
+## Instructions to Create Containers and Run the Web Page
 
-A continuación, se presentan los comandos necesarios para crear contenedores de Docker y ejecutar la aplicación web en sistemas operativos Windows y Linux.
+Below are the necessary commands to create Docker containers and run the web application on both Windows and Linux operating systems.
 
-### 1. Crear Contenedores
+### 1. Create Containers
 
-#### Para Linux:
+#### For Linux:
 
-Ejecuta el siguiente comando en la terminal en caso de tener un sistema Linux, sobre la carpeta del proyecto:
+Run the following command in the terminal while in the project folder:
 
 ```bash
 docker run --name miservidor -d -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx
 
 docker run --name miservidor -d -p 8080:80 -v $(pwd):/var/www/html php:7.0-apache
 ```
-### Para windows:
+### For Windows:
 
-Ejecuta el siguiente comando en la línea de comandos en caso de tener un sistema Windows, sobre la carpeta del proyecto:
+Run the following command in the command line while in the project folder:
 
 ```bash
 docker run --name miservidor -d -p 8080:80 -v ${pwd}:/usr/share/nginx/html nginx
@@ -38,9 +38,9 @@ docker run --name miservidor -d -p 8080:80 -v ${pwd}:/var/www/html php:7.0-apach
 
 ```
 
-### 2. Acceder a la Aplicación
+### 2. Access the Application:
 
-Después de ejecutar los comandos anteriores, podrás acceder a la aplicación web abriendo un navegador y dirigiéndote a la siguiente dirección:
+After running the above commands, you can access the web application by opening a browser and navigating to the following address:
 
 ```bash
 http://localhost:8080/login/login.html

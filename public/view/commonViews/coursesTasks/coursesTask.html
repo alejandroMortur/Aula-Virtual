@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso</title>
     <script src="/public/assets/js/menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
 </head>
 <body>
     <script> 
 
         async function init() {
 
-            loadMenu();
+            const currentUser = JSON.parse(sessionStorage.getItem("user"));
+
+            loadMenu(currentUser);
             const currentCourse = JSON.parse(sessionStorage.getItem("course"));
             console.log(currentCourse);
 

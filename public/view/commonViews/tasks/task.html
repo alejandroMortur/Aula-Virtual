@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea</title>
     <script src="/public/assets/js/menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
 </head>
 <body>
 
     <script> 
-        window.onload = () => {
-            loadMenu();
-        };
+        async function init() {
+
+        const currentUser = JSON.parse(sessionStorage.getItem("user"));
+
+        loadMenu(currentUser);
+
+        }
+
+window.onload = init;
     </script>
 
     <!-- main menu-->

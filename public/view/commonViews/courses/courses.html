@@ -8,6 +8,7 @@
     <script src="/public/assets/js/menu.js"></script>
     <script src="/public/assets/js/loader.js"></script>
     <link rel="stylesheet" type="text/css" href="courses.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
 </head>
 <body>
 
@@ -19,10 +20,10 @@
 
             const currentUser = JSON.parse(sessionStorage.getItem("user"));
 
-            let loader = new Loader();  
+            let loader = new Loader(currentUser);  
             coursesList = await loader.loadDataCourses(currentUser.registration); 
 
-            loadMenu();
+            loadMenu(currentUser);
             printCourses();
 
         }

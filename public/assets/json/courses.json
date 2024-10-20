@@ -2,7 +2,7 @@
     {
         "image": "/public/assets/img/courses/dwec.png",
         "title": "Desarrollo web en entorno cliente",
-        "description": "Adquiere habilidades en el diseño y desarrollo de aplicaciones web que operen de manera eficiente en navegadores. Aprenderás a utilizar tecnologías esenciales como HTML, CSS y JavaScript, así como a implementar frameworks populares que facilitan la creación de interfaces de usuario responsivas y dinámicas.",
+        "description": "Adquiere habilidades en el diseño y desarrollo de aplicaciones web que operen de manera eficiente en navegadores. Aprenderás a utilizar tecnologías esenciales como HTML, CSS y JavaScript, así como a implementar frameworks populares que facilitan la creación de interfaces.",
         "id": 1
     },
     {
@@ -20,7 +20,7 @@
     {
         "image": "/public/assets/img/courses/dwes.png",
         "title": "Desarrollo web en entorno servidor",
-        "description": "Sumérgete en la gestión y el desarrollo de aplicaciones en el lado del servidor. Este curso incluye la configuración de servidores web, el manejo de bases de datos y la implementación de APIs RESTful, con énfasis en la seguridad y el rendimiento utilizando tecnologías como Node.js, Express y bases de datos SQL y NoSQL.",
+        "description": "Sumérgete en la gestión y el desarrollo de aplicaciones en el lado del servidor. Este curso incluye la configuración de servidores web, el manejo de bases de datos y la implementación de APIs RESTful, con énfasis en la seguridad y el rendimiento utilizando tecnologías como Node.js, Express, SQL y NoSQL.",
         "id": 4
     }
 ]

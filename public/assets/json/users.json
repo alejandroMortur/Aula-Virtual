@@ -8,7 +8,7 @@
         "IsTeacher": 1,
         "registration" : [1,2,3,4],
         "Mail": "Yaiza@educa.academy.org",
-        "Image": "/public/assets/img/users/teacher/Yaiza.jpg"
+        "Image": "/public/assets/img/users/teachers/Yaiza.jpg"
 
     },
     {
@@ -20,7 +20,7 @@
         "IsTeacher": 1,
         "Registration" : [1,2,3,4],
         "Mail": "MariaAntonia@educa.academy.org",
-        "Image": "/public/assets/img/users/teacher/Maria-Antonia.jpg"
+        "Image": "/public/assets/img/users/teachers/Maria-Antonia.jpg"
 
     },
     {

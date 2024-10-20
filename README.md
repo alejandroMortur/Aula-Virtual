@@ -43,5 +43,5 @@ docker run --name miservidor -d -p 8080:80 -v ${pwd}:/var/www/html php:7.0-apach
 Después de ejecutar los comandos anteriores, podrás acceder a la aplicación web abriendo un navegador y dirigiéndote a la siguiente dirección:
 
 ```bash
-http://localhost:8080/index.html
+http://localhost:8080/login/login.html
 ```

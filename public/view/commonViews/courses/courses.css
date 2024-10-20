@@ -1,3 +1,11 @@
+/* Style for the body of the page */
+body{
+
+    background-image: url('/public/assets/img/background/background.jpg');    
+    background-size: cover; /* Ensures the background image covers the whole body */
+    background-position: center 40%; /* Moves the background image down by 20px */
+
+}
 
 /*Css for the img in the cards*/
 #header {
@@ -13,9 +21,12 @@
 /* Style for the container of the cards (currently using a table) */ 
 table {
 
-    margin-top: 20px;
-    background-color: rgba(35, 34, 34, 0.735);
+    background: rgba(255, 255, 255, 0.29);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde suave */
     border-radius: 20px;
+    margin-top: 10vh;
+    height: 100%;
+    width: 100%;
 
 }
 
@@ -26,7 +37,7 @@ tr {
     border-top-right-radius: 30px;
     width: 300px; /* Width of each card */
     height: auto; /* Automatic height to adjust to content */
-    background-color: rgba(78, 78, 78, 0.604);
+    background-color: rgba(77, 77, 77, 0.318);
     display: inline-block; /* Allows rows to be displayed next to each other */
     margin-left: 7%; /* Space between the cards */
     margin-top: 2%; /* Space on top of the cards */
@@ -42,12 +53,5 @@ td {
     padding: 10px; /* Internal spacing for each cell */
     border: 2px solid black;
     box-sizing: border-box; 
-
-}
-
-/* Style for the body of the page */
-body{
-
-    background-image: url('/public/assets/img/background/hackground1.jpeg');
 
 }

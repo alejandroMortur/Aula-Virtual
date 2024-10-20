@@ -27,22 +27,33 @@ class Loader{
     
     }
 
-    async loadDataCourses() {
+    async loadDataCourses(userCoursesId) {
 
         let data = await fetch("/public/assets/json/courses.json");
         let courses = await data.json();
+        let filtratedCourses = []
 
         courses.forEach(element => {
             
-            element.CoursesTask  = [];
+            if (userCoursesId.includes(element.id)) {
 
-            element.addCoursesTask = function (task) {
-                this.CoursesTask.push(task)
+                // Si está, agregar la propiedad CoursesTask y una función para agregar tareas
+                element.CoursesTask = [];
+
+                element.addCoursesTask = function(task) {
+
+                    this.CoursesTask.push(task);
+
+                };
+
+                filtratedCourses.push(element);
+                console.log("Curso encontrado");
+                
             }
 
         });
         
-        return courses
+        return filtratedCourses
     
     }
 

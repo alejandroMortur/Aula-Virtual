@@ -8,13 +8,24 @@
 </head>
 <body>
     <script> 
-        window.onload = () => {
+
+        async function init() {
+
             loadMenu();
-        };
+            const currentCourse = JSON.parse(sessionStorage.getItem("course"));
+            console.log(currentCourse);
+
+        }
+
+        window.onload = init;
+
     </script>
 
     <!-- main menu-->
     <div id="menu">
+    </div>
+
+    <div id="task">
     </div>
     
 </body>

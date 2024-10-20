@@ -13,12 +13,14 @@
 
     <script>
         
-        let coursesList = []
+        let coursesList = [];
 
         async function init() {
 
+            const currentUser = JSON.parse(sessionStorage.getItem("user"));
+
             let loader = new Loader();  
-            coursesList = await loader.loadDataCourses(); 
+            coursesList = await loader.loadDataCourses(currentUser.registration); 
 
             loadMenu();
             printCourses();

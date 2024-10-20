@@ -3,13 +3,15 @@
     and then in inyects it in a HTML table.
 */
 
+let userCoursesList = []
+
 function printCourses() {
 
     let coursesHTML = "<table>";
 
     coursesList.forEach(element => {
         
-        coursesHTML += `<tr onclick="clickCard()">
+        coursesHTML += `<tr id="${element["id"]}" onclick="clickCard(event)">
                             <td><img src='${element["image"]}' id="header"></td>
                             <td><p>${element["title"]}</p></td>
                             <td><p>${element["description"]}</p></td>
@@ -17,13 +19,27 @@ function printCourses() {
 
     });
 
+    userCoursesList = coursesList;
+
     coursesHTML += "</table>";
     document.getElementById('courses').innerHTML += coursesHTML;
 
 }
 
-function clickCard() {
+function clickCard(event) {
 
-    window.location.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
+    const id = event.currentTarget.id;
+
+    userCoursesList.forEach(element => {
+        
+        if(element.id == id){
+
+            sessionStorage.setItem("course", JSON.stringify(element));
+    
+            window.location.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
+
+        }
+
+    });
 
 }

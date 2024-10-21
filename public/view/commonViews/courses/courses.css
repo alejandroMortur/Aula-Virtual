@@ -1,99 +1,80 @@
 :root {
-    
+    /* Variables for styling that can change depending on screen size */
     --margin-size: 0px;
     --space-between-card: 0px;
     --font-size: 0px;
     --font-size-title: 0px;
     --height-cards: 0px;
-
-  }
-
-/* Style for the body of the page */
-body{
-
-    background-image: url('/public/assets/img/background/background.jpg');    
-    background-size: cover; /* Ensures the background image covers the whole body */
-    background-position: 50% center; /* Moves the background image down by 20px */
-
 }
 
-/*Media querys*/
+/* Style for the body of the page */
+body {
+    background-image: url('/public/assets/img/background/background.jpg'); /* Sets the background image */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-position: 50% center; /* Centers the background image */
+}
 
+/* Media queries for responsive design */
+
+/* Style for phones (max-width: 600px) */
 @media (max-width: 600px) {
-    /* Style for phones */
     :root {
-    
         --margin-size: 15vh;
         --space-between-card: 6vh;
         --font-size: 20px;
         --font-size-title: 30px;
         --height-cards: 380px;
-    
     }
-    
 }
-  
+
+/* Style for tablets (601px - 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
-    /* Style for tables */
     :root {
-    
         --margin-size: 10vh;
         --space-between-card: 4vh;
         --font-size: 25px;
         --font-size-title: 40px;
         --height-cards: 550px;
-    
     }
-    
 }
-  
+
+/* Style for PCs (min-width: 800px) */
 @media (min-width: 800px) {
-    /* Style for PC */
     :root {
-    
         --margin-size: 10vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 460px;
-    
     }
-    
 }
 
+/* Style for larger screens (min-width: 1080px) */
 @media (min-width: 1080px) {
-    /* Style for PC */
     :root {
-    
         --margin-size: 15vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 480px;
-    
     }
-    
 }
 
+/* Style for wide screens (min-width: 1100px) */
 @media (min-width: 1100px) {
-    /* Style for PC */
     :root {
-    
         --margin-size: 14vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 480px;
-    
     }
-    
 }
-  
 
 /*/////////////////////////////////*/
 
-#courses{
-
+/* Container for the courses section */
+#courses {
     margin-top: var(--margin-size);
     display: flex;
     flex-wrap: wrap;
@@ -101,51 +82,45 @@ body{
     align-items: center;
     gap: var(--space-between-card);
     border-radius: 30px;
-    background-color: rgba(20, 20, 26, 0.532);
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25)
-
+    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
 }
 
+/* Style for individual cards */
 .card {
-
     margin-top: 10px;
     width: 300px;
     height: var(--height-cards);
     border-radius: 30px;
-    background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                    -15px -15px 30px rgb(60, 60, 60);
+    background: #212121; /* Dark background for the card */
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60); /* Neumorphism effect */
     display: flex;
     flex-wrap: wrap;
     gap: 10px 10px;
     justify-content: center;
     margin-bottom: 10px;
-
 }
 
-#header{
-
+/* Header section of the card */
+#header {
     width: 100%;
     height: 120px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-
 }
 
-#card__test{
-
+/* Text inside the card */
+#card__test {
     color: white;
     text-align: center;
-    font-size: var(--font-size);
+    font-size: var(--font-size); /* Dynamic font size based on screen width */
     margin: 10px;
     padding: 10px;
-
 }
 
-#card__title{
-
+/* Title inside the card */
+#card__title {
     color: white;
-    font-size: var(--font-size-title);
+    font-size: var(--font-size-title); /* Dynamic title font size based on screen width */
     text-align: center;
-    
 }

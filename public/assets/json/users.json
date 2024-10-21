@@ -6,7 +6,7 @@
         "password": "Clave$1",
         "SureName": "Araujo",
         "IsTeacher": 1,
-        "registration" : [1,2,3,4],
+        "registration" : [1,2,3,4,5,6],
         "Mail": "Yaiza@educa.academy.org",
         "Image": "/public/assets/img/users/teachers/Yaiza.jpg"
 
@@ -18,7 +18,7 @@
         "password": "Clave$1",
         "SureName": "Antonia Moro",
         "IsTeacher": 1,
-        "Registration" : [1,2,3,4],
+        "Registration" : [1,2,3,4,5,6],
         "Mail": "MariaAntonia@educa.academy.org",
         "Image": "/public/assets/img/users/teachers/Maria-Antonia.jpg"
 
@@ -30,7 +30,7 @@
         "password": "Clave$1",
         "SureName": "Jesus Cordon",
         "IsTeacher": 0,
-        "registration" : [1,2],
+        "registration" : [1,2,5],
         "Mail": "JoseJesus@educa.academy.org",
         "Image": "/public/assets/img/users/students/Jose-Jesus.jpg"
 
@@ -42,7 +42,7 @@
         "password": "Clave$1",
         "SureName": "Talavera",
         "IsTeacher": 0,
-        "registration" : [3,4],
+        "registration" : [3,4,6],
         "Mail": "Nadia@educa.academy.org",
         "Image": "/public/assets/img/users/students/Nadia.jpg"
 
@@ -54,7 +54,7 @@
         "password": "Clave$1",
         "SureName": "Heras",
         "IsTeacher": 0,
-        "registration" : [3,4],
+        "registration" : [3,4,6],
         "Mail": "Ibai@educa.academy.org",
         "Image": "/public/assets/img/users/students/Ibai.jpg"
 
@@ -66,7 +66,7 @@
         "password": "Clave$1",
         "SureName": "Becerra",
         "IsTeacher": 0,
-        "registration" : [3,4],
+        "registration" : [3,4,5],
         "Mail": "Almudena@educa.academy.org",
         "Image": "/public/assets/img/users/students/Almudena.jpg"
 
@@ -78,7 +78,7 @@
         "password": "Clave$1",
         "SureName": "Valencia",
         "IsTeacher": 0,
-        "registration" : [3,2],
+        "registration" : [3,2,1],
         "Mail": "Joaquin@educa.academy.org",
         "Image": "/public/assets/img/users/students/Joaquin.jpeg"
 
@@ -90,7 +90,7 @@
         "password": "Clave$1",
         "SureName": "Fernandez",
         "IsTeacher": 0,
-        "registration" : [1,2],
+        "registration" : [1,2,5],
         "Mail": "Lucio@educa.academy.org",
         "Image": "/public/assets/img/users/students/Lucio.jpeg"
     }

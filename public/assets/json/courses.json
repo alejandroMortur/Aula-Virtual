@@ -2,25 +2,37 @@
     {
         "image": "/public/assets/img/courses/dwec.png",
         "title": "Desarrollo web en entorno cliente",
-        "description": "Adquiere habilidades en el diseño y desarrollo de aplicaciones web que operen de manera eficiente en navegadores. Aprenderás a utilizar tecnologías esenciales como HTML, CSS y JavaScript, así como a implementar frameworks populares que facilitan la creación de interfaces.",
+        "description": "Aprende a desarrollar aplicaciones web eficientes utilizando tecnologías clave como HTML, CSS y JavaScript, junto con frameworks populares.",
         "id": 1
     },
     {
         "image": "/public/assets/img/courses/diw.jpeg",
         "title": "Diseño de interfaces web",
-        "description": "Conviértete en un experto en la creación de interfaces de usuario atractivas y funcionales. Este curso cubre las mejores prácticas en UX/UI y el uso de herramientas de diseño, además de enseñarte a trabajar con HTML, CSS y JavaScript para implementar interactividad y accesibilidad en aplicaciones web.",
+        "description": "Conviértete en experto en crear interfaces atractivas y funcionales, utilizando HTML, CSS, JavaScript y las mejores prácticas de UX/UI.",
         "id": 2
     },
     {
         "image": "/public/assets/img/courses/daw.jpg",
         "title": "Despliegue de aplicaciones web",
-        "description": "Aprende los fundamentos del despliegue de aplicaciones web en entornos de producción. Este curso abarca conceptos clave como la gestión de servidores, bases de datos y la integración continua, además de técnicas para optimizar el rendimiento y la escalabilidad de las aplicaciones utilizando herramientas modernas.",
+        "description": "Aprende a gestionar servidores y bases de datos, optimizar el rendimiento y escalar aplicaciones web en producción.",
         "id": 3
     },
     {
         "image": "/public/assets/img/courses/dwes.png",
         "title": "Desarrollo web en entorno servidor",
-        "description": "Sumérgete en la gestión y el desarrollo de aplicaciones en el lado del servidor. Este curso incluye la configuración de servidores web, el manejo de bases de datos y la implementación de APIs RESTful, con énfasis en la seguridad y el rendimiento utilizando tecnologías como Node.js, Express, SQL y NoSQL.",
+        "description": "Domina la gestión de servidores, bases de datos y la implementación de APIs utilizando Node.js, Express, SQL y NoSQL.",
         "id": 4
+    },
+    {
+        "image": "/public/assets/img/courses/english.jpg",
+        "title": "2 DAW Inglés técnico",
+        "description": "Mejora tus habilidades en inglés técnico, enfocado en el ámbito de la informática, para comunicarte de manera efectiva en entornos laborales internacionales.",
+        "id": 5
+    },
+    {
+        "image": "/public/assets/img/courses/eie.png",
+        "title": "Empresa e Iniciativa Emprendedora",
+        "description": "Aprende a desarrollar ideas de negocio, gestionar proyectos y adquirir competencias para llevar tu empresa al éxito.",
+        "id": 6
     }
 ]

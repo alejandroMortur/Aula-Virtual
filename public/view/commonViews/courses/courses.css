@@ -1,57 +1,151 @@
+:root {
+    
+    --margin-size: 0px;
+    --space-between-card: 0px;
+    --font-size: 0px;
+    --font-size-title: 0px;
+    --height-cards: 0px;
+
+  }
+
 /* Style for the body of the page */
 body{
 
     background-image: url('/public/assets/img/background/background.jpg');    
     background-size: cover; /* Ensures the background image covers the whole body */
-    background-position: center 40%; /* Moves the background image down by 20px */
+    background-position: 50% center; /* Moves the background image down by 20px */
 
 }
 
-/*Css for the img in the cards*/
-#header {
+/*Media querys*/
 
-    width: 100%; /* The image takes up 100% of the container's width */
-    height: 100px;  /* Fixed height for the image */
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    object-fit: cover;  /* Crops the image to fill the container while maintaining its aspect ratio */
-
+@media (max-width: 600px) {
+    /* Style for phones */
+    :root {
+    
+        --margin-size: 15vh;
+        --space-between-card: 6vh;
+        --font-size: 20px;
+        --font-size-title: 30px;
+        --height-cards: 380px;
+    
     }
+    
+}
+  
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Style for tables */
+    :root {
+    
+        --margin-size: 10vh;
+        --space-between-card: 4vh;
+        --font-size: 25px;
+        --font-size-title: 40px;
+        --height-cards: 550px;
+    
+    }
+    
+}
+  
+@media (min-width: 800px) {
+    /* Style for PC */
+    :root {
+    
+        --margin-size: 10vh;
+        --space-between-card: 6vh;
+        --font-size: 25px;
+        --font-size-title: 30px;
+        --height-cards: 460px;
+    
+    }
+    
+}
 
-/* Style for the container of the cards (currently using a table) */ 
-table {
+@media (min-width: 1080px) {
+    /* Style for PC */
+    :root {
+    
+        --margin-size: 15vh;
+        --space-between-card: 6vh;
+        --font-size: 25px;
+        --font-size-title: 30px;
+        --height-cards: 480px;
+    
+    }
+    
+}
 
-    background: rgba(255, 255, 255, 0.29);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde suave */
-    border-radius: 20px;
-    margin-top: 10vh;
-    height: 100%;
-    width: 100%;
+@media (min-width: 1100px) {
+    /* Style for PC */
+    :root {
+    
+        --margin-size: 10vh;
+        --space-between-card: 6vh;
+        --font-size: 25px;
+        --font-size-title: 30px;
+        --height-cards: 480px;
+    
+    }
+    
+}
+  
+
+/*/////////////////////////////////*/
+
+#courses{
+
+    margin-top: var(--margin-size);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--space-between-card);
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532);
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25)
 
 }
 
-/* Style for rows in the table that act as cards */
-tr {
+.card {
 
+    margin-top: 10px;
+    width: 300px;
+    height: var(--height-cards);
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                    -15px -15px 30px rgb(60, 60, 60);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+#header{
+
+    width: 100%;
+    height: 120px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    width: 300px; /* Width of each card */
-    height: auto; /* Automatic height to adjust to content */
-    background-color: rgba(77, 77, 77, 0.318);
-    display: inline-block; /* Allows rows to be displayed next to each other */
-    margin-left: 7%; /* Space between the cards */
-    margin-top: 2%; /* Space on top of the cards */
-    color: white;/* Text color within the cards */
 
 }
 
-/* Style for cells in the card */
-td {
+#card__test{
 
-    display: block; /* Stack <td> elements vertically */
-    width: 100%; /* Full width of the card */
-    padding: 10px; /* Internal spacing for each cell */
-    border: 2px solid black;
-    box-sizing: border-box; 
+    color: white;
+    text-align: center;
+    font-size: var(--font-size);
+    margin: 10px;
+    padding: 10px;
 
+}
+
+#card__title{
+
+    color: white;
+    font-size: var(--font-size-title);
+    text-align: center;
+    
 }

@@ -7,21 +7,21 @@ let userCoursesList = []
 
 function printCourses() {
 
-    let coursesHTML = "<table>";
+    let coursesHTML = "";
 
     coursesList.forEach(element => {
         
-        coursesHTML += `<tr id="${element["id"]}" onclick="clickCard(event)">
-                            <td><img src='${element["image"]}' id="header"></td>
-                            <td><p>${element["title"]}</p></td>
-                            <td><p>${element["description"]}</p></td>
-                        </tr>`;
+        coursesHTML += `
+                        <div class="card" id="${element["id"]}" onclick="clickCard(event)">
+                            <img src='${element["image"]}' id="header">
+                            <h1 id="card__title">${element["title"]}</h1>
+                            <p id="card__test">${element["description"]}</p>
+                        </div>`;
 
     });
 
     userCoursesList = coursesList;
 
-    coursesHTML += "</table>";
     document.getElementById('courses').innerHTML += coursesHTML;
 
 }

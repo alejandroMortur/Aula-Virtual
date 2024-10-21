@@ -6,7 +6,7 @@
 }
 
 header {
-    background-color: #3498db;
+    background-color: rgba(20, 20, 26, 0.944);
     color: #fff;
     padding: 0;
     display: flex;
@@ -72,8 +72,8 @@ li {
     width: 150px; /* Ancho predefinido para todos los botones */
     height: 60%; /* Ocupa todo el alto del contenedor */
     text-decoration: none;
-    background-color: #3498db;
-    border-left: 1px solid #336699;
+    background-color: rgba(20, 20, 26, 0.944);
+    border-left: 1px solid rgb(20, 20, 26);
     padding: 10px;
     display: flex;
     align-items: center; /* Centra el texto verticalmente */
@@ -82,7 +82,7 @@ li {
 }
 
 li:hover {
-    background-color: #336699;
-    border-left: 1px solid #336699;
+    background-color: rgba(4, 4, 58, 0.944);
+    border-left: 1px solid rgba(20, 20, 26, 0.944);
 }
 

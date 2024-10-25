@@ -1,0 +1,22 @@
+#gob__card {
+    width: 120px; /* Ajusta el ancho según necesites */
+    height: 100px;
+    image-rendering: optimizeQuality;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#gob__card__es {
+    width: 260px; /* Ajusta el ancho según necesites */
+    height: 100px;
+    image-rendering: optimizeQuality;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#gob__block {
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px; /* Aumenta el espacio entre las tarjetas */
+}

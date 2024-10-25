@@ -110,21 +110,21 @@ body {
 /* Style for iPad Mini (768px - 800px) */
 @media (min-width: 768px) and (max-width: 800px) {
     :root {
-        --margin-size: 7vh;
+        --margin-size: 4vh;
         --space-between-card: 4vh;
         --font-size: 26px;
         --font-size-title: 36px;
         --height-cards: 350px;
-        --margin-size-Cards: 7vh;
+        --margin-size-Cards: 2vh;
     }
     body {
         grid-template-columns: 9fr 3fr;
-        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-rows: 1fr 4fr 10fr 10fr 2fr;
         grid-template-areas:
             "header header"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
+            "sideMenu sideMenu"
+            "cardContainer cardContainer"
+            "cardContainer cardContainer"
             "footer footer";
     }
 }
@@ -132,21 +132,21 @@ body {
 /* Style for iPad Air (801px - 1024px) */
 @media (min-width: 801px) and (max-width: 1024px) {
     :root {
-        --margin-size: 8vh;
+        --margin-size: 3vh;
         --space-between-card: 5vh;
         --font-size: 28px;
         --font-size-title: 38px;
         --height-cards: 400px;
-        --margin-size-Cards: 8vh;
+        --margin-size-Cards: 2vh;
     }
     body {
         grid-template-columns: 10fr 3fr;
-        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-rows: 2fr 4fr 10fr 10fr 2fr;
         grid-template-areas:
             "header header"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
+            "sideMenu sideMenu"
+            "cardContainer cardContainer"
+            "cardContainer cardContainer"
             "footer footer";
     }
 }
@@ -154,46 +154,22 @@ body {
 /* Style for iPad Pro (1025px - 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
     :root {
-        --margin-size: 6vh;
+        --margin-size: 3vh;
         --space-between-card: 6vh;
         --font-size: 30px;
         --font-size-title: 42px;
         --height-cards: 450px;
-        --margin-size-Cards: 6vh;
+        --margin-size-Cards: 1vh;
     }
-    body {
+    body {  
         grid-template-columns: 10fr 6fr;
-        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-rows: 1fr 3fr 10fr 10fr 2fr;
         grid-template-areas:
             "header header"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
-            "cardContainer sideMenu"
+            "sideMenu sideMenu"
+            "cardContainer cardContainer"
+            "cardContainer cardContainer"
             "footer footer";
-    }
-}
-
-/* Style for NextHub (min-width: 1023px) */
-@media (min-width: 1023px) and (max-width: 1366px){
-    :root {
-        --margin-size: 12vh;
-        --space-between-card: 6vh;
-        --font-size: 25px;
-        --font-size-title: 30px;
-        --height-cards: 300px;
-        --margin-size-Cards: 12vh;
-    }
-
-    body{
-        
-        grid-template-columns: 10fr 10fr 5fr;
-        grid-template-rows: 0fr 10fr 10fr 10fr 3fr;
-        grid-template-areas:"header header header"
-                            "cardContainer cardContainer sideMenu"
-                            "cardContainer cardContainer sideMenu"
-                            "cardContainer cardContainer sideMenu"
-                            "footer footer footer";
-                            
     }
 }
 

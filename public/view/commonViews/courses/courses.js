@@ -7,24 +7,36 @@ let userCoursesList = []
 
 function printCourses() {
 
-    let coursesHTML = "";
+    let cardsBlock = document.getElementById('courses');
 
     coursesList.forEach(element => {
 
         let workDoneMensage = element.porcent+" "+element.workDone;
         
-        coursesHTML += `
-                        <div class="card" id="${element["id"]}" onclick="clickCard(event)">
-                            <img src='${element["image"]}' id="header">
-                            <h1 id="card__title">${element["title"]}</h1>
-                            <p id="card__test">${workDoneMensage}</p>
-                        </div>`;
+        let cardDiv = document.createElement('div');
+        cardDiv.className = "card"
+        cardDiv.id = element["id"];
+        cardDiv.addEventListener('click', clickCard);
+        cardsBlock.appendChild(cardDiv);
+
+        let cardImg = document.createElement('img');
+        cardImg.src = element["image"];
+        cardImg.id  = "header";
+        cardDiv.appendChild(cardImg);
+
+        let cardTitle = document.createElement('h1');
+        cardTitle.id = "card__title";
+        cardTitle.innerHTML = element["title"];
+        cardDiv.appendChild(cardTitle);
+
+        let cardText = document.createElement('p');
+        cardText.id = "card__test";
+        cardText.innerHTML = workDoneMensage
+        cardDiv.appendChild(cardText);
 
     });
 
     userCoursesList = coursesList;
-
-    document.getElementById('courses').innerHTML += coursesHTML;
 
 }
 

@@ -5,6 +5,7 @@
     --font-size: 0px;
     --font-size-title: 0px;
     --height-cards: 0px;
+    --margin-size-Cards: 0px;
 }
 
 /* Style for the body of the page */
@@ -12,40 +13,187 @@ body {
     background-image: url('/public/assets/img/background/background.jpg'); /* Sets the background image */
     background-size: cover; /* Ensures the background image covers the entire body */
     background-position: 50% center; /* Centers the background image */
+    display: grid;
+
 }
 
 /* Media queries for responsive design */
 
-/* Style for phones (max-width: 600px) */
-@media (max-width: 600px) {
+/* Style for small phones (max-width: 320px) */
+@media (max-width: 320px) {
     :root {
-        --margin-size: 15vh;
-        --space-between-card: 6vh;
-        --font-size: 20px;
-        --font-size-title: 30px;
-        --height-cards: 300px;
+        --margin-size: 0px;
+        --space-between-card: 4vh;
+        --font-size: 14px;
+        --font-size-title: 24px;
+        --height-cards: 200px;
+        --margin-size-Cards: 1vh;
+    }
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 0fr 2fr 10fr 10fr 3fr;
+        grid-template-areas:
+            "header"
+            "sideMenu"
+            "cardContainer"
+            "cardContainer"
+            "footer";
     }
 }
 
-/* Style for tablets (601px - 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Style for mid-sized phones (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
     :root {
         --margin-size: 10vh;
-        --space-between-card: 4vh;
-        --font-size: 25px;
-        --font-size-title: 40px;
-        --height-cards: 400px;
+        --space-between-card: 5vh;
+        --font-size: 16px;
+        --font-size-title: 26px;
+        --height-cards: 250px;
+        --margin-size-Cards: 1.5vh;
+    }
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 0fr 2fr 10fr 10fr 2fr;
+        grid-template-areas:
+            "header"
+            "sideMenu"
+            "cardContainer"
+            "cardContainer"
+            "footer";
     }
 }
 
-/* Style for PCs (min-width: 800px) */
-@media (min-width: 800px) {
+/* Style for large phones (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    :root {
+        --margin-size: 2vh;
+        --space-between-card: 5vh;
+        --font-size: 18px;
+        --font-size-title: 28px;
+        --height-cards: 275px;
+        --margin-size-Cards: 2vh;
+    }
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 0fr 2fr 10fr 10fr 3fr;
+        grid-template-areas:
+            "header"
+            "sideMenu"
+            "cardContainer"
+            "cardContainer"
+            "footer";
+    }
+}
+
+/* Style for phablets (601px - 767px) */
+@media (min-width: 601px) and (max-width: 767px) {
+    :root {
+        --margin-size: 5vh;
+        --space-between-card: 4vh;
+        --font-size: 22px;
+        --font-size-title: 32px;
+        --height-cards: 300px;
+        --margin-size-Cards: 5vh;
+    }
+    body {
+        grid-template-columns: 8fr 5fr;
+        grid-template-rows: 0fr 8fr 8fr 8fr 4fr;
+        grid-template-areas:
+            "header header"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "footer footer";
+    }
+}
+
+/* Style for iPad Mini (768px - 800px) */
+@media (min-width: 768px) and (max-width: 800px) {
+    :root {
+        --margin-size: 7vh;
+        --space-between-card: 4vh;
+        --font-size: 26px;
+        --font-size-title: 36px;
+        --height-cards: 350px;
+        --margin-size-Cards: 7vh;
+    }
+    body {
+        grid-template-columns: 9fr 3fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-areas:
+            "header header"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "footer footer";
+    }
+}
+
+/* Style for iPad Air (801px - 1024px) */
+@media (min-width: 801px) and (max-width: 1024px) {
+    :root {
+        --margin-size: 8vh;
+        --space-between-card: 5vh;
+        --font-size: 28px;
+        --font-size-title: 38px;
+        --height-cards: 400px;
+        --margin-size-Cards: 8vh;
+    }
+    body {
+        grid-template-columns: 10fr 3fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-areas:
+            "header header"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "footer footer";
+    }
+}
+
+/* Style for iPad Pro (1025px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    :root {
+        --margin-size: 6vh;
+        --space-between-card: 6vh;
+        --font-size: 30px;
+        --font-size-title: 42px;
+        --height-cards: 450px;
+        --margin-size-Cards: 6vh;
+    }
+    body {
+        grid-template-columns: 10fr 6fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 2fr;
+        grid-template-areas:
+            "header header"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "cardContainer sideMenu"
+            "footer footer";
+    }
+}
+
+/* Style for NextHub (min-width: 1023px) */
+@media (min-width: 1023px) and (max-width: 1366px){
     :root {
         --margin-size: 12vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 300px;
+        --margin-size-Cards: 12vh;
+    }
+
+    body{
+        
+        grid-template-columns: 10fr 10fr 5fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 3fr;
+        grid-template-areas:"header header header"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "footer footer footer";
+                            
     }
 }
 
@@ -57,17 +205,41 @@ body {
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 300px;
+        --margin-size-Cards: 15vh;
+    }
+    body{
+
+        grid-template-columns: 10fr 10fr 5fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 5fr;
+        grid-template-areas:"header header header"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "footer footer footer";
+        
     }
 }
 
 /* Style for wide screens (min-width: 1100px) */
 @media (min-width: 1100px) {
     :root {
-        --margin-size: 14vh;
+        --margin-size: 7vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 300px;
+        --margin-size-Cards: 7vh;
+    }
+    body{
+
+        grid-template-columns: 10fr 10fr 5fr;
+        grid-template-rows: 0fr 10fr 10fr 10fr 5fr;
+        grid-template-areas:"header header header"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "cardContainer cardContainer sideMenu"
+                            "footer footer footer";
+        
     }
 }
 
@@ -75,7 +247,8 @@ body {
 
 /* Container for the courses section */
 #courses {
-    margin-top: var(--margin-size);
+    grid-area: cardContainer;
+    margin-top: var(--margin-size-Cards);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -123,4 +296,31 @@ body {
     color: white;
     font-size: var(--font-size-title); /* Dynamic title font size based on screen width */
     text-align: center;
+}
+
+/*Container for side bar*/
+#sideBar {
+    grid-area: sideMenu;
+    margin-top: var(--margin-size);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--space-between-card);
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+}
+
+/*Container for footer*/
+#footer {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--space-between-card);
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
 }

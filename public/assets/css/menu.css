@@ -6,6 +6,7 @@
 }
 
 header {
+    grid-area: header;
     background-color: rgba(20, 20, 26, 0.944);
     color: #fff;
     padding: 0;

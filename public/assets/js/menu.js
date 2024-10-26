@@ -1,7 +1,7 @@
 function loadMenu(currentUser){
 
     let menuSrc = document.getElementById('menu');
-    let Fullname = currentUser.Name+" "+currentUser.SureName;
+    let Fullname = currentUser.getName()+" "+currentUser.getSureName();
 
     let header = document.createElement('header');
     menuSrc.appendChild(header);
@@ -34,7 +34,7 @@ function loadMenu(currentUser){
     header.appendChild(divRight);
 
     let UserImg = document.createElement('img');
-    UserImg.src = currentUser.Image;
+    UserImg.src = currentUser.getImage();
     divRight.appendChild(UserImg);
 
     let UserName = document.createElement('p');

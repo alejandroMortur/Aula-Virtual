@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Aula Virtual</title>
     <script src="/public/assets/js/loader.js"></script>
+    <script src="/public/assets/class/user.js"></script>
     <script src="login.js"></script>
     <link rel="stylesheet" type="text/css" href="login.css" />
 </head>
@@ -16,7 +17,10 @@
 
         async function init() {
             let loader = new Loader();  
-            usersList = await loader.loadDataUser(); 
+            const userDataArray = await loader.loadDataUser(); // Asumiendo que devuelve un array de objetos JSON
+
+            // Itera sobre cada objeto en el array y crea una instancia de User
+            usersList = userDataArray.map(userData => new User(userData));
 
             console.log(usersList)
         }

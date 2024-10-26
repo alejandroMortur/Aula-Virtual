@@ -5,7 +5,7 @@ function valueData(){
 
     usersList.forEach(element => {
 
-        if(element.UserName == user && element.password == password){
+        if(element.getUserName() == user && element.getpassword() == password){
 
             window.location.href = "/public/view/commonViews/courses/courses.html";
 

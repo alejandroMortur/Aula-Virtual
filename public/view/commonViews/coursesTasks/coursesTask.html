@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso</title>
     <script src="/public/assets/js/menu.js"></script>
+    <script src="/public/assets/js/loader.js"></script>
+    <script src="/public/assets/class/courses.js"></script>
+    <script src="/public/assets/class/coursesTask.js"></script>
+    <script src="/public/assets/class/user.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="coursesTask.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
 </head>
 <body>
     <script> 
 
         async function init() {
 
-            const currentUser = JSON.parse(sessionStorage.getItem("user"));
-
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+            let currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
+            
+            let loader = new Loader();
             loadMenu(currentUser);
-            const currentCourse = JSON.parse(sessionStorage.getItem("course"));
-            console.log(currentUser);
+
+            let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse,currentCourse.getId());
+            coursesTaskList.forEach(element => {
+                
+                let task = new CoursesTask(element);
+                currentCourse.setTask(task)
+
+            });
+
             console.log(currentCourse);
 
         }

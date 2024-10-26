@@ -4,24 +4,6 @@ class Loader{
 
         let data = await fetch("/public/assets/json/users.json");
         let users = await data.json();
-    
-        users.forEach(element => {
-
-            element.courses  = [];
-
-            element.passwordValidate = function (password) {
-                return password === this.password; // Comparación estricta
-            }
-    
-            element.mailValidate = function (UserName) {
-                return UserName === this.UserName; // Comparación estricta
-            }
-
-            element.addCourses = function (course) {
-                this.Courses.push(course)
-            }
-
-        });
 
         return users
     
@@ -37,15 +19,6 @@ class Loader{
             
             if (userCoursesId.includes(element.id)) {
 
-                // Si está, agregar la propiedad CoursesTask y una función para agregar tareas
-                element.CoursesTask = [];
-
-                element.addCoursesTask = function(task) {
-
-                    this.CoursesTask.push(task);
-
-                };
-
                 filtratedCourses.push(element);
                 console.log("Curso encontrado");
                 
@@ -55,6 +28,29 @@ class Loader{
         
         return filtratedCourses
     
+    }
+
+    async loadDataCoursesTasks(course,userCoursesId) {
+
+        let data = await fetch("/public/assets/json/coursesTask.json");
+        let coursesTask = await data.json();
+        let taskData = [];
+
+        coursesTask.forEach(element => {
+            if(element['course_id'] == userCoursesId){
+
+                element['tasks'].forEach(data => {
+
+                    taskData.push(data);
+
+                });
+
+            }
+            
+        });
+
+        return taskData;
+
     }
 
 }

@@ -8,6 +8,8 @@
     <script src="/public/assets/js/menu.js"></script>
     <script src="/public/assets/js/loader.js"></script>
     <script src="/public/assets/js/footer.js"></script>
+    <script src="/public/assets/class/courses.js"></script>
+    <script src="/public/assets/class/user.js"></script>
     <link rel="stylesheet" type="text/css" href="courses.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
@@ -20,10 +22,10 @@
 
         async function init() {
 
-            const currentUser = JSON.parse(sessionStorage.getItem("user"));
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
 
             let loader = new Loader(currentUser);  
-            coursesList = await loader.loadDataCourses(currentUser.registration); 
+            coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
 
             loadMenu(currentUser);
             printCourses();

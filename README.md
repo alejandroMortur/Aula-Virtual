@@ -23,8 +23,6 @@ Below are the necessary commands to create Docker containers and run the web app
 Run the following command in the terminal while in the project folder:
 
 ```bash
-docker run --name miservidor -d -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx
-
 docker run --name miservidor -d -p 8080:80 -v $(pwd):/var/www/html php:7.0-apache
 ```
 ### For Windows:
@@ -32,10 +30,7 @@ docker run --name miservidor -d -p 8080:80 -v $(pwd):/var/www/html php:7.0-apach
 Run the following command in the command line while in the project folder:
 
 ```bash
-docker run --name miservidor -d -p 8080:80 -v ${pwd}:/usr/share/nginx/html nginx
-
 docker run --name miservidor -d -p 8080:80 -v ${pwd}:/var/www/html php:7.0-apache
-
 ```
 
 ### 2. Access the Application:

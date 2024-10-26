@@ -4,41 +4,47 @@
         "title": "Desarrollo web en entorno cliente",
         "workDone": "% completado",
         "porcent": 100 ,
-        "id": 1
+        "id": 1,
+        "type": "course"
     },
     {
         "image": "/public/assets/img/courses/diw.jpeg",
         "title": "Diseño de interfaces web",
         "workDone": "% completado",
         "porcent": 70 ,
-        "id": 2
+        "id": 2,
+        "type": "course"
     },
     {
         "image": "/public/assets/img/courses/daw.jpg",
         "title": "Despliegue de aplicaciones web",
         "workDone": "% completado",
         "porcent": 60 ,
-        "id": 3
+        "id": 3,
+        "type": "course"
     },
     {
         "image": "/public/assets/img/courses/dwes.png",
         "title": "Desarrollo web en entorno servidor",
         "workDone": "% completado",
         "porcent": 80 ,
-        "id": 4
+        "id": 4,
+        "type": "course"
     },
     {
         "image": "/public/assets/img/courses/english.jpg",
         "title": "2 DAW Inglés técnico",
         "workDone": "% completado",
         "porcent": 60 ,
-        "id": 5
+        "id": 5,
+        "type": "course"
     },
     {
         "image": "/public/assets/img/courses/eie.png",
         "title": "Empresa e Iniciativa Emprendedora",
         "workDone": "% completado",
         "porcent": 60 ,
-        "id": 6
+        "id": 6,
+        "type": "course"
     }
 ]

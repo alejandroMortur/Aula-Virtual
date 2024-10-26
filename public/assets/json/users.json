@@ -6,10 +6,16 @@
         "password": "Clave$1",
         "SureName": "Araujo",
         "IsTeacher": 1,
-        "registration" : [1,2,3,4,5,6],
+        "registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
         "Mail": "Yaiza@educa.academy.org",
-        "Image": "/public/assets/img/users/teachers/Yaiza.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/teachers\/Yaiza.jpg"
     },
     {
         "UserName": "Maria.Antonia1",
@@ -18,10 +24,16 @@
         "password": "Clave$1",
         "SureName": "Antonia Moro",
         "IsTeacher": 1,
-        "Registration" : [1,2,3,4,5,6],
+        "Registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
         "Mail": "MariaAntonia@educa.academy.org",
-        "Image": "/public/assets/img/users/teachers/Maria-Antonia.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/teachers\/Maria-Antonia.jpg"
     },
     {
         "UserName": "Jose.Jesus1",
@@ -30,10 +42,13 @@
         "password": "Clave$1",
         "SureName": "Jesus Cordon",
         "IsTeacher": 0,
-        "registration" : [1,2,5],
+        "registration": [
+            1,
+            2,
+            5
+        ],
         "Mail": "JoseJesus@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Jose-Jesus.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/students\/Jose-Jesus.jpg"
     },
     {
         "UserName": "Nadia.Talavera1",
@@ -42,10 +57,13 @@
         "password": "Clave$1",
         "SureName": "Talavera",
         "IsTeacher": 0,
-        "registration" : [3,4,6],
+        "registration": [
+            3,
+            4,
+            6
+        ],
         "Mail": "Nadia@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Nadia.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/students\/Nadia.jpg"
     },
     {
         "UserName": "Ibai.Heras1",
@@ -54,10 +72,13 @@
         "password": "Clave$1",
         "SureName": "Heras",
         "IsTeacher": 0,
-        "registration" : [3,4,6],
+        "registration": [
+            3,
+            4,
+            6
+        ],
         "Mail": "Ibai@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Ibai.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/students\/Ibai.jpg"
     },
     {
         "UserName": "Almudena.Becerra1",
@@ -66,10 +87,13 @@
         "password": "Clave$1",
         "SureName": "Becerra",
         "IsTeacher": 0,
-        "registration" : [3,4,5],
+        "registration": [
+            3,
+            4,
+            5
+        ],
         "Mail": "Almudena@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Almudena.jpg"
-
+        "Image": "\/public\/assets\/img\/users\/students\/Almudena.jpg"
     },
     {
         "UserName": "Joaquin.Valencia1",
@@ -78,20 +102,27 @@
         "password": "Clave$1",
         "SureName": "Valencia",
         "IsTeacher": 0,
-        "registration" : [3,2,1],
+        "registration": [
+            3,
+            2,
+            1
+        ],
         "Mail": "Joaquin@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Joaquin.jpeg"
-
-    },    
+        "Image": "\/public\/assets\/img\/users\/students\/Joaquin.jpeg"
+    },
     {
         "UserName": "Lucio.Fernandez1",
-        "Name": "Lucio",
+        "Name": "Lucios",
         "DNI": "51589677X",
-        "password": "Clave$1",
+        "password": "Clave$1222222222222222",
         "SureName": "Fernandez",
         "IsTeacher": 0,
-        "registration" : [1,2,5],
+        "registration": [
+            1,
+            2,
+            5
+        ],
         "Mail": "Lucio@educa.academy.org",
-        "Image": "/public/assets/img/users/students/Lucio.jpeg"
+        "Image": "\/public\/assets\/img\/users\/students\/Lucio.jpeg"
     }
 ]

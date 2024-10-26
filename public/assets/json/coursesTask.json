@@ -1,0 +1,104 @@
+[
+    {
+        "course_id": 1,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "Introductions to HTML",
+                "description": "Create a simple HTML page with your personal information.",
+                "due_date": "2024-11-10"
+            },
+            {
+                "task_id": 2,
+                "name": "CSS Project",
+                "description": "Design a webpage using CSS to style it.",
+                "due_date": "2024-11-20"
+            }
+        ]
+    },
+    {
+        "course_id": 2,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "Form Design",
+                "description": "Create a contact form with data validation.",
+                "due_date": "2024-11-15"
+            },
+            {
+                "task_id": 2,
+                "name": "UI Mockup",
+                "description": "Design a mockup for a user interface of an application.",
+                "due_date": "2024-11-25"
+            }
+        ]
+    },
+    {
+        "course_id": 3,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "Server Deployment",
+                "description": "Upload a web application to a server using FTP.",
+                "due_date": "2024-11-12"
+            },
+            {
+                "task_id": 2,
+                "name": "Development Environment Setup",
+                "description": "Set up a development environment for a web application.",
+                "due_date": "2024-11-22"
+            }
+        ]
+    },
+    {
+        "course_id": 4,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "REST API",
+                "description": "Create a simple REST API using PHP.",
+                "due_date": "2024-11-18"
+            },
+            {
+                "task_id": 2,
+                "name": "Final Server Project",
+                "description": "Develop a project that integrates everything learned in the course.",
+                "due_date": "2024-12-01"
+            }
+        ]
+    },
+    {
+        "course_id": 5,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "Technical Vocabulary",
+                "description": "Create a glossary of technical vocabulary in English.",
+                "due_date": "2024-11-14"
+            },
+            {
+                "task_id": 2,
+                "name": "Oral Presentation",
+                "description": "Prepare and deliver a presentation in English on a technical topic.",
+                "due_date": "2024-11-28"
+            }
+        ]
+    },
+    {
+        "course_id": 6,
+        "tasks": [
+            {
+                "task_id": 1,
+                "name": "Business Plan",
+                "description": "Develop a business plan for an entrepreneurial idea.",
+                "due_date": "2024-11-16"
+            },
+            {
+                "task_id": 2,
+                "name": "Market Research",
+                "description": "Conduct market research on a business idea.",
+                "due_date": "2024-11-30"
+            }
+        ]
+    }
+]

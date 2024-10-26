@@ -1,2 +1,11 @@
 package.json
 package-lock.json
+
+# Ignore the datos_para_sql folder and its contents
+datos_para_sql/
+
+# Ignore the server folder and its contents
+server/
+
+# Ignore the JavaScript file for sending data to PHP
+/public/assets/js/sendData.js

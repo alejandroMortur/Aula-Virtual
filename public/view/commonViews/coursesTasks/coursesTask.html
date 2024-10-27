@@ -9,6 +9,8 @@
     <script src="/public/assets/class/courses.js"></script>
     <script src="/public/assets/class/coursesTask.js"></script>
     <script src="/public/assets/class/user.js"></script>
+    <script src="/public/assets/js/footer.js"></script>
+    <script src="/public/view/commonViews/coursesTasks/coursesTask.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="coursesTask.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
@@ -24,7 +26,7 @@
             let loader = new Loader();
             loadMenu(currentUser);
 
-            let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse,currentCourse.getId());
+            let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse.getId());
             coursesTaskList.forEach(element => {
                 
                 let task = new CoursesTask(element);
@@ -32,7 +34,8 @@
 
             });
 
-            console.log(currentCourse);
+            printTask(currentCourse);
+            loadFooter();
 
         }
 
@@ -44,7 +47,15 @@
     <div id="menu">
     </div>
 
-    <div id="task">
+    <div id="taskContainer">
+    </div>
+
+    <div id="sideBar">
+        <p>awdwadwadwadwa</p>
+        <p>awdwadwadwadwa</p>
+    </div>
+
+    <div id="footer">
     </div>
     
 </body>

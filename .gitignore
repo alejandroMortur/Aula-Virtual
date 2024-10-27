@@ -9,3 +9,5 @@ server/funcionesExternas.php
 
 # Ignore the JavaScript file for sending data to PHP
 /public/assets/js/sendData.js
+
+docker-compose.yml

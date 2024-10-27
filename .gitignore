@@ -5,7 +5,7 @@ package-lock.json
 datos_para_sql/
 
 # Ignore the server folder and its contents
-server/
+server/funcionesExternas.php
 
 # Ignore the JavaScript file for sending data to PHP
 /public/assets/js/sendData.js

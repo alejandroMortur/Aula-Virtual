@@ -1,12 +1,13 @@
 <?php
 
-    //include 'funcionesExternas.php';
+    include 'funcionesExternas.php';
 
     if(isset($_POST['Enviar'])){
 
-        //zona subida y carga de ficheros
-        print_r($_FILES);
+        $files = $_FILES['Ficheros'];
+        echo "<script>console.log('Archivos recibidos correctamente');</script>";
 
+    
     /*} else if($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtiene el contenido JSON del cuerpo de la solicitud
         $json = file_get_contents('php://input');

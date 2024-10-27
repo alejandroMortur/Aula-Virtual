@@ -9,9 +9,14 @@
     <script src="/public/assets/js/menu.js"></script>
     <script src="/public/assets/js/loader.js"></script>
     <script src="/public/assets/js/footer.js"></script>
+    <script src="/public/view/commonViews/tasks/task.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="task.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
+    <style>
+        /* Estilo del iframe para que parezca una consola */
+        #consoleOutput {display: none;}
+    </style>
 </head>
 <body>
 
@@ -24,6 +29,8 @@
             let loader = new Loader();
             await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
 
+            addValuesToUpload(currentTask);
+
             loadMenu(currentUser);
 
         }
@@ -35,11 +42,14 @@
     <div id="menu">
     </div>
     
+    <!-- Iframe oculto para recibir la respuesta sin redirigir la página -->
+    <iframe id="consoleOutput" name="uploadTarget"></iframe>
+
     <div id="upload">
-        <form action="/server/main.php" method="post" enctype="multipart/form-data">
+        <form id="file__form" action="/server/main.php" method="post" enctype="multipart/form-data" target="uploadTarget">
             <p>
                 70MB max
-                <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo 70000000 ?>">
+                <input type="hidden" name="MAX_FILE_SIZE" value="70000000">
                 <input type="file" name="Ficheros[]" multiple="multiple">
             </p>
             <p>

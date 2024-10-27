@@ -40,7 +40,7 @@ function clickCard(event){
         if(element["task_id"] == id){
 
             sessionStorage.setItem("task", JSON.stringify(element));
-            window.location.href = "/public/view/commonViews/tasks/task.php";
+            window.location.href = "/public/view/commonViews/tasks/task.html";
 
         }
 

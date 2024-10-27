@@ -241,7 +241,7 @@ body {
     width: 300px;
     height: var(--height-cards);
     border-radius: 30px;
-    background: #212121; /* Dark background for the card */
+    background: #0D1F23; /* Dark background for the card */
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60); /* Neumorphism effect */
     display: flex;
     flex-wrap: wrap;

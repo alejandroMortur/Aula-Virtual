@@ -30,7 +30,7 @@ class Loader{
     
     }
 
-    async loadDataCoursesTasks(course,userCoursesId) {
+    async loadDataCoursesTasks(userCoursesId) {
 
         let data = await fetch("/public/assets/json/coursesTask.json");
         let coursesTask = await data.json();
@@ -50,6 +50,25 @@ class Loader{
         });
 
         return taskData;
+
+    }
+
+    async loadDocumentCoursesTasks(userTaskId) {
+
+        let data = await fetch("/public/assets/json/documents.json");
+        let documents = await data.json();
+        let documentsData = [];
+
+        documents.forEach(element => {
+            if(element['task_id'] == userTaskId){
+
+                console.log(element)
+
+            }
+            
+        });
+
+        //return taskData;
 
     }
 

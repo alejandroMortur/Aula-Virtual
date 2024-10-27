@@ -15,6 +15,12 @@ class CoursesTask{
     getTaskId(){
         return this.task_id;
     }
+    getName(){
+        return this.name;
+    }
+    getDescription(){
+        return this.description;
+    }
     getUploadDate(){
         return this.upload_date;
     }

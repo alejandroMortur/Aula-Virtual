@@ -62,13 +62,13 @@ class Loader{
         documents.forEach(element => {
             if(element['task_id'] == userTaskId){
 
-                console.log(element)
+                documentsData.push(element);
 
             }
             
         });
 
-        //return taskData;
+        return documentsData;
 
     }
 

@@ -13,10 +13,6 @@
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="task.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
-    <style>
-        /* Estilo del iframe para que parezca una consola */
-        #consoleOutput {display: none;}
-    </style>
 </head>
 <body>
 
@@ -24,14 +20,34 @@
         async function init() {
 
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-            let currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
+            let newTask = JSON.parse(sessionStorage.getItem("newTask"));
+
+            console.log(newTask);
 
             let loader = new Loader();
-            await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
-
-            addValuesToUpload(currentTask);
-
             loadMenu(currentUser);
+
+            let statusSolution = "";
+            let currentTask = "";
+            let statusHeader = newTask;
+
+            if(newTask == "notNew"){
+
+                let document = await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
+                let currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
+                console.log(currentTask);
+
+                statusSolution = document[0].documents[1].status;
+                statusHeader = document[0].documents[0].status;
+
+            }
+
+            if(statusHeader == 'done' && statusSolution == 'done'){
+
+                createTaskHeader(currentTask,document,statusHeader);
+                createTaskBody(document,statusSolution);
+            }else
+                createTaskHeader(currentTask,document,statusHeader);
 
         }
 
@@ -42,24 +58,14 @@
     <div id="menu">
     </div>
     
-    <!-- Iframe oculto para recibir la respuesta sin redirigir la página -->
-    <iframe id="consoleOutput" name="uploadTarget"></iframe>
+    <div id="taskBlock">
 
-    <div id="upload">
-        <form id="file__form" action="/server/main.php" method="post" enctype="multipart/form-data" target="uploadTarget">
-            <p>
-                70MB max
-                <input type="hidden" name="MAX_FILE_SIZE" value="70000000">
-                <input type="file" name="Ficheros[]" multiple="multiple">
-            </p>
-            <p>
-                <button type="submit" name="Enviar">Enviar</button>
-                <button type="reset">Limpiar</button>
-            </p>
-        </form>
-    </div>
-
-    <div id="dowload">
+        <div id="header">
+        </div>
+    
+        <div id="body">
+        </div>
+    
     </div>
 
     <div id="footer">

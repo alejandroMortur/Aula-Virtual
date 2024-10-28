@@ -1,3 +1,18 @@
-#upload{
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#taskBlock{
     margin-top: 200px;
+    width: 400px;
+    height: 200px;
+    background-color: azure;
+    border: 2px solid black;
+}
+#file__link{
+
+    color: black;
+
 }

@@ -40,10 +40,18 @@ function clickCard(event){
         if(element["task_id"] == id){
 
             sessionStorage.setItem("task", JSON.stringify(element));
+            sessionStorage.setItem("newTask", JSON.stringify("notNew"));
             window.location.href = "/public/view/commonViews/tasks/task.html";
 
         }
 
     });
+
+}
+
+function newTask(){
+
+    sessionStorage.setItem("newTask", JSON.stringify("new"));
+    window.location.href = "/public/view/commonViews/tasks/task.html";
 
 }

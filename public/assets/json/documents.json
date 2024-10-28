@@ -4,17 +4,17 @@
         "documents": [
             {
                 "document_id": 1,
-                "file_path": "\/public\/media\/enunciados\/html_intro.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-01T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 2,
-                "file_path": "\/public\/media\/soluciones\/student1\/html_intro_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/html_intro_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-08T15:30:00",
-                "status": ""
+                "status": "done"
             }
         ]
     },
@@ -23,17 +23,17 @@
         "documents": [
             {
                 "document_id": 3,
-                "file_path": "\/public\/uploads\/enunciados\/css_project.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-05T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 4,
-                "file_path": "\/public\/uploads\/soluciones\/student1\/css_project_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/css_project_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-15T11:00:00",
-                "status": ""
+                "status": "done"
             }
         ]
     },
@@ -42,17 +42,17 @@
         "documents": [
             {
                 "document_id": 5,
-                "file_path": "\/public\/uploads\/enunciados\/server_deployment.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-02T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 6,
-                "file_path": "\/public\/uploads\/soluciones\/student1\/server_deployment_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/server_deployment_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-12T12:00:00",
-                "status": ""
+                "status": "done"
             }
         ]
     },
@@ -61,17 +61,17 @@
         "documents": [
             {
                 "document_id": 7,
-                "file_path": "\/public\/uploads\/enunciados\/rest_api.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-07T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 8,
-                "file_path": "\/public\/uploads\/soluciones\/student1\/rest_api_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/rest_api_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-18T13:00:00",
-                "status": ""
+                "status": "done"
             }
         ]
     },
@@ -80,17 +80,17 @@
         "documents": [
             {
                 "document_id": 9,
-                "file_path": "\/public\/uploads\/enunciados\/technical_vocabulary.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-03T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 10,
-                "file_path": "\/public\/uploads\/soluciones\/student1\/technical_vocabulary_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/technical_vocabulary_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-14T14:00:00",
-                "status": ""
+                "status": "done"
             }
         ]
     },
@@ -99,17 +99,17 @@
         "documents": [
             {
                 "document_id": 11,
-                "file_path": "\/public\/uploads\/enunciados\/business_plan.pdf",
+                "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
                 "type": "Enunciado",
                 "uploaded_at": "2024-11-06T10:00:00",
-                "status": ""
+                "status": "done"
             },
             {
                 "document_id": 12,
-                "file_path": "\/public\/uploads\/soluciones\/student1\/business_plan_solution.zip",
-                "type": "Soluci\u00f3n",
+                "file_path": "/..\/..\/public\/assets\/media\/soluciones\/business_plan_solution.zip",
+                "type": "Solucion",
                 "uploaded_at": "2024-11-16T15:00:00",
-                "status": ""
+                "status": "done"
             }
         ]
     }

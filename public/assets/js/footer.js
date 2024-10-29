@@ -2,6 +2,22 @@ function loadFooter(){
 
     let footer = document.getElementById('footer');
 
+    let divTextoLicense = document.createElement('div');
+    divTextoLicense.id="license__block";
+    footer.appendChild(divTextoLicense);
+
+    let licenceText = document.createElement('p');
+    licenceText.innerHTML= "&copy; 2024 AlexDev. Todos los derechos reservados"
+    divTextoLicense.appendChild(licenceText );
+
+    let divTexto = document.createElement('div');
+    divTexto.id="links__block";
+    footer.appendChild(divTexto);
+
+    let externalLinks = document.createElement('p');
+    externalLinks.innerHTML= "Consejería de Educación, Ciencia y Universidades "
+    divTexto.appendChild(externalLinks);
+
     let div = document.createElement('div');
     div.id="gob__block";
     footer.appendChild(div);

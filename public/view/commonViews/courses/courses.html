@@ -23,11 +23,12 @@
         async function init() {
 
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-
             let loader = new Loader(currentUser);  
             coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
 
-            loadMenu(currentUser);
+            let loc = "courses";
+
+            loadMenu(currentUser,loc);
             printCourses();
             loadFooter();
 

@@ -22,20 +22,19 @@
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
             let newTask = JSON.parse(sessionStorage.getItem("newTask"));
 
-            console.log(newTask);
-
             let loader = new Loader();
-            loadMenu(currentUser);
+            let loc = "task";
+            loadMenu(currentUser,loc);
 
             let statusSolution = "";
             let currentTask = "";
+            let document = "";
             let statusHeader = newTask;
 
-            if(newTask == "notNew"){
+            if(newTask == "notNew"){    
 
-                let document = await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
-                let currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
-                console.log(currentTask);
+                currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
+                document = await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
 
                 statusSolution = document[0].documents[1].status;
                 statusHeader = document[0].documents[0].status;

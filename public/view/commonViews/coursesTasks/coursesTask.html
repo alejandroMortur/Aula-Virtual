@@ -24,7 +24,8 @@
             let currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
             
             let loader = new Loader();
-            loadMenu(currentUser);
+            let loc = "coursesTask";
+            loadMenu(currentUser,loc);
 
             let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse.getId());
             coursesTaskList.forEach(element => {
@@ -52,7 +53,6 @@
 
     <div id="sideBar">
         <button id="new_task" onclick="newTask()">Agregar Tarea</button>
-        <p>awdwadwadwadwa</p>
         <p>awdwadwadwadwa</p>
     </div>
 

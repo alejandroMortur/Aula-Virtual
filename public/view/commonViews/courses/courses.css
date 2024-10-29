@@ -1,6 +1,5 @@
 :root {
     /* Variables for styling that can change depending on screen size */
-    --margin-size: 0px;
     --space-between-card: 0px;
     --font-size: 0px;
     --font-size-title: 0px;
@@ -14,7 +13,6 @@ body {
     background-size: cover; /* Ensures the background image covers the entire body */
     background-position: 50% center; /* Centers the background image */
     display: grid;
-
 }
 
 /* Media queries for responsive design */
@@ -22,7 +20,6 @@ body {
 /* Style for small phones (max-width: 320px) */
 @media (max-width: 320px) {
     :root {
-        --margin-size: 0px;
         --space-between-card: 4vh;
         --font-size: 14px;
         --font-size-title: 24px;
@@ -44,7 +41,6 @@ body {
 /* Style for mid-sized phones (321px - 480px) */
 @media (min-width: 321px) and (max-width: 480px) {
     :root {
-        --margin-size: 10vh;
         --space-between-card: 5vh;
         --font-size: 16px;
         --font-size-title: 26px;
@@ -66,7 +62,6 @@ body {
 /* Style for large phones (481px - 600px) */
 @media (min-width: 481px) and (max-width: 600px) {
     :root {
-        --margin-size: 2vh;
         --space-between-card: 5vh;
         --font-size: 18px;
         --font-size-title: 28px;
@@ -88,7 +83,6 @@ body {
 /* Style for phablets (601px - 767px) */
 @media (min-width: 601px) and (max-width: 767px) {
     :root {
-        --margin-size: 5vh;
         --space-between-card: 4vh;
         --font-size: 22px;
         --font-size-title: 32px;
@@ -110,12 +104,11 @@ body {
 /* Style for iPad Mini (768px - 800px) */
 @media (min-width: 768px) and (max-width: 800px) {
     :root {
-        --margin-size: 4vh;
         --space-between-card: 4vh;
         --font-size: 26px;
         --font-size-title: 36px;
         --height-cards: 350px;
-        --margin-size-Cards: 2vh;
+        --margin-size-Cards: 1vh;
     }
     body {
         grid-template-columns: 9fr 3fr;
@@ -132,12 +125,11 @@ body {
 /* Style for iPad Air (801px - 1024px) */
 @media (min-width: 801px) and (max-width: 1024px) {
     :root {
-        --margin-size: 3vh;
         --space-between-card: 5vh;
         --font-size: 28px;
         --font-size-title: 38px;
         --height-cards: 400px;
-        --margin-size-Cards: 2vh;
+        --margin-size-Cards: 1vh;
     }
     body {
         grid-template-columns: 10fr 3fr;
@@ -154,7 +146,6 @@ body {
 /* Style for iPad Pro (1025px - 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
     :root {
-        --margin-size: 3vh;
         --space-between-card: 6vh;
         --font-size: 30px;
         --font-size-title: 42px;
@@ -176,49 +167,42 @@ body {
 /* Style for larger screens (min-width: 1080px) */
 @media (min-width: 1080px) {
     :root {
-        --margin-size: 15vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 300px;
         --margin-size-Cards: 15vh;
     }
-    body{
-
+    body {
         grid-template-columns: 10fr 10fr 5fr;
         grid-template-rows: 0fr 10fr 10fr 10fr 5fr;
         grid-template-areas:"header header header"
                             "cardContainer cardContainer sideMenu"
                             "cardContainer cardContainer sideMenu"
                             "cardContainer cardContainer sideMenu"
-                            "footer footer footer";
-        
+                            "footer footer footer";  
     }
 }
 
 /* Style for wide screens (min-width: 1100px) */
 @media (min-width: 1100px) {
     :root {
-        --margin-size: 7vh;
         --space-between-card: 6vh;
         --font-size: 25px;
         --font-size-title: 30px;
         --height-cards: 300px;
-        --margin-size-Cards: 7vh;
+        --margin-size-Cards: 9vh;
     }
-    body{
-
+    body {
         grid-template-columns: 10fr 10fr 5fr;
         grid-template-rows: 0fr 10fr 10fr 10fr 5fr;
         grid-template-areas:"header header header"
                             "cardContainer cardContainer sideMenu"
                             "cardContainer cardContainer sideMenu"
                             "cardContainer cardContainer sideMenu"
-                            "footer footer footer";
-        
+                            "footer footer footer";  
     }
 }
-
 /*/////////////////////////////////*/
 
 /* Container for the courses section */
@@ -277,7 +261,7 @@ body {
 /*Container for side bar*/
 #sideBar {
     grid-area: sideMenu;
-    margin-top: var(--margin-size);
+    margin-top: var(--margin-size-Cards);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -288,7 +272,6 @@ body {
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
 }
 
-/*Container for footer*/
 #footer {
     grid-area: footer;
     display: flex;
@@ -299,4 +282,5 @@ body {
     border-radius: 30px;
     background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    margin-top: 10px; /* Adds space between the footer and the elements above */
 }

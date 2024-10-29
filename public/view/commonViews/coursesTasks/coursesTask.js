@@ -15,9 +15,11 @@ function printTask(currentCourse){
 
         let taskImage = document.createElement('img')
         taskImage.src = "/public/assets/icons/media-icons/file-72px.png";
+        taskImage.id="file__img";
         taskCard.appendChild(taskImage);
 
         let taskName = document.createElement('p')
+        taskName.id ="task__p"
         taskName.innerHTML = element.getName();
         taskCard.appendChild(taskImage);
 

@@ -21,7 +21,7 @@ form {
     max-width: 350px; /* Ancho máximo del formulario */
     min-width: 250px; /* Asegura que no se encoja demasiado */
     padding: 20px; /* Espaciado interno del formulario */
-    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
 
 }
 
@@ -79,7 +79,7 @@ img {
     margin: 10px auto; /* Centrado con margen */
     border: 2px solid black; /* Borde de los campos */
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623); /* Sombra de los campos */
-    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
     color: white; /* Color del texto de los campos */
     font-size: 1em; /* Tamaño de la fuente de los campos */
     transition: all 0.7s ease-in-out; /* Transición suave para todos los cambios */
@@ -109,7 +109,7 @@ img {
     flex: 1; /* Hace que cada botón ocupe el mismo espacio */
     padding: 10px; /* Espaciado interno de los botones */
     border: none; /* Sin borde predeterminado */
-    background: rgba(4, 40, 68, 0.85); /* Fondo semi-transparente para los botones */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente para los botones */
     color: white; /* Color del texto de los botones */
     box-shadow: 0px 1px 5px rgb(0, 0, 0); /* Sombra de los botones */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
@@ -119,7 +119,7 @@ img {
 
 #buttonsLine button:hover {
 
-    background-color: rgba(60, 80, 100, 0.85); /* Cambia el color de fondo al pasar el ratón */
+    background-color: rgba(75, 6, 72, 0.85); /* Cambia el color de fondo al pasar el ratón */
 
 }
 

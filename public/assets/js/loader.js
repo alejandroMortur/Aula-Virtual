@@ -16,14 +16,8 @@ class Loader{
         let filtratedCourses = []
 
         courses.forEach(element => {
-            
-            if (userCoursesId.includes(element.id)) {
-
+            if (userCoursesId.includes(element.id))
                 filtratedCourses.push(element);
-                console.log("Curso encontrado");
-                
-            }
-
         });
         
         return filtratedCourses
@@ -36,15 +30,14 @@ class Loader{
         let coursesTask = await data.json();
         let taskData = [];
 
+
+
         coursesTask.forEach(element => {
+            
             if(element['course_id'] == userCoursesId){
-
                 element['tasks'].forEach(data => {
-
                     taskData.push(data);
-
                 });
-
             }
             
         });
@@ -60,12 +53,8 @@ class Loader{
         let documentsData = [];
 
         documents.forEach(element => {
-            if(element['task_id'] == userTaskId){
-
+            if(element['task_id'] == userTaskId)
                 documentsData.push(element);
-
-            }
-            
         });
 
         return documentsData;

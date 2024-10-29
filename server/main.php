@@ -60,7 +60,7 @@
         $object = json_decode($json, true);
 
         // Llama a la función para insertar el objeto en el archivo JSON
-        insertIntoJsonFile($object);*/
+        insertIntoJsonFile($object);
     } else {
         echo "Solicitud no válida. Por favor, envíe un objeto JSON a través de una solicitud POST.\n";
     }

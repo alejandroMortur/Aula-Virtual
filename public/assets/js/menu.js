@@ -31,7 +31,7 @@ function loadMenu(currentUser,location){
         coursesSrc.innerHTML = "Login"
         li.appendChild(coursesSrc)
     
-    }else{{
+    }else{
 
         let ulButtons = document.createElement(`ul`);
         nav.appendChild(ulButtons);
@@ -58,7 +58,7 @@ function loadMenu(currentUser,location){
     
         }
 
-    }}
+    }
 
     let divRight = document.createElement('div');
     divRight.id = "Right";
@@ -70,6 +70,7 @@ function loadMenu(currentUser,location){
 
     let UserName = document.createElement('p');
     UserName.innerHTML = Fullname;
+    UserName.id = "userName__p"
     divRight.appendChild(UserName);
 
 }

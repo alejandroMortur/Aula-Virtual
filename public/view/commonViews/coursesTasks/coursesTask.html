@@ -35,6 +35,7 @@
 
             });
 
+            buildSideBar(currentCourse,coursesTaskList);
             printTask(currentCourse);
             loadFooter();
 
@@ -52,8 +53,24 @@
     </div>
 
     <div id="sideBar">
-        <p><img src="/public/assets/icons/media-icons/add-file-72px.png" id="new_task" onclick="newTask()">Crear entrega</p>
-        <p>awdwadwadwadwa</p>
+        <hr>
+        <h1 id="bar__title">not see</h1>
+        <div id="bar__p">not see</div>
+        <hr>
+        <h3 id="bar__SecTitle">Opciones:</h3>
+        <div id="bar__utilities">
+            <div id="bar__utilOp">
+                <img id="bar__img" src="/public/assets/icons/media-icons/add-file-32px.png">Crear entrega
+            </div>
+            <div id="bar__utilOp">
+                <img id="bar__img" src="/public/assets/icons/media-icons/pencil-32px.png">Ordenar de forma:
+                <select id="realignment">
+                    <option>Ascendente</option>
+                    <option>Descendente</option>
+                </select>
+            </div>
+        </div>
+        <hr>
     </div>
 
     <div id="footer">

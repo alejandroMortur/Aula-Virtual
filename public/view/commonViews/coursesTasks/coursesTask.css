@@ -2,10 +2,10 @@
     /* Variables para estilos que pueden cambiar según el tamaño de la pantalla */
     --margin-size: 0px;
     --space-between-card: 0px;
-    --font-size: 16px; /* Tamaño de fuente base */
-    --font-size-title: 28px; /* Tamaño de fuente para títulos */
-    --height-cards: 300px; /* Altura de las tarjetas */
-    --margin-size-Cards: 2vh; /* Margen entre las tarjetas */
+    --font-size: 0px; /* Tamaño de fuente base */
+    --font-size-title: 0px; /* Tamaño de fuente para títulos */
+    --height-cards: 0px; /* Altura de las tarjetas */
+    --margin-size-Cards: 0px; /* Margen entre las tarjetas */
 }
 
 /* Estilo para el cuerpo de la página */
@@ -38,8 +38,8 @@ body {
         --space-between-card: 4vh;
         --font-size: 14px;
         --font-size-title: 24px;
-        --height-cards: 200px;
         --margin-size-Cards: 1vh;
+        --height-cards: 30px;
     }
     body {
         grid-template-areas: 
@@ -57,8 +57,8 @@ body {
         --space-between-card: 5vh;
         --font-size: 16px;
         --font-size-title: 26px;
-        --height-cards: 250px;
         --margin-size-Cards: 4vh;
+        --height-cards: 80%;
     }
     body {
         grid-template-areas: 
@@ -70,14 +70,32 @@ body {
 }
 
 /* Estilo para dispositivos de pantalla grande (min-width: 1024px) */
+@media (min-width: 481px) and (max-width: 1023px) {
+    :root {
+        --margin-size: 20px;
+        --space-between-card: 20px;
+        --font-size: 18px;
+        --font-size-title: 30px;
+        --margin-size-Cards: 8vh; /* Margen entre las tarjetas */
+        --height-cards: 20%;
+    }
+    body {
+        grid-template-areas: 
+            "task sidebar" 
+            "footer footer"; /* Mantiene el layout para pantallas grandes */
+        grid-template-columns: 3fr 1fr; /* Dos columnas con proporción */
+    }
+}
+
+/* Estilo para dispositivos de pantalla grande (min-width: 1024px) */
 @media (min-width: 1024px) {
     :root {
         --margin-size: 20px;
         --space-between-card: 20px;
         --font-size: 18px;
         --font-size-title: 30px;
-        --height-cards: 120px; /* Mantiene la altura de las tarjetas */
         --margin-size-Cards: 8vh; /* Margen entre las tarjetas */
+        --height-cards: 20%;
     }
     body {
         grid-template-areas: 
@@ -109,30 +127,13 @@ body {
     background: #0D1F23; /* Fondo oscuro para la tarjeta */
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60); /* Efecto neumorfismo */
     display: flex;
+    color: white;
+    margin-bottom: 10px;
 }
 
 #task__p {
     width: 100px;
     height: 100px;
-}
-
-p {
-    color: white;
-    font-size: var(--font-size);
-}
-
-/* Contenedor para la barra lateral */
-#sideBar {
-    grid-area: sidebar; /* Asigna esta área al grid */
-    margin-top: var(--margin-size-Cards);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: var(--space-between-card);
-    border-radius: 30px;
-    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
 }
 
 /* Estilos del footer */
@@ -159,4 +160,97 @@ footer {
     width: 100px;
     height: 100px;
 
+}
+
+/*////////(sideBar)////////*/
+
+/* Contenedor para la barra lateral */
+#sideBar {
+    grid-area: sidebar; /* Asigna esta área al grid */
+    margin-top: var(--margin-size-Cards);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
+}
+
+#bar__title{
+    font-size: 50px;
+}
+
+#bar__SecTitle{
+    font-size: 30px;
+}
+
+#bar__p {
+    color: white;
+    font-size: var(--font-size);
+    align-items: center;
+}
+
+#bar__utilOp{
+    color: white;
+    font-size: 25px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+hr {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 5px; /* Grosor de la línea */
+    background-color: rgba(90, 32, 98, 0.944);
+    margin: 20px 0; /* Espaciado opcional */
+}
+
+#bar__utilities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    gap: 20px;
+}
+
+#bar__img{
+    width: 70px;
+    height: 70px;
+}
+
+select {
+    margin-top: 20px;
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 90%;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+        no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, rgba(191, 16, 179, 0.3) 3em, rgba(191, 16, 179, 0.2) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* <option> colors */
+    option {
+      color: inherit;
+      background-color: #320a28;
+      height: 10px;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
 }

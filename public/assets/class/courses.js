@@ -3,6 +3,7 @@ class Course{
     constructor(coursesData){
         this.image = coursesData.image
         this.title = coursesData.title
+        this.description = coursesData.description
         this.workDone = coursesData.workDone
         this.porcent = coursesData.porcent
         this.id = coursesData.id

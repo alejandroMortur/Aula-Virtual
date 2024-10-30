@@ -3,48 +3,54 @@
         "image": "/public/assets/img/courses/dwec.png",
         "title": "Desarrollo web en entorno cliente",
         "workDone": "% completado",
-        "porcent": 100 ,
+        "porcent": 100,
         "id": 1,
-        "type": "course"
+        "type": "course",
+        "description": "Aprende a crear aplicaciones web interactivas utilizando tecnologías del lado del cliente como HTML, CSS y JavaScript."
     },
     {
         "image": "/public/assets/img/courses/diw.jpeg",
         "title": "Diseño de interfaces web",
         "workDone": "% completado",
-        "porcent": 70 ,
+        "porcent": 70,
         "id": 2,
-        "type": "course"
+        "type": "course",
+        "description": "Explora los principios del diseño de interfaces y la experiencia del usuario para crear páginas web atractivas y funcionales."
     },
     {
         "image": "/public/assets/img/courses/daw.jpg",
         "title": "Despliegue de aplicaciones web",
         "workDone": "% completado",
-        "porcent": 60 ,
+        "porcent": 60,
         "id": 3,
-        "type": "course"
+        "type": "course",
+        "description": "Aprende a desplegar y gestionar aplicaciones web en servidores y entornos de producción."
     },
     {
         "image": "/public/assets/img/courses/dwes.png",
         "title": "Desarrollo web en entorno servidor",
         "workDone": "% completado",
-        "porcent": 80 ,
+        "porcent": 80,
         "id": 4,
-        "type": "course"
+        "type": "course",
+        "description": "Domina la creación de aplicaciones web en el lado del servidor utilizando tecnologías como Node.js y bases de datos."
     },
     {
         "image": "/public/assets/img/courses/english.jpg",
         "title": "2 DAW Inglés técnico",
         "workDone": "% completado",
-        "porcent": 60 ,
+        "porcent": 60,
         "id": 5,
-        "type": "course"
+        "type": "course",
+        "description": "Desarrolla habilidades en inglés técnico aplicadas al ámbito del desarrollo de software y la tecnología."
     },
     {
         "image": "/public/assets/img/courses/eie.png",
         "title": "Empresa e Iniciativa Emprendedora",
         "workDone": "% completado",
-        "porcent": 60 ,
+        "porcent": 60,
         "id": 6,
-        "type": "course"
+        "type": "course",
+        "description": "Aprende los fundamentos del emprendimiento y la creación de empresas, incluyendo la planificación y gestión empresarial."
     }
 ]

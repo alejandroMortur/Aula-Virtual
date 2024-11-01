@@ -28,31 +28,23 @@
         window.onload = init;
 
     </script>
-    
-    <form>
-        <div id="content">
 
-            <img src="/public/assets/icons/logo.jpg" alt>
-
-            <h1 id="title">Login:</h1>
-
-            <p  id="fields">
-                Usuario: <input type="text" id="user">
-            </p>
-            <p id="fields">
-                Contraseña: <input type="password" id="pass">
-            </p>
-            <p>
-                <div id="buttonsLine">
-
-                    <button type="button" onclick="valueData()" name="enviar">Enviar</button>
-                    <button type="reset"  name="enviar">Limpiar</button>
-
-                </div>
-            </p>
-
-        </div>
+    <form class="form">
+        <img src="/public/assets/icons/logo.jpg" alt>
+        <p class="title">Login:</p>
+        <p class="mensageError" id="mensageError">Error en uno o multiples campos. </p>
+        <p class="mensageErrorRegister" id="mensageErrorRegister">Error el usuario no esta registrado considere registrarse</p>
+        <label>
+            <input class="input" type="text" id="User" placeholder="" required="">
+            <span>UserName</span>
+        </label>
+        <label>
+            <input class="input" type="password" id="Pass" placeholder="" required="">
+            <span>Password</span>
+        </label>
+        <button type="button" class="submitButton" onclick="valueData()" name="enviar">Enviar</button>
+        <button type="reset" class="submitButton"  name="enviar">Limpiar</button>
+        <p class="mensage"><a class="menu__link" href="../public/view/auth/register/register.html">Registrarse</a></p>
     </form>
-
 </body>
 </html>

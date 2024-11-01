@@ -1,130 +1,273 @@
+/* Estilos generales */
 body {
-
     font-family: "Open Sans", sans-serif; /* Fuente para el cuerpo de la página */
     height: 100vh; /* Altura completa de la ventana del navegador */
     display: flex; /* Utiliza flexbox para centrar contenido */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Imagen de fondo */
-    background-size: cover; /* Ensures the background image covers the whole body */
-    background-position: center 40%; /* Moves the background image down by 20px */
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el cuerpo */
+    background-position: center 40%; /* Mueve la imagen de fondo hacia abajo */
     margin: 0; /* Elimina márgenes predeterminados */
-
 }
 
-form {
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; /* Aumenta el ancho en dispositivos pequeños */
+    max-width: 350px; /* Mantiene el ancho máximo */
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: rgba(90, 32, 98, 0.354);
+    color: #fff;
+    border: 1px solid #333;
+}
 
-    display: flex; /* Utiliza flexbox para organizar el contenido del formulario */
-    flex-direction: column; /* Organiza elementos en columna */
-    border: 2px solid black; /* Borde del formulario */
-    width: 80%; /* Reduce el ancho del formulario */
-    max-width: 350px; /* Ancho máximo del formulario */
-    min-width: 250px; /* Asegura que no se encoja demasiado */
-    padding: 20px; /* Espaciado interno del formulario */
-    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
+.title {
+    font-size: 28px; /* Tamaño de fuente para el título */
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: rgba(90, 32, 98, 0.944);
+}
 
+.title::before, .title::after {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgba(90, 32, 98, 0.944);
+}
+
+.title::after {
+    animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+    font-size: 14.5px; /* Tamaño de fuente para mensajes y enlaces */
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center; /* Centra el texto en la sección de inicio de sesión */
+}
+
+.signin a {
+    color: rgba(90, 32, 98, 0.944);
+}
+
+.signin a:hover {
+    text-decoration: underline rgba(90, 32, 98, 0.944);
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 5px 5px 10px; /* Ajusta el padding */
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: rgb(75, 0, 85);
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.input {
+    font-size: medium;
+}
+
+.submitButton {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transition: transform .3s ease;
+    background-color: rgba(121, 10, 136, 0.944);
+}
+
+.submitButton:hover {
+    background-color: rgba(87, 6, 98, 0.944);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
 }
 
 img {
-
     width: 120px; /* Ancho de la imagen */
     height: 120px; /* Altura de la imagen */
     display: block; /* Muestra la imagen como bloque */
     margin: 0 auto 20px auto; /* Centra la imagen y agrega margen inferior */
     border-radius: 50%; /* Hace la imagen circular */
-
 }
 
-#content {
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px; /* Disminuye el tamaño del título en tabletas y móviles */
+    }
 
-    display: flex; /* Utiliza flexbox para organizar el contenido */
-    flex-direction: column; /* Organiza elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    color: white; /* Color del texto */
-    width: 100%; /* Ancho completo */
+    .form {
+        max-width: 90%; /* Permite más ancho en dispositivos móviles */
+        padding: 15px; /* Reduce el padding */
+    }
 
+    .submitButton {
+        font-size: 14px; /* Disminuye el tamaño de fuente del botón en dispositivos móviles */
+    }
+
+    img {
+        width: 100px; /* Cambia el tamaño de la imagen en dispositivos móviles */
+        height: 100px; /* Cambia la altura de la imagen en dispositivos móviles */
+    }
 }
 
-#title {
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px; /* Disminuye aún más el tamaño del título en móviles más pequeños */
+    }
 
-    font-size: 1.8em; /* Tamaño de la fuente del título */
-    font-weight: bold; /* Negrita para el título */
-    text-align: center; /* Centra el texto */
-    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+    .form {
+        padding: 10px; /* Reduce aún más el padding en móviles más pequeños */
+    }
 
+    .submitButton {
+        font-size: 12px; /* Cambia el tamaño de fuente del botón para móviles más pequeños */
+    }
+
+    img {
+        width: 80px; /* Ajusta el tamaño de la imagen en móviles más pequeños */
+        height: 80px; /* Ajusta la altura de la imagen en móviles más pequeños */
+    }
 }
 
-#fields {
+/*Link style*/
 
-    width: 100%; /* Ancho completo para los campos */
-    display: flex; /* Utiliza flexbox para organizar los campos */
-    flex-direction: column; /* Organiza los campos en columna */
-    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
-
+/* <reset-style> ============================ */
+a {
+    text-decoration: none;
+}
+/* <main-style> ============================ */
+.menu__link {
+    color: #fff;
+    line-height: 2;
+    position: relative;
+    font-size: 20px;
+}
+  
+.menu__link::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    transition: transform .4s, opacity .4s;
+    opacity: 0;
+}
+  
+.menu__link:hover::before {
+    transform: translateY(-.25rem);
+    opacity: 1;
 }
 
-#fields label {
-
-    font-size: 1em; /* Tamaño de la etiqueta */
-    margin-bottom: 5px; /* Margen inferior para separar de los campos */
-    color: white; /* Color del texto de la etiqueta */
-
+/* Error CSS */
+.form label .error {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(248, 18, 18, 0.8); 
+    border-radius: 10px;
+}
+  
+.form label .error + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+  
+.form label .error:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+  
+.form label .error:focus + span,
+.form label .error:valid + span {
+    color: #00bfff;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+  
+.error {
+    font-size: medium;
+}
+  
+.mensageError, 
+.signin {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
 }
 
-#fields input {
-
-    width: 80%; /* Ancho de los campos de entrada */
-    padding: 10px; /* Espaciado interno de los campos */
-    margin: 10px auto; /* Centrado con margen */
-    border: 2px solid black; /* Borde de los campos */
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623); /* Sombra de los campos */
-    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
-    color: white; /* Color del texto de los campos */
-    font-size: 1em; /* Tamaño de la fuente de los campos */
-    transition: all 0.7s ease-in-out; /* Transición suave para todos los cambios */
-
-}
-
-#fields input:focus {
-
-    height: 45px; /* Aumenta la altura al enfocarse */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Aumenta la sombra al enfocarse */
-    border-color: #00ffcc; /* Cambia el color del borde al enfocarse */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño del input */
-
-}
-
-#buttonsLine {
-
-    display: flex; /* Utiliza flexbox para organizar los botones */
-    justify-content: space-between; /* Espacio entre botones */
-    width: 100%; /* Ancho completo */
-    gap: 10px; /* Espacio entre botones */
-
-}
-
-#buttonsLine button {
-
-    flex: 1; /* Hace que cada botón ocupe el mismo espacio */
-    padding: 10px; /* Espaciado interno de los botones */
-    border: none; /* Sin borde predeterminado */
-    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente para los botones */
-    color: white; /* Color del texto de los botones */
-    box-shadow: 0px 1px 5px rgb(0, 0, 0); /* Sombra de los botones */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease, transform 0.2s; /* Transición para cambios de fondo y escala */
-
-}
-
-#buttonsLine button:hover {
-
-    background-color: rgba(75, 6, 72, 0.85); /* Cambia el color de fondo al pasar el ratón */
-
-}
-
-#buttonsLine button:active {
-
-    transform: scale(0.98); /* Efecto de presión al hacer clic */
-
+.mensageErrorRegister, 
+.signin {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
 }

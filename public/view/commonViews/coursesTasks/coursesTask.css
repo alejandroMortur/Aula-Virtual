@@ -1,118 +1,82 @@
-:root {
-    /* Variables para estilos que pueden cambiar según el tamaño de la pantalla */
-    --margin-size: 0px;
-    --space-between-card: 0px;
-    --font-size: 0px; /* Tamaño de fuente base */
-    --font-size-title: 0px; /* Tamaño de fuente para títulos */
-    --height-cards: 0px; /* Altura de las tarjetas */
-    --margin-size-Cards: 0px; /* Margen entre las tarjetas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*  {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
-/* Estilo para el cuerpo de la página */
-body {
-    background-image: url('/public/assets/img/background/background.jpg'); /* Establece la imagen de fondo */
-    background-size: cover; /* Asegura que la imagen de fondo cubra todo el cuerpo */
-    background-position: 50% center; /* Centra la imagen de fondo */
-    display: grid; /* Usa el layout de grid */
-    grid-template-areas: 
-        "task sidebar" 
-        "task sidebar" 
-        "footer footer"; /* Define las áreas del grid para pantallas grandes */
-    grid-template-rows: 1fr auto; /* La primera fila toma el espacio disponible, la segunda para el footer */
-    grid-template-columns: 3fr 1fr; /* Ajusta las columnas: task es más ancho (3 partes) que sidebar (1 parte) */
-    min-height: 100vh; /* Asegura que el cuerpo tome toda la altura del viewport */
-    margin: 0; /* Elimina el margen por defecto */
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url('/public/assets/img/background/background2.jpg'); /* Sets the background image */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-position: 50% center; /* Centers the background image */
 }
 
-/* Contenedor principal para el contenido */
-#mainContent {
-    display: contents; /* Permite que el contenido interno use el grid del body */
-}
+.grid-container > * {
+    box-shadow: 10px 6px 37px -13px rgba(51,51,51,0.74);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    }
+    .grid-container{
+        display: grid;
+        gap: 25px;
+        grid-template: 
+        "header" 90px
+        "sidebar" 70px
+        "main"  auto
+        "footer" 70px;
 
-/* Media queries para el diseño responsivo */
+        .header{
+            grid-area: header;
+            background-color: rgba(90, 32, 98, 0.944);
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+        }
 
-/* Estilo para teléfonos pequeños (max-width: 320px) */
-@media (max-width: 320px) {
-    :root {
-        --margin-size: 0px;
-        --space-between-card: 4vh;
-        --font-size: 14px;
-        --font-size-title: 24px;
-        --margin-size-Cards: 1vh;
-        --height-cards: 30px;
-    }
-    body {
-        grid-template-areas: 
-            "sidebar"
-            "task"
-            "footer"; /* Cambia el layout para móviles */
-        grid-template-columns: 1fr; /* Solo una columna */
-    }
-}
+        .sidebar{
+            grid-area: sidebar;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            border-radius: 30px;
+            background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
+        }
 
-/* Estilo para teléfonos medianos (321px - 480px) */
-@media (min-width: 321px) and (max-width: 480px) {
-    :root {
-        --margin-size: 10vh;
-        --space-between-card: 5vh;
-        --font-size: 16px;
-        --font-size-title: 26px;
-        --margin-size-Cards: 4vh;
-        --height-cards: 80%;
-    }
-    body {
-        grid-template-areas: 
-            "sidebar"
-            "task"
-            "footer"; /* Cambia el layout para móviles */
-        grid-template-columns: 1fr; /* Solo una columna */
-    }
-}
+        .main{
+            grid-area: main;
+        }
 
-/* Estilo para dispositivos de pantalla grande (min-width: 1024px) */
-@media (min-width: 481px) and (max-width: 1023px) {
-    :root {
-        --margin-size: 20px;
-        --space-between-card: 20px;
-        --font-size: 18px;
-        --font-size-title: 30px;
-        --margin-size-Cards: 8vh; /* Margen entre las tarjetas */
-        --height-cards: 20%;
-    }
-    body {
-        grid-template-areas: 
-            "task sidebar" 
-            "footer footer"; /* Mantiene el layout para pantallas grandes */
-        grid-template-columns: 3fr 1fr; /* Dos columnas con proporción */
-    }
-}
+        .footer{
+            grid-area: footer;
+            height: max-content;
+            background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+        }
 
-/* Estilo para dispositivos de pantalla grande (min-width: 1024px) */
-@media (min-width: 1024px) {
-    :root {
-        --margin-size: 20px;
-        --space-between-card: 20px;
-        --font-size: 18px;
-        --font-size-title: 30px;
-        --margin-size-Cards: 8vh; /* Margen entre las tarjetas */
-        --height-cards: 20%;
-    }
-    body {
-        grid-template-areas: 
-            "task sidebar" 
-            "footer footer"; /* Mantiene el layout para pantallas grandes */
-        grid-template-columns: 3fr 1fr; /* Dos columnas con proporción */
-    }
+        @media (min-width: 768px){
+            grid-template: 
+            "header header" 90px
+            "sidebar main" auto
+            "footer footer" 70px/
+            30% auto;
+        }
+
 }
 
 /* Contenedor para la sección de tareas */
 #taskContainer {
-    grid-area: task; /* Asigna esta área al grid */
-    margin-top: var(--margin-size-Cards);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-between-card);
+    gap: 20px;
     border-radius: 30px;
     background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
@@ -122,13 +86,15 @@ body {
 .taskCard {
     margin-top: 20px;
     width: 70%;
-    height: var(--height-cards);
+    height:fit-content;
     border-radius: 30px;
     background: #0D1F23; /* Fondo oscuro para la tarjeta */
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60); /* Efecto neumorfismo */
     display: flex;
     color: white;
     margin-bottom: 10px;
+    justify-content: first baseline;
+    align-items: center;
 }
 
 #task__p {
@@ -136,48 +102,19 @@ body {
     height: 100px;
 }
 
-/* Estilos del footer */
-#footer {
-    grid-area: footer; /* Asigna esta área al grid */
-    padding: 10px; /* Añade padding para mejor apariencia */
-    border-radius: 30px;
-    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
-}
-
 /* Otros estilos generales */
 h1, h2, h3 {
     color: white; /* Establece el color de los encabezados a blanco */
 }
 
-/* Asegura que el footer esté siempre en la parte inferior */
-footer {
-    position: relative; /* Posicionamiento por defecto */
-}
-
 #file__img{
-
     width: 100px;
     height: 100px;
-
 }
 
 /*////////(sideBar)////////*/
 
 /* Contenedor para la barra lateral */
-#sideBar {
-    grid-area: sidebar; /* Asigna esta área al grid */
-    margin-top: var(--margin-size-Cards);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    border-radius: 30px;
-    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
-}
-
 #bar__title{
     font-size: 50px;
 }

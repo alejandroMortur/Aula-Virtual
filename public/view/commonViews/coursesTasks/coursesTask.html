@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="coursesTask.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
 </head>
-<body>
+<body class ="grid-container">
     <script> 
 
         async function init() {
@@ -28,6 +28,7 @@
             loadMenu(currentUser,loc);
 
             let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse.getId());
+
             coursesTaskList.forEach(element => {
                 
                 let task = new CoursesTask(element);
@@ -45,36 +46,32 @@
 
     </script>
 
-    <!-- main menu-->
-    <div id="menu">
-    </div>
-
-    <div id="taskContainer">
-    </div>
-
-    <div id="sideBar">
-        <hr>
-        <h1 id="bar__title">not see</h1>
-        <div id="bar__p">not see</div>
-        <hr>
-        <h3 id="bar__SecTitle">Opciones:</h3>
-        <div id="bar__utilities">
-            <div id="bar__utilOp">
-                <img id="bar__img" src="/public/assets/icons/media-icons/add-file-32px.png">Crear entrega
+    <header class="header" id="header"> </header>
+    <aside class="sidebar">
+            <hr>
+            <h1 id="bar__title">not see</h1>
+            <div id="bar__p">not see</div>
+            <hr>
+            <h3 id="bar__SecTitle">Opciones:</h3>
+            <div id="bar__utilities">
+                <div id="bar__utilOp">
+                    <img id="bar__img" src="/public/assets/icons/media-icons/add-file-32px.png">Crear entrega
+                </div>
+                <div id="bar__utilOp">
+                    <img id="bar__img" src="/public/assets/icons/media-icons/pencil-32px.png">Ordenar de forma:
+                    <select id="realignment">
+                        <option>Ascendente</option>
+                        <option>Descendente</option>
+                    </select>
+                </div>
             </div>
-            <div id="bar__utilOp">
-                <img id="bar__img" src="/public/assets/icons/media-icons/pencil-32px.png">Ordenar de forma:
-                <select id="realignment">
-                    <option>Ascendente</option>
-                    <option>Descendente</option>
-                </select>
-            </div>
+            <hr>
+    </aside>
+    <article class="main">
+        <div id="taskContainer">
         </div>
-        <hr>
-    </div>
-
-    <div id="footer">
-    </div>
+    </article>
+    <footer class="footer" id="footer"></footer>
     
 </body>
 </html>

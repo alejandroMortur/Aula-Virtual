@@ -106,5 +106,23 @@
         ],
         "Mail": "Lucio@educa.academy.org",
         "Image": "\/public\/assets\/img\/users\/students\/Lucio.jpeg"
+    },
+    {
+        "UserName": "Alejandro.Moron1",
+        "Name": "Alejandro",
+        "DNI": "54712110D",
+        "password": "Clave$1",
+        "SureName": "Moron Turiel",
+        "IsTeacher": 1,
+        "registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "Mail": "Alejandro@gmail.com",
+        "Image": "\/public\/assets\/img\/users\/default.jpg"
     }
 ]

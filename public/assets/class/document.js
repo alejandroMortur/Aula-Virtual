@@ -5,13 +5,9 @@ class Document {
         this._file_path = documentData.file_path;
         this._type = documentData.type;
         this._uploaded_at = documentData.uploaded_at;
-        this._documentStatus = documentData.status;
     }
 
     // Getters
-    getStatus(){
-        return this.status;
-    }
     getTask_id() {
         return this._task_id;
     }
@@ -28,9 +24,5 @@ class Document {
     // Setters
     setUploaded_at(value) {
         this._uploaded_at = value;
-    }
-
-    setStatus(status){
-        this.status = status;
     }
 }

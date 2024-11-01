@@ -1,55 +1,59 @@
-let userCoursesList = [];
+/*
+    Function that loads all courses data por the cards
+    and then in inyects it in a HTML table.
+*/
 
-// Function to print courses
+let userCoursesList = []
+
 function printCourses() {
+
     let cardsBlock = document.getElementById('courses');
-    cardsBlock.innerHTML = ''; // Clear previous content
 
     coursesList.forEach(element => {
-        // Create a message indicating work done percentage
-        let workDoneMessage = `${element.porcent} ${element.workDone}`;
+
+        let workDoneMensage = element.porcent+" "+element.workDone;
         
-        // Create card div
         let cardDiv = document.createElement('div');
-        cardDiv.className = "card"; // Use className instead of id for repeated elements
-        cardDiv.id = element.id; // Unique identifier for the card
-        cardDiv.addEventListener('click', clickCard); // Attach click event
-        cardsBlock.appendChild(cardDiv); // Append card to the container
+        cardDiv.className = "card"
+        cardDiv.id = element["id"];
+        cardDiv.addEventListener('click', clickCard);
+        cardsBlock.appendChild(cardDiv);
 
-        // Create card image
         let cardImg = document.createElement('img');
-        cardImg.src = element.image; // Set image source
-        cardImg.alt = element.title; // Provide alt text for accessibility
-        cardDiv.appendChild(cardImg); // Append image to the card
+        cardImg.src = element["image"];
+        cardImg.id  = "header";
+        cardDiv.appendChild(cardImg);
 
-        // Create card title
         let cardTitle = document.createElement('h1');
-        cardTitle.className = "card__title"; // Change from id to className for multiple elements
-        cardTitle.innerHTML = element.title; // Set title text
-        cardDiv.appendChild(cardTitle); // Append title to the card
+        cardTitle.id = "card__title";
+        cardTitle.innerHTML = element["title"];
+        cardDiv.appendChild(cardTitle);
 
-        // Create card text
         let cardText = document.createElement('p');
-        cardText.className = "card__text"; // Change from id to className for multiple elements
-        cardText.innerHTML = workDoneMessage; // Set text for work done message
-        cardDiv.appendChild(cardText); // Append text to the card
+        cardText.id = "card__test";
+        cardText.innerHTML = workDoneMensage
+        cardDiv.appendChild(cardText);
+
     });
 
-    // Store the list of courses for later use
     userCoursesList = coursesList;
+
 }
 
-// Function to handle card click events
 function clickCard(event) {
-    const id = event.currentTarget.id; // Get the ID of the clicked card
 
-    // Find the course that matches the clicked card's ID
+    const id = event.currentTarget.id;
+
     userCoursesList.forEach(element => {
-        if (element.id === id) { // Use strict equality
-            // Store selected course in session storage
+        
+        if(element.id == id){
+
             sessionStorage.setItem("course", JSON.stringify(element));
-            // Redirect to the course tasks page
+    
             window.location.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
+
         }
+
     });
+
 }

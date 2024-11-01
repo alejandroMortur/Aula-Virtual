@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="task.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
 </head>
-<body class ="grid-container">
+<body class="grid-container">
 
     <script> 
         async function init() {
@@ -42,6 +42,7 @@
             }
 
             if(statusHeader == 'done' && statusSolution == 'done'){
+
                 createTaskHeader(currentTask,document,statusHeader);
                 createTaskBody(document,statusSolution);
             }else
@@ -54,14 +55,16 @@
         window.onload = init;
     </script>
 
-    <header class="header" id="header"></header>
+    <header class="header" id="header"> </header>
     <aside class="sidebar">
+        <div id="sideBar">
+        </div>
     </aside>
     <article class="main">
-            <div id="taskHeader">
-            </div>
-            <div id="taskBody">
-            </div>
+        <div id="taskHeader">
+        </div>
+        <div id="taskBody">
+        </div>
     </article>
     <footer class="footer" id="footer"></footer>
 

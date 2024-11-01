@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="coursesTask.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
 </head>
-<body class ="grid-container">
+<body class="grid-container">
     <script> 
 
         async function init() {
@@ -28,7 +28,6 @@
             loadMenu(currentUser,loc);
 
             let coursesTaskList = await loader.loadDataCoursesTasks(currentCourse.getId());
-
             coursesTaskList.forEach(element => {
                 
                 let task = new CoursesTask(element);
@@ -48,6 +47,7 @@
 
     <header class="header" id="header"> </header>
     <aside class="sidebar">
+        <div id="sideBar">
             <hr>
             <h1 id="bar__title">not see</h1>
             <div id="bar__p">not see</div>
@@ -66,6 +66,7 @@
                 </div>
             </div>
             <hr>
+        </div>
     </aside>
     <article class="main">
         <div id="taskContainer">

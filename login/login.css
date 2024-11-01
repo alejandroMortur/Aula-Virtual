@@ -1,104 +1,130 @@
 body {
-    font-family: "Open Sans", sans-serif; /* Font for the body of the page */
-    height: 100vh; /* Full height of the browser window */
-    display: flex; /* Uses flexbox to center content */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Background image */
+
+    font-family: "Open Sans", sans-serif; /* Fuente para el cuerpo de la página */
+    height: 100vh; /* Altura completa de la ventana del navegador */
+    display: flex; /* Utiliza flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Imagen de fondo */
     background-size: cover; /* Ensures the background image covers the whole body */
-    background-position: center 40%; /* Adjusts background position */
-    margin: 0; /* Removes default margins */
+    background-position: center 40%; /* Moves the background image down by 20px */
+    margin: 0; /* Elimina márgenes predeterminados */
+
 }
 
 form {
-    display: flex; /* Uses flexbox to organize form content */
-    flex-direction: column; /* Arranges elements in a column */
-    border: 2px solid black; /* Border for the form */
-    width: 80%; /* Reduces form width */
-    max-width: 350px; /* Maximum form width */
-    min-width: 250px; /* Minimum form width */
-    padding: 20px; /* Internal spacing for the form */
-    background: rgba(75, 6, 72, 0.85); /* Semi-transparent background */
+
+    display: flex; /* Utiliza flexbox para organizar el contenido del formulario */
+    flex-direction: column; /* Organiza elementos en columna */
+    border: 2px solid black; /* Borde del formulario */
+    width: 80%; /* Reduce el ancho del formulario */
+    max-width: 350px; /* Ancho máximo del formulario */
+    min-width: 250px; /* Asegura que no se encoja demasiado */
+    padding: 20px; /* Espaciado interno del formulario */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
+
 }
 
 img {
-    width: 120px; /* Image width */
-    height: 120px; /* Image height */
-    display: block; /* Displays image as block */
-    margin: 0 auto 20px; /* Centers image with bottom margin */
-    border-radius: 50%; /* Makes the image circular */
+
+    width: 120px; /* Ancho de la imagen */
+    height: 120px; /* Altura de la imagen */
+    display: block; /* Muestra la imagen como bloque */
+    margin: 0 auto 20px auto; /* Centra la imagen y agrega margen inferior */
+    border-radius: 50%; /* Hace la imagen circular */
+
 }
 
 #content {
-    display: flex; /* Uses flexbox to organize content */
-    flex-direction: column; /* Arranges items in a column */
-    align-items: center; /* Centers horizontally */
-    justify-content: center; /* Centers vertically */
-    color: white; /* Text color */
-    width: 100%; /* Full width */
+
+    display: flex; /* Utiliza flexbox para organizar el contenido */
+    flex-direction: column; /* Organiza elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    color: white; /* Color del texto */
+    width: 100%; /* Ancho completo */
+
 }
 
 #title {
-    font-size: 1.8em; /* Title font size */
-    font-weight: bold; /* Title in bold */
-    text-align: center; /* Centers text */
-    margin-bottom: 20px; /* Bottom margin to separate from following content */
+
+    font-size: 1.8em; /* Tamaño de la fuente del título */
+    font-weight: bold; /* Negrita para el título */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+
 }
 
 #fields {
-    width: 100%; /* Full width for fields */
-    display: flex; /* Uses flexbox for field organization */
-    flex-direction: column; /* Arranges fields in a column */
-    margin-bottom: 20px; /* Bottom margin to separate from following content */
+
+    width: 100%; /* Ancho completo para los campos */
+    display: flex; /* Utiliza flexbox para organizar los campos */
+    flex-direction: column; /* Organiza los campos en columna */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+
 }
 
 #fields label {
-    font-size: 1em; /* Label font size */
-    margin-bottom: 5px; /* Bottom margin to separate from fields */
-    color: white; /* Label text color */
+
+    font-size: 1em; /* Tamaño de la etiqueta */
+    margin-bottom: 5px; /* Margen inferior para separar de los campos */
+    color: white; /* Color del texto de la etiqueta */
+
 }
 
 #fields input {
-    width: 80%; /* Input field width */
-    padding: 10px; /* Internal spacing for input fields */
-    margin: 10px auto; /* Centered with margin */
-    border: 2px solid black; /* Border for input fields */
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623); /* Shadow for input fields */
-    background: rgba(75, 6, 72, 0.85); /* Semi-transparent background */
-    color: white; /* Text color of input fields */
-    font-size: 1em; /* Font size for input fields */
-    transition: all 0.7s ease-in-out; /* Smooth transition for changes */
+
+    width: 80%; /* Ancho de los campos de entrada */
+    padding: 10px; /* Espaciado interno de los campos */
+    margin: 10px auto; /* Centrado con margen */
+    border: 2px solid black; /* Borde de los campos */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.623); /* Sombra de los campos */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente */
+    color: white; /* Color del texto de los campos */
+    font-size: 1em; /* Tamaño de la fuente de los campos */
+    transition: all 0.7s ease-in-out; /* Transición suave para todos los cambios */
+
 }
 
 #fields input:focus {
-    height: 45px; /* Increases height on focus */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Increases shadow on focus */
-    border-color: #00ffcc; /* Changes border color on focus */
-    transform: scale(1.05); /* Slightly enlarges the input */
+
+    height: 45px; /* Aumenta la altura al enfocarse */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.8); /* Aumenta la sombra al enfocarse */
+    border-color: #00ffcc; /* Cambia el color del borde al enfocarse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del input */
+
 }
 
 #buttonsLine {
-    display: flex; /* Uses flexbox for button organization */
-    justify-content: space-between; /* Space between buttons */
-    width: 100%; /* Full width */
-    gap: 10px; /* Space between buttons */
+
+    display: flex; /* Utiliza flexbox para organizar los botones */
+    justify-content: space-between; /* Espacio entre botones */
+    width: 100%; /* Ancho completo */
+    gap: 10px; /* Espacio entre botones */
+
 }
 
 #buttonsLine button {
-    flex: 1; /* Makes each button occupy the same space */
-    padding: 10px; /* Internal spacing for buttons */
-    border: none; /* Removes default border */
-    background: rgba(75, 6, 72, 0.85); /* Semi-transparent background for buttons */
-    color: white; /* Text color for buttons */
-    box-shadow: 0px 1px 5px rgb(0, 0, 0); /* Shadow for buttons */
-    cursor: pointer; /* Changes cursor on hover */
-    transition: background-color 0.3s ease, transform 0.2s; /* Transition for background and scale changes */
+
+    flex: 1; /* Hace que cada botón ocupe el mismo espacio */
+    padding: 10px; /* Espaciado interno de los botones */
+    border: none; /* Sin borde predeterminado */
+    background: rgba(75, 6, 72, 0.85); /* Fondo semi-transparente para los botones */
+    color: white; /* Color del texto de los botones */
+    box-shadow: 0px 1px 5px rgb(0, 0, 0); /* Sombra de los botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transición para cambios de fondo y escala */
+
 }
 
 #buttonsLine button:hover {
-    background-color: rgba(60, 5, 60, 0.95); /* Change background color on hover for better contrast */
+
+    background-color: rgba(75, 6, 72, 0.85); /* Cambia el color de fondo al pasar el ratón */
+
 }
 
 #buttonsLine button:active {
-    transform: scale(0.98); /* Press effect on button click */
+
+    transform: scale(0.98); /* Efecto de presión al hacer clic */
+
 }

@@ -40,20 +40,12 @@ body{
 
         .sidebar{
             grid-area: sidebar;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-            border-radius: 30px;
             background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra */
         }
 
         .main{
             grid-area: main;
-            display: flex;
-            flex-direction: column;
         }
 
         .footer{
@@ -64,22 +56,15 @@ body{
         }
 
         @media (min-width: 768px){
+
             grid-template: 
             "header header" 90px
             "sidebar main" auto
             "footer footer" 70px/
             30% auto;
+
         }
 
-}
-
-/* Sidebar styles */
-#sideBar {
-    background-color: rgba(20, 20, 26, 0.532);
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25);
-    border-radius: 30px;
-    margin-top:80px;
-    color: white;
 }
 
 /* Header styles */
@@ -87,8 +72,7 @@ body{
     display: flex; /* Flex para organizar su contenido */
     flex-direction: column;
     align-items: center;
-    color: white;
-    height:100%;  /* Altura del header */
+    height: 50%; /* Altura del header */
     margin-left: 10px;
     margin-bottom: 20px; /* Margen inferior para separación del body */
     border-radius: 30px;
@@ -101,15 +85,20 @@ body{
     display: flex; /* Flex para organizar su contenido */
     flex-direction: column;
     align-items: center;
-    color: white;
-    height:100%;  /* Altura del body */
+    height: 50%; /* Altura del body */
     border-radius: 30px;
     margin-left: 10px;
     background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra */
 }
 
-a{
-    text-decoration: none;
-    color: red;
+/* Footer styles */
+#footer {
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532);
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
 }

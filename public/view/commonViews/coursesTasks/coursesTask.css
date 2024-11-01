@@ -11,7 +11,7 @@ body{
     font-size: 1.2em;
     min-height: 100vh;
     padding: 20px;
-    background-image: url('/public/assets/img/background/background2.jpg'); /* Sets the background image */
+    background-image: url('/public/assets/img/background/background.jpg'); /* Sets the background image */
     background-size: cover; /* Ensures the background image covers the entire body */
     background-position: 50% center; /* Centers the background image */
 }
@@ -40,14 +40,6 @@ body{
 
         .sidebar{
             grid-area: sidebar;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-            border-radius: 30px;
-            background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
         }
 
         .main{
@@ -62,11 +54,13 @@ body{
         }
 
         @media (min-width: 768px){
+
             grid-template: 
             "header header" 90px
             "sidebar main" auto
             "footer footer" 70px/
             30% auto;
+
         }
 
 }
@@ -76,7 +70,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: var(--space-between-card);
     border-radius: 30px;
     background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
@@ -86,15 +80,12 @@ body{
 .taskCard {
     margin-top: 20px;
     width: 70%;
-    height:fit-content;
     border-radius: 30px;
     background: #0D1F23; /* Fondo oscuro para la tarjeta */
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60); /* Efecto neumorfismo */
     display: flex;
     color: white;
     margin-bottom: 10px;
-    justify-content: first baseline;
-    align-items: center;
 }
 
 #task__p {
@@ -102,19 +93,45 @@ body{
     height: 100px;
 }
 
+/* Estilos del footer */
+#footer {
+    padding: 10px; /* Añade padding para mejor apariencia */
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
+}
+
 /* Otros estilos generales */
 h1, h2, h3 {
     color: white; /* Establece el color de los encabezados a blanco */
 }
 
+/* Asegura que el footer esté siempre en la parte inferior */
+footer {
+    position: relative; /* Posicionamiento por defecto */
+}
+
 #file__img{
+
     width: 100px;
     height: 100px;
+
 }
 
 /*////////(sideBar)////////*/
 
 /* Contenedor para la barra lateral */
+#sideBar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    border-radius: 30px;
+    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra para profundidad */
+}
+
 #bar__title{
     font-size: 50px;
 }
@@ -125,7 +142,6 @@ h1, h2, h3 {
 
 #bar__p {
     color: white;
-    font-size: var(--font-size);
     align-items: center;
 }
 

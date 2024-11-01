@@ -1,35 +1,37 @@
 function loadMenu(currentUser, location) {
-    // Elemento principal donde se insertará el menú
+
+    // Main element where the menu will be inserted
     let menuSrc = document.getElementById('header');
     
-    // Crear el contenedor del logo en la izquierda
+    // Create the logo container on the left
     let divLeft = document.createElement('div');
     divLeft.className = "logo";
     menuSrc.appendChild(divLeft);
 
-    // Agregar imagen del logo dentro del contenedor izquierdo
+    // Add logo image inside the left container
     let img = document.createElement('img');
     img.src = "/public/assets/icons/logo.jpg";
     divLeft.appendChild(img);
 
-    // Agregar texto al lado de la imagen del logo
+    // Add text next to the logo image
     let logoText = document.createElement('span');
     logoText.className = "logo-text";
     logoText.textContent = "Academy";
     divLeft.appendChild(logoText);
 
-    // Crear barra de navegación
+    // Create navigation bar
     let nav = document.createElement('nav');
     menuSrc.appendChild(nav);
 
-    // Crear lista de enlaces de navegación
+    // Create list of navigation links
     let ulLinks = document.createElement('ul');
     ulLinks.className = "nav-links";
     nav.appendChild(ulLinks);
 
-    // Verificar el valor de location y agregar enlaces de navegación
+    // Check the value of location and add navigation links
     if (location === "courses") {
-        // Si la ubicación es "courses", solo se muestra el enlace "Login"
+
+        // If the location is "courses", only show the "Login" link
         let li = document.createElement('li');
         let loginLink = document.createElement('a');
         loginLink.href = "/login/login.html";
@@ -39,7 +41,7 @@ function loadMenu(currentUser, location) {
         ulLinks.appendChild(li);
     }else{
 
-        // Si la ubicación es "courses", solo se muestra el enlace "Login"
+        // If the location is not "courses", add the "Courses" link
         let li = document.createElement('li');
         let coursesLink = document.createElement('a');
         coursesLink.href = "/public/view/commonViews/courses/courses.html";
@@ -48,30 +50,31 @@ function loadMenu(currentUser, location) {
         li.appendChild(coursesLink);
         ulLinks.appendChild(li);
 
-        // Si la ubicación es "task", agregar el enlace adicional de "Listado tareas curso"
+
+        // If the location is "task", add the additional link for "Task List"
         if (location === "task") {
             let taskLi = document.createElement('li');
             let taskLink = document.createElement('a');
             taskLink.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
             taskLink.className = "boton";
-            taskLink.textContent = "Listado tareas curso";
+            taskLink.textContent = "Listado tareas";
             taskLi.appendChild(taskLink);
             ulLinks.appendChild(taskLi);
         }
 
     } 
 
-    // Crear el contenedor del usuario en la derecha
+    // Create the user container on the right
     let divRight = document.createElement('div');
     divRight.className = "user-profile";
     menuSrc.appendChild(divRight);
 
-    // Agregar imagen del usuario en el lado derecho
+    // Add user image on the right side
     let userImg = document.createElement('img');
-    userImg.src = currentUser.getImage(); // Imagen del usuario
+    userImg.src = currentUser.getImage(); // User's image
     divRight.appendChild(userImg);
 
-    // Agregar el nombre completo del usuario a la derecha de la imagen
+    // Add the full name of the user to the right of the image
     let userName = document.createElement('p');
     userName.textContent = currentUser.getName() + " " + currentUser.getSureName();
     divRight.appendChild(userName);

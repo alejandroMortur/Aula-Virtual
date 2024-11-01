@@ -1,6 +1,6 @@
 <?php
 
-    include 'funcionesExternas.php';
+    include 'externalFunctions.php';
 
     if(isset($_POST['Enviar'])){
 

@@ -5,28 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Aula Virtual</title>
     <script src="register.js"></script>
+    <script src="/public/assets/class/user.js"></script>
+    <script src="/public/assets/js/sendData.js"></script>
+    <link rel="stylesheet" type="text/css" href="register.css" />
 </head>
 <body>
+    <form class="form" method="post" action="http://localhost:8080/server/main.php">
+        <p class="title">Register </p>
+        <p class="message" id="mensage">Signup now and get full access to our app. </p>
+        <p class="mensageError" id="mensageError">Error en uno o multiples campos. </p>
+            <div class="flex">
+            <label>
+                <input class="input" type="text" id="Name" placeholder="" required="">
+                <span>Firstname</span>
+            </label>
     
-    <form>
-
-        <h1>Registro:</h1>
-
-        <p>
-            Usuario: <input type="text" id="user">
-        </p>
-        <p>
-            Contraseña: <input type="password" id="pass">
-        </p>
-        <p>
-            Repertir Contraseña: <input type="password" id="pass2">
-        </p>
-        <p>
-            <button type="button" onclick="valueData()" name="enviar">Enviar</button>
-            <button type="reset"  name="enviar">Limpiar</button>
-        </p>
-
+            <label>
+                <input class="input" type="text" id="SureName" placeholder="" required="">
+                <span>Lastname</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input class="input" type="text" id="User" placeholder="" required="">
+            <span>UserName</span>
+        </label>
+        <label>
+            <input class="input" type="text" id="Dni" placeholder="" required="">
+            <span>Dni</span>
+        </label>
+        <label>
+            <input class="input" type="email"  id="Mail" placeholder="" required="">
+            <span>Email</span>
+        </label> 
+            
+        <label>
+            <input class="input" type="password" id="Pass" placeholder="" required="">
+            <span>Password</span>
+        </label>
+        <label>
+            <input class="input" type="password" id="Pass2" placeholder="" required="">
+            <span>Confirm password</span>
+        </label>
+        <label>
+            <span>¿Es profesor?:</span>
+            <input type="checkbox" id="IsTeacher" value="1" />
+        </label>
+        <button type="button" class="submitButton" onclick="valueData()">Submit</button>
     </form>
-
 </body>
 </html>

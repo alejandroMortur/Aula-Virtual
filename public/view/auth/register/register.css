@@ -1,15 +1,22 @@
-/* From Uiverse.io by ammarsaa */ 
-body {
-    font-family: "Open Sans", sans-serif; /* Fuente para el cuerpo de la página */
-    height: 100vh; /* Altura completa de la ventana del navegador */
-    display: flex; /* Utiliza flexbox para centrar contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Imagen de fondo */
-    background-size: cover; /* Ensures the background image covers the whole body */
-    background-position: center 40%; /* Moves the background image down by 20px */
-    margin: 0; /* Elimina márgenes predeterminados */
-}
+  /* ==============================
+    Body Styles
+    ============================== */
+
+  body {
+      font-family: "Open Sans", sans-serif; 
+      height: 100vh; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      background-image: url('/public/assets/img/background/loginbackground.jpg'); 
+      background-size: cover; 
+      background-position: center 40%; 
+      margin: 0; 
+  }
+
+  /* ==============================
+    Form Styles
+    ============================== */
 
 .form {
     display: flex;
@@ -24,7 +31,7 @@ body {
     border: 1px solid #333;
   }
   
-  .title {
+.title {
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -1px;
@@ -33,7 +40,7 @@ body {
     align-items: center;
     padding-left: 30px;
     color: #00bfff;
-  }
+}
   
   .title::before {
     width: 18px;
@@ -57,6 +64,10 @@ body {
     background-color: #00bfff;
   }
   
+  /* ==============================
+    Message and Sign-in Styles
+    ============================== */
+
   .message, 
   .signin {
     font-size: 14.5px;
@@ -75,12 +86,20 @@ body {
     color: #00bfff;
   }
   
+  /* ==============================
+    Flexbox Styles
+    ============================== */
+
   .flex {
     display: flex;
     width: 100%;
     gap: 6px;
   }
   
+  /* ==============================
+    Label Styles
+    ============================== */
+
   .form label {
     position: relative;
   }
@@ -118,10 +137,18 @@ body {
     font-weight: 600;
   }
   
+  /* ==============================
+   Input Styles
+   ============================== */
+
   .input {
     font-size: medium;
   }
   
+  /* ==============================
+   Submit Button Styles
+   ============================== */
+
   .submitButton {
     border: none;
     outline: none;
@@ -137,6 +164,10 @@ body {
     background-color: #00bfff96;
   }
   
+  /* ==============================
+    Keyframes for Pulse Animation
+    ============================== */
+
   @keyframes pulse {
     from {
       transform: scale(0.9);
@@ -149,47 +180,50 @@ body {
     }
   }
 
-/* Error CSS */
-.form label .error {
-    background-color: #333;
-    color: #fff;
-    width: 100%;
-    padding: 20px 05px 05px 10px;
-    outline: 0;
-    border: 1px solid rgba(248, 18, 18, 0.8); 
-    border-radius: 10px;
-}
-  
-.form label .error + span {
-    color: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    left: 10px;
-    top: 0px;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-}
-  
-.form label .error:placeholder-shown + span {
-    top: 12.5px;
-    font-size: 0.9em;
-}
-  
-.form label .error:focus + span,
-.form label .error:valid + span {
-    color: #00bfff;
-    top: 0px;
-    font-size: 0.7em;
-    font-weight: 600;
-}
-  
-.error {
-    font-size: medium;
-}
-  
-.mensageError, 
-.signin {
-  display: none;
-  font-size: 17.5px;
-  color: rgba(255, 0, 0, 0.7);
-}
+  /* ==============================
+    Error Styles
+    ============================== */
+
+  .form label .error {
+      background-color: #333;
+      color: #fff;
+      width: 100%;
+      padding: 20px 05px 05px 10px;
+      outline: 0;
+      border: 1px solid rgba(248, 18, 18, 0.8); 
+      border-radius: 10px;
+  }
+    
+  .form label .error + span {
+      color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      font-size: 0.9em;
+      cursor: text;
+      transition: 0.3s ease;
+  }
+    
+  .form label .error:placeholder-shown + span {
+      top: 12.5px;
+      font-size: 0.9em;
+  }
+    
+  .form label .error:focus + span,
+  .form label .error:valid + span {
+      color: #00bfff;
+      top: 0px;
+      font-size: 0.7em;
+      font-weight: 600;
+  }
+    
+  .error {
+      font-size: medium;
+  }
+    
+  .mensageError, 
+  .signin {
+    display: none;
+    font-size: 17.5px;
+    color: rgba(255, 0, 0, 0.7);
+  }

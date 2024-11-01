@@ -1,22 +1,28 @@
-/* Estilos generales */
+/* ==============================
+   General Styles
+   ============================== */
 body {
-    font-family: "Open Sans", sans-serif; /* Fuente para el cuerpo de la página */
-    height: 100vh; /* Altura completa de la ventana del navegador */
-    display: flex; /* Utiliza flexbox para centrar contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    background-image: url('/public/assets/img/background/loginbackground.jpg'); /* Imagen de fondo */
-    background-size: cover; /* Asegura que la imagen de fondo cubra todo el cuerpo */
-    background-position: center 40%; /* Mueve la imagen de fondo hacia abajo */
-    margin: 0; /* Elimina márgenes predeterminados */
+    font-family: "Open Sans", sans-serif; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-image: url('/public/assets/img/background/loginbackground.jpg'); 
+    background-size: cover; 
+    background-position: center 40%; 
+    margin: 0; 
 }
+
+/* ==============================
+   Form Styles
+   ============================== */
 
 .form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%; /* Aumenta el ancho en dispositivos pequeños */
-    max-width: 350px; /* Mantiene el ancho máximo */
+    width: 100%; 
+    max-width: 350px; 
     padding: 20px;
     border-radius: 20px;
     position: relative;
@@ -25,8 +31,12 @@ body {
     border: 1px solid #333;
 }
 
+/* ==============================
+   Title Styles
+   ============================== */
+
 .title {
-    font-size: 28px; /* Tamaño de fuente para el título */
+    font-size: 28px; 
     font-weight: 600;
     letter-spacing: -1px;
     position: relative;
@@ -50,13 +60,17 @@ body {
     animation: pulse 1s linear infinite;
 }
 
+/* ==============================
+   Message and Sign-in Styles
+   ============================== */
+
 .message, .signin {
-    font-size: 14.5px; /* Tamaño de fuente para mensajes y enlaces */
+    font-size: 14.5px; 
     color: rgba(255, 255, 255, 0.7);
 }
 
 .signin {
-    text-align: center; /* Centra el texto en la sección de inicio de sesión */
+    text-align: center; 
 }
 
 .signin a {
@@ -67,11 +81,19 @@ body {
     text-decoration: underline rgba(90, 32, 98, 0.944);
 }
 
+/* ==============================
+   Flexbox Styles
+   ============================== */
+
 .flex {
     display: flex;
     width: 100%;
     gap: 6px;
 }
+
+/* ==============================
+   Input Styles
+   ============================== */
 
 .form label {
     position: relative;
@@ -110,6 +132,10 @@ body {
     font-weight: 600;
 }
 
+/* ==============================
+   Submit Button Styles
+   ============================== */
+
 .input {
     font-size: medium;
 }
@@ -129,72 +155,88 @@ body {
     background-color: rgba(87, 6, 98, 0.944);
 }
 
+/* ==============================
+   Keyframes for Animation
+   ============================== */
+
 @keyframes pulse {
     from {
-        transform: scale(0.9);
-        opacity: 1;
+        transform: scale(0.9); /* Ending scale for pulsing effect */
+        opacity: 1; /* Starting opacity */
     }
     to {
-        transform: scale(1.8);
-        opacity: 0;
+        transform: scale(1.8); /* Ending scale for pulsing effect */
+        opacity: 0; /* Starting opacity */
     }
 }
 
+/* ==============================
+   Image Styles
+   ============================== */
+
 img {
-    width: 120px; /* Ancho de la imagen */
-    height: 120px; /* Altura de la imagen */
-    display: block; /* Muestra la imagen como bloque */
-    margin: 0 auto 20px auto; /* Centra la imagen y agrega margen inferior */
-    border-radius: 50%; /* Hace la imagen circular */
+    width: 120px; 
+    height: 120px; 
+    display: block; 
+    margin: 0 auto 20px auto; 
+    border-radius: 50%; 
 }
 
-/* Media Queries para Responsividad */
+/* ==============================
+   Media Queries for Responsiveness
+   ============================== */
+
 @media (max-width: 768px) {
     .title {
-        font-size: 24px; /* Disminuye el tamaño del título en tabletas y móviles */
+        font-size: 24px; /* Decreases title size on tablets and mobiles */
     }
 
     .form {
-        max-width: 90%; /* Permite más ancho en dispositivos móviles */
-        padding: 15px; /* Reduce el padding */
+        max-width: 90%; /* Allows more width on mobile devices */
+        padding: 15px; /* Reduces padding */
     }
 
     .submitButton {
-        font-size: 14px; /* Disminuye el tamaño de fuente del botón en dispositivos móviles */
+        font-size: 14px; /* Decreases button font size on mobile devices */
     }
 
     img {
-        width: 100px; /* Cambia el tamaño de la imagen en dispositivos móviles */
-        height: 100px; /* Cambia la altura de la imagen en dispositivos móviles */
+        width: 100px; /* Changes image size on mobile devices */
+        height: 100px; /* Changes image height on mobile devices */
     }
 }
 
 @media (max-width: 480px) {
     .title {
-        font-size: 20px; /* Disminuye aún más el tamaño del título en móviles más pequeños */
+        font-size: 20px; /* Decreases title size further on smaller mobiles */
     }
 
     .form {
-        padding: 10px; /* Reduce aún más el padding en móviles más pequeños */
+        padding: 10px; /* Further reduces padding on smaller mobiles */
     }
 
     .submitButton {
-        font-size: 12px; /* Cambia el tamaño de fuente del botón para móviles más pequeños */
+        font-size: 12px; /* Changes button font size for smaller mobiles */
     }
 
     img {
-        width: 80px; /* Ajusta el tamaño de la imagen en móviles más pequeños */
-        height: 80px; /* Ajusta la altura de la imagen en móviles más pequeños */
+        width: 80px; /* Adjusts image size on smaller mobiles */
+        height: 80px; /* Adjusts image height on smaller mobiles */
     }
 }
 
-/*Link style*/
+/* ==============================
+   Link Styles
+   ============================== */
 
-/* <reset-style> ============================ */
 a {
     text-decoration: none;
 }
-/* <main-style> ============================ */
+
+/* ==============================
+   Menu Link Styles
+   ============================== */
+
 .menu__link {
     color: #fff;
     line-height: 2;
@@ -220,7 +262,10 @@ a {
     opacity: 1;
 }
 
-/* Error CSS */
+/* ==============================
+   Error Mensage Style
+   ============================== */
+
 .form label .error {
     background-color: #333;
     color: #fff;

@@ -54,7 +54,7 @@ function loadMenu(currentUser, location) {
             let taskLink = document.createElement('a');
             taskLink.href = "/public/view/commonViews/coursesTasks/coursesTask.html";
             taskLink.className = "boton";
-            taskLink.textContent = "Listado tareas curso";
+            taskLink.textContent = "Listado tareas";
             taskLi.appendChild(taskLink);
             ulLinks.appendChild(taskLi);
         }

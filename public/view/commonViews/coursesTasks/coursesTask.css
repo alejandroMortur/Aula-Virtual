@@ -191,7 +191,7 @@ select {
     border-radius: 0.25em;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    font-size: clamp(1em, 1.5vw, 1.2em); /* Tamaño del texto en select */
+    font-size: clamp(1em, 1.5vw, 1.2em); 
 }
 
 hr {

@@ -92,12 +92,11 @@ function buildSideBar(currentCourse,cuorseTask){
     document.getElementById('bar__p').innerHTML =  currentCourse.description;
     document.getElementById('bar__img').addEventListener('click', ()  =>  newTask());
     
-    const selectElement = document.getElementById('realignment');
+    let selectElement = document.getElementById('realignment');
 
-    // Agregar el evento change al elemento select
     selectElement.addEventListener('change', () => {
-        const selectedValue = selectElement.value; // Obtener el valor seleccionado
-        orderTasks(selectedValue,cuorseTask); // Llamar a la función con el valor seleccionado
+        let selectedValue = selectElement.value; 
+        orderTasks(selectedValue,cuorseTask); 
     });
 
 }

@@ -124,5 +124,23 @@
         ],
         "Mail": "Alejandro@gmail.com",
         "Image": "\/public\/assets\/img\/users\/default.jpg"
+    },
+    {
+        "UserName": "Admin",
+        "Name": "Admin",
+        "DNI": "54712110D",
+        "password": "Admin",
+        "SureName": "",
+        "IsTeacher": 1,
+        "registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "Mail": "Admin@gmail.com",
+        "Image": "\/public\/assets\/img\/users\/admin\/admin.jpg"
     }
 ]

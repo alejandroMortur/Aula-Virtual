@@ -16,6 +16,20 @@ body{
     background-position: 50% center; /* Centers the background image */
 }
 
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem; 
+    }
+
+    h1 {
+        font-size: 1.5rem; 
+    }
+
+    p {
+        font-size: 0.9rem; 
+    }
+}
+
 .grid-container > * {
     box-shadow: 10px 6px 37px -13px rgba(51,51,51,0.74);
     border-radius: 10px;
@@ -67,32 +81,33 @@ body{
 
 }
 
-/* Header styles */
 #taskHeader {
-    display: flex; /* Flex para organizar su contenido */
+    display: flex; 
     flex-direction: column;
     align-items: center;
-    height: 50%; /* Altura del header */
+    height: 50%; 
     margin-left: 10px;
-    margin-bottom: 20px; /* Margen inferior para separación del body */
+    margin-bottom: 20px; 
     border-radius: 30px;
-    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra */
+    gap: 10px;
+    color: white;
+    background-color: rgba(20, 20, 26, 0.532); 
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); 
 }
 
-/* Body styles */
 #taskBody {
-    display: flex; /* Flex para organizar su contenido */
+    display: flex; 
     flex-direction: column;
     align-items: center;
-    height: 50%; /* Altura del body */
+    height: 50%; 
+    gap: 20px;
+    color: white;
     border-radius: 30px;
     margin-left: 10px;
-    background-color: rgba(20, 20, 26, 0.532); /* Fondo semi-transparente */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Sombra */
+    background-color: rgba(20, 20, 26, 0.532); 
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); 
 }
 
-/* Footer styles */
 #footer {
     border-radius: 30px;
     background-color: rgba(20, 20, 26, 0.532);
@@ -101,4 +116,9 @@ body{
     justify-content: center; 
     align-items: center; 
     padding: 20px; 
+}
+
+a{
+    color: red;
+    text-decoration: none;
 }

@@ -187,6 +187,10 @@ select {
     font-size: clamp(1em, 1.5vw, 1.2em); 
 }
 
+option{
+    background-color: rgba(191, 16, 179, 0.3);
+}
+
 .table-container {
     max-width: 100%; 
     overflow: hidden; 

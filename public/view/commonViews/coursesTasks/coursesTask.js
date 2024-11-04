@@ -23,9 +23,8 @@ function printTask(currentCourse){
         taskCard.appendChild(taskImage);
 
         let taskName = document.createElement('p')
-        taskName.id ="task__p"
         taskName.innerHTML = element.name;
-        taskCard.appendChild(taskImage);
+        taskCard.appendChild(taskName);
 
         let taskDescription = document.createElement('p')
         taskDescription.innerHTML = element.description;

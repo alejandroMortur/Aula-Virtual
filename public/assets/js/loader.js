@@ -61,4 +61,14 @@ class Loader{
 
     }
 
+
+    async loadExams() {
+        
+        let data = await fetch("/public/assets/json/exams.json");
+        let exams = await data.json();
+
+        return exams;
+
+    }
+  
 }

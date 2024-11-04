@@ -26,11 +26,14 @@
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
             let loader = new Loader(currentUser);  
             coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
+            let exams = await loader.loadExams();
 
             let loc = "courses";
 
             loadMenu(currentUser,loc);
+            createExamTable(exams);
             printCourses();
+            buildSideBar(coursesList);
             loadFooter();
 
         }
@@ -42,6 +45,19 @@
     <header class="header" id="header"> </header>
     <aside class="sidebar">
         <div id="sideBar">
+            <div id="table-container">
+            </div> 
+            <h3 id="bar__SecTitle">Opciones:</h3>
+            <div id="bar__utilities">
+                <div id="bar__utilOp">
+                    <img id="bar__img" src="/public/assets/icons/media-icons/pencil-32px.png">Ordenar de forma:
+                    <select id="realignment">
+                        <option>Ascendente</option>
+                        <option>Descendente</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
         </div>
     </aside>
     <article class="main">

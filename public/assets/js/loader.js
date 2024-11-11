@@ -30,8 +30,6 @@ class Loader{
         let coursesTask = await data.json();
         let taskData = [];
 
-
-
         coursesTask.forEach(element => {
             
             if(element['course_id'] == userCoursesId){

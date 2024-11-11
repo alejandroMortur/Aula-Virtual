@@ -25,4 +25,5 @@ class Document {
     setUploaded_at(value) {
         this._uploaded_at = value;
     }
+
 }

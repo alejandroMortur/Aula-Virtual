@@ -10,9 +10,15 @@ function valueData(){
         usersList.forEach(element => {
 
             if(element.getUserName() == user && element.getpassword() == password){
-                // Guardar el objeto en sessionStorage
-                sessionStorage.setItem("user", JSON.stringify(element));
-                window.location.href = "/public/view/commonViews/courses/courses.html";
+
+                if(element.getUserName() == "Admin" && element.getpassword() == "Admin"){
+                    sessionStorage.setItem("user", JSON.stringify(element));
+                    window.location.href = "/public/view/admin/admin-hub/admin.html"; 
+                }else{
+                    sessionStorage.setItem("user", JSON.stringify(element));
+                    window.location.href = "/public/view/commonViews/courses/courses.html";
+                }
+
             }else{
                 document.getElementById("mensageError").style.display = "none";
                 document.getElementById("mensageErrorRegister").style.display = "initial";

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
+    <script src="/public/assets/js/loader.js"></script>
+    <script src="/public/assets/js/menu.js"></script>
+    <script src="/public/assets/class/courses.js"></script>
+    <script src="/public/assets/class/user.js"></script>
+    <script src="/public/assets/js/footer.js"></script>
+    <script src="admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/footer.css" />
+    <title>Zona administrador</title>
+</head>
+<script>
+        
+    let coursesList = [];
+
+    async function init() {
+
+        let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+        let loader = new Loader(currentUser);  
+        coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
+
+        let loc = "courses";
+        loadMenu(currentUser,loc);
+        loadFooter();
+
+    }
+
+    window.onload = init;
+
+</script>
+<body class="grid-container">
+    <header class="header" id="header"> </header>
+    <article class="main">
+    </article>
+    <footer class="footer" id="footer"></footer>
+</body>
+</html>

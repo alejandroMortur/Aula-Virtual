@@ -7,8 +7,6 @@ function printTask(currentCourse){
     taskContainer.innerHTML  = "";
     let tasks = currentCourse.getTask();
 
-    //mirar error metodos en objetos task cuando se sortea
-
     tasks.forEach(element => {
         
         let taskCard = document.createElement('div');
@@ -84,16 +82,61 @@ function newTask(){
 
 }
 
-function buildSideBar(currentCourse,cuorseTask){
+function buildSideBar(currentCourse,cuorseTask,IsTeacher){
 
     currentCourseSorted = currentCourse;
 
     document.getElementById('bar__title').innerHTML =  currentCourse.title;
     document.getElementById('bar__p').innerHTML =  currentCourse.description;
-    document.getElementById('bar__img').addEventListener('click', ()  =>  newTask());
-    
-    let selectElement = document.getElementById('realignment');
 
+    let createTaskDiv = document.getElementById('bar__utilities');
+
+    if(IsTeacher){
+
+        let divBarUtilOp = document.createElement('div');
+        divBarUtilOp.id = 'bar__utilOp';
+        createTaskDiv.appendChild(divBarUtilOp);
+
+        let imgBarImg = document.createElement('img');
+        imgBarImg.id = 'bar__img';
+        imgBarImg.src = '/public/assets/icons/media-icons/add-file-32px.png';
+
+        let textNode = document.createTextNode('Crear entrega');
+
+        divBarUtilOp.appendChild(imgBarImg);
+        divBarUtilOp.appendChild(textNode);
+
+        document.getElementById('bar__img').addEventListener('click', ()  =>  newTask());
+    
+    }
+
+    let divBarUtilOp = document.createElement('div');
+    divBarUtilOp.id = 'bar__utilOp';
+    createTaskDiv.appendChild(divBarUtilOp);
+
+    let imgBarImg = document.createElement('img');
+    imgBarImg.id = 'bar__img';
+    imgBarImg.src = '/public/assets/icons/media-icons/pencil-32px.png';
+
+    let textNode = document.createTextNode('Ordenar de forma:');
+
+    let selectRealignment = document.createElement('select');
+    selectRealignment.id = 'realignment';
+
+    let optionAscendente = document.createElement('option');
+    optionAscendente.textContent = 'Ascendente';
+    selectRealignment.appendChild(optionAscendente);
+
+    let optionDescendente = document.createElement('option');
+    optionDescendente.textContent = 'Descendente';
+    selectRealignment.appendChild(optionDescendente);
+
+    divBarUtilOp.appendChild(imgBarImg);
+    divBarUtilOp.appendChild(textNode);
+    divBarUtilOp.appendChild(selectRealignment);
+
+    let selectElement = document.getElementById('realignment');
+    
     selectElement.addEventListener('change', () => {
         let selectedValue = selectElement.value; 
         orderTasks(selectedValue,cuorseTask); 

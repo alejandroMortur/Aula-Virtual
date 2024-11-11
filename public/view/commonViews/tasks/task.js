@@ -50,6 +50,7 @@ function createTaskHeader(task,documents,status){
 
         let inputFile = document.createElement('input');
         inputFile.type = "file";
+        inputFile.id="file_uploader";
         inputFile.name = "Ficheros[]";
         inputFile.multiple = "multiple";
         parrafo.appendChild(inputFile);
@@ -71,7 +72,6 @@ function createTaskHeader(task,documents,status){
     }
 
 }
-
 
 function createTaskBody(documents,status){
 
@@ -117,8 +117,9 @@ function createTaskBody(documents,status){
 
         let inputFile = document.createElement('input');
         inputFile.type = "file";
+        inputFile.id="file_uploader";
         inputFile.name = "Ficheros[]";
-        inputFile.multiple = "multiple";
+
         parrafo.appendChild(inputFile);
 
         let parrafo2 = document.createElement('p');
@@ -129,7 +130,7 @@ function createTaskBody(documents,status){
         submitButton.name = "Enviar";
         submitButton.innerHTML = "Enviar";
         parrafo2.appendChild(submitButton);
-
+        
         let resetButton = document.createElement('button');
         resetButton.type = "reset";
         resetButton.innerHTML = "Limpiar";
@@ -138,4 +139,3 @@ function createTaskBody(documents,status){
     }
 
 }
-

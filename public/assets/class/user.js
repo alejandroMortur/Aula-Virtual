@@ -24,6 +24,9 @@ class User {
     getDNI() {
         return this.DNI;
     }
+    getIsTeacher() {
+        return this.IsTeacher;
+    }
     getpassword() {
         return this.password;
     }

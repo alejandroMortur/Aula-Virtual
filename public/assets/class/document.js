@@ -4,7 +4,7 @@ class Document {
         this._task_id = documentData.task_id;
         this._file_path = documentData.file_path;
         this._type = documentData.type;
-        this._uploaded_at = new Date(documentData.uploaded_at);  // Convertir a objeto Date
+        this._uploaded_at = new Date(documentData.uploaded_at);  
         this._status = documentData.status;
     }
 

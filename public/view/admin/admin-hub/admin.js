@@ -40,7 +40,10 @@ function allCoursesCardBuilder(coursesList){
         let coursesId = document.createElement('p');
         coursesId.innerHTML ="Id: "+coursesList[x].getId();
 
-        $(courses).append(coursesTitle,coursesId,coursesImg);
+        let coursesRemoveFlag = document.createElement('p');
+        coursesRemoveFlag.innerHTML = " . . .";
+
+        $(courses).append(coursesTitle,coursesId,coursesImg,coursesRemoveFlag);
         $('#courses_list').append(courses);
 
     }

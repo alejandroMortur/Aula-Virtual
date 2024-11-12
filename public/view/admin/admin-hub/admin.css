@@ -4,6 +4,7 @@
     padding: 10px;
     text-align: center;
     font-weight: 500;
+
 }
 
 .grid-container {
@@ -13,6 +14,24 @@
         "header" 90px
         "main" auto
         "footer" 70px;
+        background: #000000;
+        --gap: 5em;
+        --line: 1px;
+        --color: rgba(255, 255, 255, 0.2);
+    
+    /*Background Pattern*/
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)),
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap) - var(--line)),
+            var(--color) calc(var(--gap) - var(--line) + 1px),
+            var(--color) var(--gap)
+        );
+    background-size: var(--gap) var(--gap);
 
     .header {
         grid-area: header;
@@ -21,6 +40,10 @@
     }
     .main {
         grid-area: main;
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    }
+    .sidebar{
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
     }
 
     .footer {
@@ -37,10 +60,15 @@
             "footer footer" 70px / 30% auto;
     }
 
+    
 }
 
 img{
-
     width: 100px;
     height: 100px;
+}
+
+p{
+
+    color: white;
 }

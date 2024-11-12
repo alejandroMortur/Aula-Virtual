@@ -1,249 +1,210 @@
 [
     {
+        "document_id": 1,
         "task_id": 1,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-01T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/html_intro_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-08T15:30:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-01T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 1,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/html_intro_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-08T15:30:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 2,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-05T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/css_project_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-15T11:00:00",
-                "status": "done"
-            },
-            {
-                "task_id": 2,
-                "documents": [
-                    {
-                        "task_id": 2,
-                        "document_id": 1,
-                        "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/tema1a. repaso redes y tcpip.Oct2020.pdf",
-                        "type": "Enunciado",
-                        "uploaded_at": "2024-11-11T18:07:53.908Z"
-                    },
-                    {
-                        "task_id": 2,
-                        "document_id": 2,
-                        "file_path": "",
-                        "type": "Solucion",
-                        "uploaded_at": ""
-                    }
-                ]
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-05T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 2,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/css_project_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-15T11:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
+        "task_id": 2,
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/tema1a. repaso redes y tcpip.Oct2020.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-11T18:07:53.908Z",
+        "status": "done"
+    },
+    {
+        "document_id": 2,
+        "task_id": 2,
+        "file_path": "",
+        "type": "Solucion",
+        "uploaded_at": "",
+        "status": ""
+    },
+    {
+        "document_id": 1,
         "task_id": 3,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-02T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/server_deployment_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-12T12:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-02T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 3,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/server_deployment_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-12T12:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 4,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-07T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/rest_api_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-18T13:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-07T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 4,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/rest_api_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-18T13:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 5,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-03T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/technical_vocabulary_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-14T14:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-03T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 5,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/technical_vocabulary_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-14T14:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 6,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/business_plan_solution.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 6,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/business_plan_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 7,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/REST-API.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 7,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/REST-API.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 8,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/Final-Server-Project.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 8,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/Final-Server-Project.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 9,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/glossary.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 9,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/glossary.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 10,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/presentation.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 10,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/presentation.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 11,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/business_plan_solution2.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
     },
     {
+        "document_id": 2,
+        "task_id": 11,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/business_plan_solution2.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
         "task_id": 12,
-        "documents": [
-            {
-                "document_id": 1,
-                "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
-                "type": "Enunciado",
-                "uploaded_at": "2024-11-06T10:00:00",
-                "status": "done"
-            },
-            {
-                "document_id": 2,
-                "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/market-research.zip",
-                "type": "Solucion",
-                "uploaded_at": "2024-11-16T15:00:00",
-                "status": "done"
-            }
-        ]
+        "file_path": "/..\/..\/public\/assets\/media\/enunciados\/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-06T10:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 2,
+        "task_id": 12,
+        "file_path": "/..\/..\/public\/assets\/media\/soluciones\/market-research.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
     }
 ]

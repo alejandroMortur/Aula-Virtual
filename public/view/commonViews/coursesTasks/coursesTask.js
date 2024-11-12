@@ -86,8 +86,8 @@ function buildSideBar(currentCourse,cuorseTask,IsTeacher){
 
     currentCourseSorted = currentCourse;
 
-    document.getElementById('bar__title').innerHTML =  currentCourse.title;
-    document.getElementById('bar__p').innerHTML =  currentCourse.description;
+    document.getElementById('bar__title').innerHTML =  currentCourse.getTitle();
+    document.getElementById('bar__p').innerHTML =  currentCourse.getDescription();
 
     let createTaskDiv = document.getElementById('bar__utilities');
 

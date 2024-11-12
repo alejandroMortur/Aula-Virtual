@@ -9,6 +9,7 @@
     <script src="/public/assets/class/courses.js"></script>
     <script src="/public/assets/class/user.js"></script>
     <script src="/public/assets/js/footer.js"></script>
+    <script src="/public/assets/js/jquery-3.7.1.min.js"></script>
     <script src="admin.js"></script>
     <link rel="stylesheet" type="text/css" href="admin.css" />
     <link rel="stylesheet" type="text/css" href="/public/assets/css/menu.css" />
@@ -18,14 +19,23 @@
 <script>
         
     let coursesList = [];
+    let usersList = [];
 
     async function init() {
 
         let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
         let loader = new Loader(currentUser);  
-        coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
+        const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
+        coursesList = coursesDataArray.map(courseData => new Course(courseData));
 
         let loc = "courses";
+        const userDataArray = await loader.loadDataUser();
+        usersList = userDataArray.map(userData => new User(userData));
+
+        console.log(coursesList);
+
+        allUsersCardBuilder(usersList);
+        allCoursesCardBuilder(coursesList);
         loadMenu(currentUser,loc);
         loadFooter();
 
@@ -37,7 +47,11 @@
 <body class="grid-container">
     <header class="header" id="header"> </header>
     <article class="main">
+        <div id="user_list"></div>
+        <div id="courses_list"></div>
     </article>
+    <aside class="sidebar">
+    </aside>
     <footer class="footer" id="footer"></footer>
 </body>
 </html>

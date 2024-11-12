@@ -120,7 +120,7 @@ body {
 }
 
 /* Text inside the card */
-#card__test {
+#card__text {
     color: white;
     text-align: center;
     margin: 10px;

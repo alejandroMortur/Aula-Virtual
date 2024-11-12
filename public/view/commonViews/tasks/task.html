@@ -7,6 +7,7 @@
     <title>Tarea</title>
     <script src="/public/assets/class/user.js"></script>
     <script src="/public/assets/class/coursesTask.js"></script>
+    <script src="/public/assets/class/document.js"></script>
     <script src="/public/assets/js/menu.js"></script>
     <script src="/public/assets/js/loader.js"></script>
     <script src="/public/assets/js/footer.js"></script>
@@ -35,15 +36,16 @@
             if(newTask == "notNew"){    
 
                 currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
-                document = await loader.loadDocumentCoursesTasks(currentTask.getTaskId());
+                
+                const documentDataArray = await loader.loadDocumentCoursesTasks(currentTask.getTaskId()); 
+                document = documentDataArray.map(documentData => new Document(documentData));
 
-                statusSolution = document[0].documents[1].status;
-                statusHeader = document[0].documents[0].status;
+                statusSolution = document[1].getStatus();
+                statusHeader = document[0].getStatus();
 
             }
 
             if(statusHeader == 'done' && statusSolution == 'done'){
-
                 createTaskHeader(currentTask,document,statusHeader);
                 createTaskBody(document,statusSolution);
             }else

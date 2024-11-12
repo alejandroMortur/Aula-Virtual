@@ -25,7 +25,8 @@
 
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
             let loader = new Loader(currentUser);  
-            coursesList = await loader.loadDataCourses(currentUser.getRegistration()); 
+            const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
+            coursesList = coursesDataArray.map(courseData => new Course(courseData));
             let exams = await loader.loadExams();
 
             let loc = "courses";

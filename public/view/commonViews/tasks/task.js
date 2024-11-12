@@ -13,13 +13,13 @@ function createTaskHeader(task,documents,status){
         divHeader.appendChild(description);
     
         let estado  = document.createElement('p');
-        estado.innerHTML = "Estado de la entrega: "+documents[0].documents[0].status;
+        estado.innerHTML = "Estado de la entrega: "+documents[0].getStatus();
         divHeader.appendChild(estado);
     
         let enunciado = document.createElement('a');
         enunciado.id = "file__link";
-        enunciado.href = documents[0].documents[0].file_path;
-        const fileName = documents[0].documents[0].file_path.split('/').pop();
+        enunciado.href = documents[0].getFile_path();
+        const fileName = documents[0].getFile_path().split('/').pop();
         enunciado.innerHTML = fileName;
         divHeader.appendChild(enunciado);
 
@@ -80,13 +80,13 @@ function createTaskBody(documents,status){
     if(status == 'done'){
 
         let estado  = document.createElement('p');
-        estado.innerHTML = "Fecha entrega: "+documents[0].documents[1].uploaded_at;
+        estado.innerHTML = "Fecha entrega: "+documents[1].getUploaded_at();
         divBody.appendChild(estado);
 
         let enunciado = document.createElement('a');
         enunciado.id = "file__link";
-        enunciado.href = documents[0].documents[1].file_path;
-        const fileName = documents[0].documents[1].file_path.split('/').pop();
+        enunciado.href = documents[1].getFile_path();
+        const fileName = documents[1].getFile_path().split('/').pop();
         enunciado.innerHTML = fileName;
         divBody.appendChild(enunciado);
 

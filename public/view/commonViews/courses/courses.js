@@ -2,7 +2,6 @@
     Function that loads all courses data por the cards
     and then in inyects it in a HTML table.
 */
-
 let userCoursesList = []
 
 function printCourses() {
@@ -12,7 +11,7 @@ function printCourses() {
 
     coursesList.forEach(element => {
 
-        let workDoneMensage = element.porcent+" "+element.workDone;
+        let workDoneMensage = element.getPorcent()+" "+element.getWorkDone();
         
         let cardDiv = document.createElement('div');
         cardDiv.className = "card"
@@ -31,7 +30,7 @@ function printCourses() {
         cardDiv.appendChild(cardTitle);
 
         let cardText = document.createElement('p');
-        cardText.id = "card__test";
+        cardText.id = "card__text";
         cardText.innerHTML = workDoneMensage
         cardDiv.appendChild(cardText);
 

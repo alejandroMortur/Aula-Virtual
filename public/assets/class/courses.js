@@ -1,33 +1,61 @@
-class Course{
-
-    constructor(coursesData){
-        this.image = coursesData.image
-        this.title = coursesData.title
-        this.description = coursesData.description
-        this.workDone = coursesData.workDone
-        this.porcent = coursesData.porcent
-        this.id = coursesData.id
-        this.type = coursesData.type
+class Course {
+    constructor(coursesData) {
+        this.image = coursesData.image;
+        this.title = coursesData.title;
+        this.description = coursesData.description;
+        this.workDone = coursesData.workDone;
+        this.porcent = coursesData.porcent;
+        this.id = coursesData.id;
+        this.type = coursesData.type;
         this.coursesTask = [];
     }
 
-    //getters
-    getId(){
+    // Getters
+    getId() {
         return this.id;
     }
-    getTask(){
-        return this.coursesTask;
+    getTitle() {
+        return this.title;
     }
-    getPorcent(){
+    getDescription() {
+        return this.description;
+    }
+    getImage() {
+        return this.image;
+    }
+    getWorkDone() {
+        return this.workDone;
+    }
+    getPorcent() {
         return this.porcent;
     }
+    getType() {
+        return this.type;
+    }
+    getTask() {
+        return this.coursesTask;
+    }
 
-    //Setters
-    setTask(task){
+    // Setters
+    setTask(task) {
         this.coursesTask.push(task);
     }
-    setPorcent(newPorcent){
+    setPorcent(newPorcent) {
         this.porcent = newPorcent;
     }
-
+    setTitle(newTitle) {
+        this.title = newTitle;
+    }
+    setDescription(newDescription) {
+        this.description = newDescription;
+    }
+    setImage(newImage) {
+        this.image = newImage;
+    }
+    setWorkDone(newWorkDone) {
+        this.workDone = newWorkDone;
+    }
+    setType(newType) {
+        this.type = newType;
+    }
 }

@@ -28,7 +28,7 @@ function loadMenu(currentUser, location) {
     nav.appendChild(ulLinks);
 
     // Verificar el valor de location y agregar enlaces de navegación
-    if (location === "courses") {
+    if (location === "courses" || location == "adminDashboard") {
         // Si la ubicación es "courses", solo se muestra el enlace "Login"
         let li = document.createElement('li');
         let loginLink = document.createElement('a');

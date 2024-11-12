@@ -28,7 +28,7 @@
         const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
         coursesList = coursesDataArray.map(courseData => new Course(courseData));
 
-        let loc = "courses";
+        let loc = "adminDashboard";
         const userDataArray = await loader.loadDataUser();
         usersList = userDataArray.map(userData => new User(userData));
 

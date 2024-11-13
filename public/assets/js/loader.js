@@ -33,13 +33,20 @@ class Loader{
         coursesTask.forEach(element => {
             
             if(element['course_id'] == userCoursesId){
-                element['tasks'].forEach(data => {
-                    taskData.push(data);
-                });
+                    taskData.push(element);
             }
             
         });
 
+        return taskData;
+
+    }
+
+    async loadAllDataCoursesTasks() {
+
+        let data = await fetch("/public/assets/json/coursesTask.json");
+        let taskData = await data.json();
+        
         return taskData;
 
     }

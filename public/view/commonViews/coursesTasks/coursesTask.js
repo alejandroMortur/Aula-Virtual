@@ -1,13 +1,11 @@
-let userCoursesTaskList = []
 let currentCourseSorted;
 
-function printTask(currentCourse){
+function printTask(taskList){
 
     let taskContainer = document.getElementById('taskContainer');
     taskContainer.innerHTML  = "";
-    let tasks = currentCourse.getTask();
 
-    tasks.forEach(element => {
+    taskList.forEach(element => {
         
         let taskCard = document.createElement('div');
         taskCard.className = "taskCard";
@@ -21,16 +19,14 @@ function printTask(currentCourse){
         taskCard.appendChild(taskImage);
 
         let taskName = document.createElement('p')
-        taskName.innerHTML = element.name;
+        taskName.innerHTML = element.getName();
         taskCard.appendChild(taskName);
 
         let taskDescription = document.createElement('p')
-        taskDescription.innerHTML = element.description;
+        taskDescription.innerHTML = element.getDescription();
         taskCard.appendChild(taskDescription);
 
     });
-
-    userCoursesTaskList = tasks;
 
 }
 
@@ -38,7 +34,7 @@ function clickCard(event){
 
     const id = event.currentTarget.id;
 
-    userCoursesTaskList.forEach(element => {
+    taskList.forEach(element => {
         
         if(element["task_id"] == id){
 
@@ -52,26 +48,21 @@ function clickCard(event){
 
 }
 
-function orderTasks(selectedValue, courseTask) {
+function orderTasks(selectedValue) {
 
     if (selectedValue === "Ascendente") {
-        courseTask.sort((a, b) => {
+        taskList.sort((a, b) => {
             if(a.name>b.name)return 1
             return -1
         });
     } else if (selectedValue === "Descendente") {
-        courseTask.sort((a, b) => {
+        taskList.sort((a, b) => {
             if(b.name>a.name)return 1
             return -1
         });
     }
 
-    currentCourseSorted.coursesTask.splice(0,currentCourseSorted.coursesTask.length);
-    courseTask.forEach(task => {
-        currentCourseSorted.setTask(task)
-    });
-
-    printTask(currentCourseSorted);
+    printTask(taskList);
 
 }
 
@@ -139,7 +130,7 @@ function buildSideBar(currentCourse,cuorseTask,IsTeacher){
     
     selectElement.addEventListener('change', () => {
         let selectedValue = selectElement.value; 
-        orderTasks(selectedValue,cuorseTask); 
+        orderTasks(selectedValue); 
     });
 
 }

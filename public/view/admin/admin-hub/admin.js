@@ -1,3 +1,23 @@
+
+function clickCard(event) {
+
+    const id = $(event.currentTarget).children('p').eq(1).text();
+
+    usersList.forEach(element => {
+            
+        if(element.getDNI() == id){
+    
+            console.log(element)
+            sessionStorage.setItem("targetUser", JSON.stringify(element));
+
+            window.location.href = "/public/view/admin/CRUD-Users/CRUD-Users.html";
+    
+        }
+    
+    });
+
+}
+
 function allUsersCardBuilder(usersList){
 
     $('#user_list').innerHTML = "";
@@ -7,16 +27,19 @@ function allUsersCardBuilder(usersList){
         let userFullName = usersList[x].getName() + " " + usersList[x].getSureName();
 
         let user = document.createElement('div');
+        $(user).attr("id","user_card");
+
         let userImg = document.createElement('img');
         $(userImg).attr("src",usersList[x].getImage());
 
         let userFullNameP = document.createElement('p');
-        userFullNameP.innerHTML = userFullName;
+        userFullNameP.innerHTML = userFullName
 
-        let userRemoveFlag = document.createElement('p');
-        userRemoveFlag.innerHTML = " . . .";
+        let userDni = document.createElement('p');
+        userDni.innerHTML = usersList[x].getDNI();
 
-        $(user).append(userImg,userFullNameP,userRemoveFlag);
+        $(user).on("click",clickCard)
+        $(user).append(userImg,userFullNameP,userDni);
         $('#user_list').append(user);
 
     }
@@ -30,6 +53,7 @@ function allCoursesCardBuilder(coursesList){
     for(let x = 0; x < coursesList.length; ++x){
 
         let courses = document.createElement('div');
+        $(courses).attr("id","course_card");
 
         let coursesTitle = document.createElement('p');
         coursesTitle.innerHTML = coursesList[x].getTitle();
@@ -40,11 +64,38 @@ function allCoursesCardBuilder(coursesList){
         let coursesId = document.createElement('p');
         coursesId.innerHTML ="Id: "+coursesList[x].getId();
 
-        let coursesRemoveFlag = document.createElement('p');
-        coursesRemoveFlag.innerHTML = " . . .";
-
-        $(courses).append(coursesTitle,coursesId,coursesImg,coursesRemoveFlag);
+        $(courses).on("click",clickCard)
+        $(courses).append(coursesImg,coursesTitle,coursesId);
         $('#courses_list').append(courses);
+
+    }
+
+}
+
+function allTaskCardBuilder(taskList){
+
+    $('#task_list').innerHTML = "";
+
+    for(let x = 0; x < taskList.length; ++x){
+
+        let task = document.createElement('div');
+        $(task).attr("id","user_card");
+
+        let taskName = document.createElement('p');
+        taskName.innerHTML = "Nombre: "+taskList[x].getName();
+
+        let taskDescription = document.createElement('p');
+        taskDescription.innerHTML = "Descripcion: "+taskList[x].getDescription();
+
+        let taskId = document.createElement('p');
+        taskId.innerHTML = "Id tarea: "+taskList[x].getTaskId();
+
+        let courseTaskId = document.createElement('p');
+        courseTaskId.innerHTML = "Id curso: "+taskList[x].getPartentCourseId();
+
+        $(task).on("click",clickCard)
+        $(task).append(taskName,taskDescription,taskId,courseTaskId);
+        $('#task_list').append(task);
 
     }
 

@@ -23,7 +23,7 @@
         "DNI": "22958717W",
         "password": "Clave$1",
         "SureName": "Jesus Cordon",
-        "IsTeacher": 0,
+        "IsTeacher": false,
         "registration": [
             1,
             2,
@@ -38,7 +38,7 @@
         "DNI": "20350525X",
         "password": "Clave$1",
         "SureName": "Talavera",
-        "IsTeacher": 0,
+        "IsTeacher": false,
         "registration": [
             3,
             4,
@@ -53,7 +53,7 @@
         "DNI": "93652987T",
         "password": "Clave$1",
         "SureName": "Heras",
-        "IsTeacher": 0,
+        "IsTeacher": false,
         "registration": [
             3,
             4,
@@ -68,11 +68,12 @@
         "DNI": "44982855F",
         "password": "Clave$1",
         "SureName": "Becerra",
-        "IsTeacher": 0,
+        "IsTeacher": true,
         "registration": [
             3,
             4,
-            5
+            5,
+            6
         ],
         "Mail": "Almudena@educa.academy.org",
         "Image": "\/public\/assets\/img\/users\/students\/Almudena.jpg"
@@ -83,7 +84,7 @@
         "DNI": "64022210P",
         "password": "Clave$1",
         "SureName": "Valencia",
-        "IsTeacher": 0,
+        "IsTeacher": false,
         "registration": [
             3,
             2,
@@ -98,7 +99,7 @@
         "DNI": "51589677X",
         "password": "Clave$1",
         "SureName": "Fernandez",
-        "IsTeacher": 0,
+        "IsTeacher": false,
         "registration": [
             1,
             2,
@@ -108,30 +109,12 @@
         "Image": "\/public\/assets\/img\/users\/students\/Lucio.jpeg"
     },
     {
-        "UserName": "Alejandro.Moron1",
-        "Name": "Alejandro",
-        "DNI": "54712110D",
-        "password": "Clave$1",
-        "SureName": "Moron Turiel",
-        "IsTeacher": 1,
-        "registration": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-        ],
-        "Mail": "Alejandro@gmail.com",
-        "Image": "\/public\/assets\/img\/users\/default.jpg"
-    },
-    {
         "UserName": "Admin",
         "Name": "Admin",
         "DNI": "54712110D",
         "password": "Admin",
         "SureName": "",
-        "IsTeacher": 1,
+        "IsTeacher": true,
         "registration": [
             1,
             2,

@@ -14,8 +14,10 @@ function loadFooter(){
     divTexto.id="links__block";
     footer.appendChild(divTexto);
 
-    let externalLinks = document.createElement('p');
+    let externalLinks = document.createElement('a');
+    externalLinks.id="footer_link";
     externalLinks.innerHTML= "Consejería de Educación, Ciencia y Universidades "
+    externalLinks.href = "https://www.comunidad.madrid/transparencia/unidad-organizativa-responsable/consejeria-educacion-ciencia-y-universidades";
     divTexto.appendChild(externalLinks);
 
     let div = document.createElement('div');

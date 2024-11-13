@@ -96,3 +96,13 @@
     justify-content: space-around;
     gap: var(--gap--size); /* Aumenta el espacio entre las tarjetas */
 }
+
+#footer_link{
+    text-decoration: none;
+    color: white;
+}
+
+#footer_link:hover{
+    text-decoration: none;
+    color:darkorchid;
+}

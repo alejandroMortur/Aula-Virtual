@@ -37,7 +37,7 @@ function loadMenu(currentUser, location) {
         loginLink.textContent = "Login";
         li.appendChild(loginLink);
         ulLinks.appendChild(li);
-    }else{
+    }else if(location != "CRUD-Users"){
 
         // Si la ubicación es "courses", solo se muestra el enlace "Login"
         let li = document.createElement('li');
@@ -58,6 +58,16 @@ function loadMenu(currentUser, location) {
             taskLi.appendChild(taskLink);
             ulLinks.appendChild(taskLi);
         }
+
+    }else{
+
+        let li = document.createElement('li');
+        let coursesLink = document.createElement('a');
+        coursesLink.href = "/public/view/admin/admin-hub/admin.html";
+        coursesLink.className = "boton";
+        coursesLink.textContent = "Panel de control";
+        li.appendChild(coursesLink);
+        ulLinks.appendChild(li);
 
     } 
 

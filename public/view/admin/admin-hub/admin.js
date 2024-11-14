@@ -1,5 +1,5 @@
 
-function clickCard(event) {
+function clickCardUser(event) {
 
     const id = $(event.currentTarget).children('p').eq(1).text();
 
@@ -11,6 +11,28 @@ function clickCard(event) {
             sessionStorage.setItem("targetUser", JSON.stringify(element));
 
             window.location.href = "/public/view/admin/CRUD-Users/CRUD-Users.html";
+    
+        }
+    
+    });
+
+}
+
+function clickCardCourses(event) {
+
+    let id = $(event.currentTarget).children('p').eq(1).text();
+    id = id[4];
+
+    coursesList.forEach(element => {
+            
+        console.log(id)
+        console.log(element.getId())
+
+        if(element.getId() == id){
+    
+            console.log("aqui estoy")
+            sessionStorage.setItem("targetCourse", JSON.stringify(element));
+            window.location.href = "/public/view/admin/CRUD-Courses/CRUD-Courses.html";
     
         }
     
@@ -38,7 +60,7 @@ function allUsersCardBuilder(usersList){
         let userDni = document.createElement('p');
         userDni.innerHTML = usersList[x].getDNI();
 
-        $(user).on("click",clickCard)
+        $(user).on("click",clickCardUser)
         $(user).append(userImg,userFullNameP,userDni);
         $('#user_list').append(user);
 
@@ -64,7 +86,7 @@ function allCoursesCardBuilder(coursesList){
         let coursesId = document.createElement('p');
         coursesId.innerHTML ="Id: "+coursesList[x].getId();
 
-        $(courses).on("click",clickCard)
+        $(courses).on("click",clickCardCourses)
         $(courses).append(coursesImg,coursesTitle,coursesId);
         $('#courses_list').append(courses);
 
@@ -93,7 +115,7 @@ function allTaskCardBuilder(taskList){
         let courseTaskId = document.createElement('p');
         courseTaskId.innerHTML = "Id curso: "+taskList[x].getPartentCourseId();
 
-        $(task).on("click",clickCard)
+        $(task).on("click",clickCardUser)
         $(task).append(taskName,taskDescription,taskId,courseTaskId);
         $('#task_list').append(task);
 

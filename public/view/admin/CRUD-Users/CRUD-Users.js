@@ -57,7 +57,7 @@ function saveChanges() {
 
         if (state == "notNew") {
 
-            let user = {
+            const user = {
                 "UserName": $('#UserName').val(),
                 "Name": $('#Name').val(),
                 "DNI": $('#DNI').val(),
@@ -73,7 +73,7 @@ function saveChanges() {
             
         }else{
 
-            let user = {
+            const user = {
                 "UserName": $('#UserName').val(),
                 "Name": $('#Name').val(),
                 "DNI": $('#DNI').val(),
@@ -89,7 +89,6 @@ function saveChanges() {
             
         }
 
-        console.log(modifiedUser);
         mandarDatos(modifiedUser);
 
         sessionStorage.setItem("targetUser", JSON.stringify(modifiedUser));

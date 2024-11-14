@@ -89,7 +89,7 @@ function saveChanges() {
             
         }
 
-        mandarDatos(modifiedUser);
+        sendData(modifiedUser,false);
 
         sessionStorage.setItem("targetUser", JSON.stringify(modifiedUser));
         window.location.href = "/public/view/admin/admin-hub/admin.html";

@@ -81,7 +81,7 @@ function saveChanges() {
         }
 
         console.log(modifiedCourse)
-        mandarDatos(modifiedCourse);
+        sendData(modifiedCourse,false);
 
         sessionStorage.setItem("targetUser", JSON.stringify(modifiedCourse));
         window.location.href = "/public/view/admin/admin-hub/admin.html";

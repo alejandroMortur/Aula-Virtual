@@ -40,6 +40,11 @@ function clickCardCourses(event) {
 
 }
 
+function clickCardTask(event) {
+
+
+}
+
 function allUsersCardBuilder(usersList){
 
     $('#user_list').innerHTML = "";
@@ -115,7 +120,7 @@ function allTaskCardBuilder(taskList){
         let courseTaskId = document.createElement('p');
         courseTaskId.innerHTML = "Id curso: "+taskList[x].getPartentCourseId();
 
-        $(task).on("click",clickCardUser)
+        $(task).on("click",clickCardTask)
         $(task).append(taskName,taskDescription,taskId,courseTaskId);
         $('#task_list').append(task);
 

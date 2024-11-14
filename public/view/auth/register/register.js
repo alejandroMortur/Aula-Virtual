@@ -47,7 +47,7 @@ function valueData() {
         };
 
         let userObject = new User(usuario);
-        mandarDatos(userObject);
+        sendData(userObject,false);
 
         sessionStorage.setItem("user", JSON.stringify(userObject));
         window.location.href = "/public/view/commonViews/courses/courses.html";

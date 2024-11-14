@@ -5,12 +5,11 @@
         "DNI": "89847291E",
         "password": "Clave$1",
         "SureName": "Araujo",
-        "IsTeacher": 1,
+        "IsTeacher": true,
         "registration": [
             1,
             2,
             3,
-            4,
             5,
             6
         ],

@@ -6,7 +6,8 @@
         "workDone": "% completado",
         "porcent": "100",
         "id": 1,
-        "type": "course"
+        "type": "course",
+        "coursesTask": []
     },
     {
         "image": "\/public\/assets\/img\/courses\/diw.jpeg",

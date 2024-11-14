@@ -57,24 +57,18 @@
 
                         break;
 
-                case 'courses':
-
-                    $taskIndex = array_search($object['task_id'], array_column($data, 'task_id'));
-
-                    if ($taskIndex !== false) {
-                        // Search for the document within the task.
-                        $docIndex = array_search($object['document_id'], array_column($data[$taskIndex]['documents'], 'document_id'));
-    
-                        if ($docIndex !== false) $data[$taskIndex]['documents'][$docIndex] = $object; // If the document already exists, update it.
-                        else $data[$taskIndex]['documents'][] = $object; // If the document does not exist, add it to the task.
+                        case 'courses':
+                            // Buscar el índice del curso en base a 'id' en lugar de 'task_id'
+                            $courseIndex = array_search($object['id'], array_column($data, 'id'));
                         
-                    } else // If the task does not exist, create the task and add the document.
-                        $data[] = [
-                            'task_id' => $object['task_id'],
-                            'documents' => [$object]
-                        ];
-
-                    break;
+                            if ($courseIndex !== false) {
+                                // Si el curso ya existe, actualizarlo
+                                $data[$courseIndex] = $object;
+                            } else {
+                                // Si el curso no existe, añadirlo como un nuevo curso
+                                $data[] = $object;
+                            }
+                            break;
 
                 case 'coursesTask':
 

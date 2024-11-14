@@ -37,7 +37,7 @@ function loadMenu(currentUser, location) {
         loginLink.textContent = "Login";
         li.appendChild(loginLink);
         ulLinks.appendChild(li);
-    }else if(location != "CRUD-Users"){
+    }else if(location != "CRUD"){
 
         // Si la ubicación es "courses", solo se muestra el enlace "Login"
         let li = document.createElement('li');

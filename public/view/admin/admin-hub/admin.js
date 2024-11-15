@@ -9,7 +9,7 @@ function clickCardUser(event) {
     
             console.log(element)
             sessionStorage.setItem("targetUser", JSON.stringify(element));
-
+            sessionStorage.setItem("state", "notNewObject");
             window.location.href = "/public/view/admin/CRUD-Users/CRUD-Users.html";
     
         }
@@ -32,6 +32,7 @@ function clickCardCourses(event) {
     
             console.log("aqui estoy")
             sessionStorage.setItem("targetCourse", JSON.stringify(element));
+            sessionStorage.setItem("state", "notNewObject");
             window.location.href = "/public/view/admin/CRUD-Courses/CRUD-Courses.html";
     
         }
@@ -42,6 +43,32 @@ function clickCardCourses(event) {
 
 function clickCardTask(event) {
 
+
+}
+
+
+function clickNewElement(event) {
+
+    const id = $(event.currentTarget).attr('id');
+    console.log(id)
+
+
+    switch(id){
+
+        case "newUser":
+            sessionStorage.setItem("state", "newObject");
+            window.location.href = "/public/view/admin/CRUD-Users/CRUD-Users.html";
+            break;
+        case "newCourse":
+            sessionStorage.setItem("state", "newObject");
+            window.location.href = "/public/view/admin/CRUD-Courses/CRUD-Courses.html";
+            break;
+        case "newTask":
+            sessionStorage.setItem("state", "newObject");
+            window.location.href = "/public/view/admin/CRUD-Task-Document/General-CRUD.html.html";
+            break;
+
+    }
 
 }
 

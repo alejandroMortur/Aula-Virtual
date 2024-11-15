@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <script src="/public/assets/js/loader.js"></script>
     <script src="/public/assets/js/menu.js"></script>
     <script src="/public/assets/class/courses.js"></script>
@@ -32,7 +32,7 @@
         let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
         let loader = new Loader(currentUser);  
 
-        const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
+        const coursesDataArray = await loader.loadAllDataCourses(); 
         coursesList = coursesDataArray.map(courseData => new Course(courseData));
 
         let loc = "adminDashboard";
@@ -48,6 +48,10 @@
         loadMenu(currentUser,loc);
         loadFooter();
 
+        $('#newUser').on('click',clickNewElement)
+        $('#newCourse').on('click',clickNewElement)
+        $('#newTask').on('click',clickNewElement)
+
     }
 
     window.onload = init;
@@ -61,6 +65,9 @@
         <div id="task_list"></div>
     </article>
     <aside class="sidebar">
+        <button id="newUser">Nuevo usuario</button>
+        <button id="newCourse">Nuevo Curso</button>
+        <button id="newTask">Nueva Tarea</button>
     </aside>
     <footer class="footer" id="footer"></footer>
 </body>

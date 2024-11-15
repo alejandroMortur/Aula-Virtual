@@ -20,17 +20,27 @@
     <title>CRUD User</title>
     <script>
         
+        let targetUser = "";
+
         function init(){
 
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-            let targetUser= new User(JSON.parse(sessionStorage.getItem("targetUser")));
+            targetUser= new User(JSON.parse(sessionStorage.getItem("targetUser")));
 
-            let loc = "CRUD-Users";
-            let state = "notNew";
+            let loc = "CRUD";
+            let state = sessionStorage.getItem("state");
             loadMenu(currentUser,loc);
-            loadUserData(targetUser,state);
+
+            if(state == "notNewObject"){
+                loadUserData(targetUser,state);
+            }else{
+                $('#user_Img').attr("src","/public/assets/img/users/default.jpg");
+                $('#userName_text').html("Create new User");
+            }
+
             loadFooter();
     
+            $('#delUser').on('click',removeElement)
 
         }
 
@@ -82,7 +92,7 @@
 
             <button type="submit" onclick="saveChanges(state)">Guardar Cambios</button>
         </form>
-            
+        <button id="delUser">Borrar este usuario</button>
     </article>
     <aside class="sidebar">
             <img id="user_Img">

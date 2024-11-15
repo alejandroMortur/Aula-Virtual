@@ -55,7 +55,7 @@ function saveChanges() {
         let modifiedUser = "";
         event.preventDefault();
 
-        if (state == "notNew") {
+        if (state == "notNewObject") {
 
             const user = {
                 "UserName": $('#UserName').val(),
@@ -131,6 +131,15 @@ function saveChanges() {
     }
     
 }
+
+function removeElement(){
+
+    alert("Usuario eliminado con exito");
+    console.log(targetUser);
+    sendData(targetUser,true);
+
+}
+
 
 /*
     Function that verifies if both passwords are equal. In the future,

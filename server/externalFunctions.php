@@ -37,6 +37,8 @@ function insertIntoJsonFile($object, $delete = false) {
                         if ($docIndex !== false) {
                             // Remove the document
                             unset($data[$taskIndex]['documents'][$docIndex]);
+                            // Reindex the documents array
+                            $data[$taskIndex]['documents'] = array_values($data[$taskIndex]['documents']);
                         }
                     }
                 } else {
@@ -65,6 +67,8 @@ function insertIntoJsonFile($object, $delete = false) {
                     if ($userIndex !== false) {
                         // Remove the user
                         unset($data[$userIndex]);
+                        // Reindex the users array
+                        $data = array_values($data);
                     }
                 } else {
                     // Add or update user
@@ -84,6 +88,8 @@ function insertIntoJsonFile($object, $delete = false) {
                     if ($courseIndex !== false) {
                         // Remove the course
                         unset($data[$courseIndex]);
+                        // Reindex the array to remove numeric keys
+                        $data = array_values($data);
                     }
                 } else {
                     // Add or update course
@@ -105,6 +111,8 @@ function insertIntoJsonFile($object, $delete = false) {
                         if ($taskIndex !== false) {
                             // Remove the task
                             unset($data[$courseIndex]['tasks'][$taskIndex]);
+                            // Reindex the tasks array
+                            $data[$courseIndex]['tasks'] = array_values($data[$courseIndex]['tasks']);
                         }
                     }
                 } else {

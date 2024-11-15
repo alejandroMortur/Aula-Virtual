@@ -24,23 +24,34 @@
     <script>
         
         let taskList = [];
+        let state = "";
+        let targetCourse = "";
 
         async function init(){
 
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-            let targetCourse= new Course(JSON.parse(sessionStorage.getItem("targetCourse")));
+            targetCourse= new Course(JSON.parse(sessionStorage.getItem("targetCourse")));
 
             let loader = new Loader();
             const taskDataArray = await loader.loadDataCoursesTasks(targetCourse.getId());
             taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
 
             let loc = "CRUD";
-            let state = "notNew";
+            state = sessionStorage.getItem("state");
+
+            if(state == "notNewObject"){
+                loadCourseData(targetCourse,state);
+                loadTaskData(taskList);
+            }else{
+                $('#course_Img').attr("src","/public/assets/img/courses/default-header.jpg");
+                $('.sidebar').append('<h3>Creación de un Nuevo Curso</h3>')
+                $('.sidebar').append('<p>Esta usted creando un Nuevo Curso tenga cuidado a la hora de indicar la Id, porque de exister se sobre escribira</p>')
+            }
+            
             loadMenu(currentUser,loc);
-            loadCourseData(targetCourse,state);
-            loadTaskData(taskList);
             loadFooter();
     
+            $('#delCourse').on('click',removeElement)
 
         }
 
@@ -75,7 +86,7 @@
 
             <button type="submit" onclick="saveChanges(state)">Guardar Cambios</button>
         </form>
-            
+        <button id="delCourse">Borrar este usuario</button>
     </article>
     <aside class="sidebar">
         <div id="task_list"></div> 

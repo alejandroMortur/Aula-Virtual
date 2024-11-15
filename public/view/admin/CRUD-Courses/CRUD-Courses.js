@@ -1,7 +1,5 @@
-let state = "";
-function loadCourseData(targetCourse,currentState){
 
-    console.log(targetCourse);
+function loadCourseData(targetCourse){
 
     $('#course_Img').attr("src",targetCourse.getImage());
     $('#title').val(targetCourse.getTitle());
@@ -9,7 +7,6 @@ function loadCourseData(targetCourse,currentState){
     $('#porcent').val(targetCourse.getPorcent());
     $('#id').val(targetCourse.getId());
 
-    state = currentState;
 }
 
 function loadTaskData(taskList){
@@ -50,14 +47,14 @@ function saveChanges() {
         let modifiedCourse = "";
         event.preventDefault();
 
-        if (state == "notNew") {
+        if (state == "notNewObject") {
 
             const coursesData = {
                 "image": $('#course_Img').attr("src"), 
                 "title": $('#title').val(),
                 "description": $('#description').val(),
                 "workDone": "% completado", 
-                "porcent": $('#porcent').val(), 
+                "porcent": parseInt($('#porcent').val()), 
                 "id": parseInt($('#id').val()), 
                 "type": "course"
             };
@@ -67,11 +64,11 @@ function saveChanges() {
         }else{
 
             const coursesData = {
-                "Image": "/public/assets/img/courses/default-header.jpg", 
+                "image": "/public/assets/img/courses/default-header.jpg", 
                 "title": $('#title').val(),
                 "description": $('#description').val(),
                 "workDone": "% completado", 
-                "porcent": $('#porcent').val(), 
+                "porcent": parseInt($('#porcent').val()), 
                 "id": parseInt($('#id').val()), 
                 "type": "course"
             };
@@ -108,6 +105,14 @@ function saveChanges() {
 
     }
     
+}
+
+function removeElement(){
+
+    alert("Curso eliminado con exito");
+    console.log(targetCourse);
+    sendData(targetCourse,true);
+
 }
 
 /*

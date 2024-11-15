@@ -24,6 +24,15 @@ class Loader{
     
     }
 
+    async loadAllDataCourses() {
+
+        let data = await fetch("/public/assets/json/courses.json");
+        let filtratedCourses = await data.json();
+
+        return filtratedCourses
+    
+    }
+
     async loadDataCoursesTasks(userCoursesId) {
 
         let data = await fetch("/public/assets/json/coursesTask.json");
@@ -46,7 +55,7 @@ class Loader{
 
         let data = await fetch("/public/assets/json/coursesTask.json");
         let taskData = await data.json();
-        
+
         return taskData;
 
     }

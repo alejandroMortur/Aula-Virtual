@@ -5,11 +5,12 @@
         "DNI": "89847291E",
         "password": "Clave$1",
         "SureName": "Araujo",
-        "IsTeacher": true,
+        "IsTeacher": 1,
         "registration": [
             1,
             2,
             3,
+            4,
             5,
             6
         ],
@@ -124,5 +125,20 @@
         ],
         "Mail": "Admin@gmail.com",
         "Image": "\/public\/assets\/img\/users\/admin\/admin.jpg"
+    },
+    {
+        "UserName": "Juanama.1",
+        "Name": "Juanma",
+        "DNI": "44982855F",
+        "password": "clave$1",
+        "SureName": "Ortiz Gomez",
+        "IsTeacher": true,
+        "registration": [
+            2,
+            3,
+            4
+        ],
+        "Mail": "Almudena@educa.academy.org",
+        "Image": "\/public\/assets\/img\/users\/default.jpg"
     }
 ]

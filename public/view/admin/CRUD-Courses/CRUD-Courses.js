@@ -1,5 +1,5 @@
 
-function loadCourseData(targetCourse){
+function loadCourseData(){
 
     $('#course_Img').attr("src",targetCourse.getImage());
     $('#title').val(targetCourse.getTitle());
@@ -9,7 +9,7 @@ function loadCourseData(targetCourse){
 
 }
 
-function loadTaskData(taskList){
+function loadTaskData(){
 
     taskList.forEach(element => {
         let task_card = $('<div></div>');
@@ -110,17 +110,19 @@ function saveChanges() {
 function removeElement(){
 
     alert("Curso eliminado con exito");
-    console.log(targetCourse);
     sendData(targetCourse,true);
+
+    taskList.forEach(element => {
+        sendData(element,true);
+    });
+
+    window.location.href = "/public/view/admin/admin-hub/admin.html";
 
 }
 
-/*
-    Function that verifies if the username meets all security requirements.
-*/
 function verifyData(element,pattern) {
 
-    // Checks if the "user" string follows the pattern
+    // Checks if the "date" string follows the pattern
     if (pattern.test(element)) {
         console.log("The data follows the pattern.");
         return true;

@@ -75,6 +75,14 @@ class Loader{
 
     }
 
+    async loadAllDocumentCoursesTasks() {
+
+        let data = await fetch("/public/assets/json/documents.json");
+        let documentsData  = await data.json();
+        
+        return documentsData;
+
+    }
 
     async loadExams() {
         

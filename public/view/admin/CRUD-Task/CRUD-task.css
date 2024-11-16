@@ -1,3 +1,7 @@
+body{
+    color: white;
+}
+
 .grid-container > * {
     box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
     border-radius: 10px;
@@ -41,10 +45,6 @@
     .main {
         grid-area: main;
         box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto); 
-        gap: 10px; 
     }
     .sidebar{
         box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
@@ -76,30 +76,14 @@ p{
     color: white;
 }
 
-#courses_container{
-    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
-    width: 100%;
-    height: fit-content;
-}
 
-#user_container{
-    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
-    width: 100%;
-    height: fit-content;
+.error {
+    font-size: medium;
+    border: 6px solid red;
 }
-
-#task_container{
-    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
-    width: 100%;
-    height: fit-content;
-}
-
-#document_container{
-    background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
-    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
-    width: 100%;
-    height: fit-content;
+  
+#messageError {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
 }

@@ -32,7 +32,7 @@
             loadMenu(currentUser,loc);
 
             if(state == "notNewObject"){
-                loadUserData(targetUser,state);
+                loadUserData(state);
             }else{
                 $('#user_Img').attr("src","/public/assets/img/users/default.jpg");
                 $('#userName_text').html("Create new User");
@@ -46,12 +46,6 @@
 
         window.onload = init;
 
-        // Añadimos un EventListener para manejar el clic del botón
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const form = document.querySelector('form');
-            form.addEventListener('submit', saveChanges);
-        });
-    
     </script>
 </head>
 <body class="grid-container">

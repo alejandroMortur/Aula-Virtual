@@ -1,7 +1,5 @@
 let state = "";
-function loadUserData(targetUser,currentState){
-
-    console.log(targetUser)
+function loadUserData(currentState){
 
     $('#UserName').val(targetUser.getUserName());
     $('#Name').val(targetUser.getName());
@@ -137,6 +135,8 @@ function removeElement(){
     alert("Usuario eliminado con exito");
     console.log(targetUser);
     sendData(targetUser,true);
+
+    window.location.href = "/public/view/admin/admin-hub/admin.html"; 
 
 }
 

@@ -1,0 +1,318 @@
+/* ==============================
+   General Styles
+   ============================== */
+body {
+    font-family: "Open Sans", sans-serif; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-image: url('/Aula-Virtual/public/assets/img/background/loginbackground.jpg'); 
+    background-size: cover; 
+    background-position: center 40%; 
+    margin: 0; 
+}
+
+/* ==============================
+   Form Styles
+   ============================== */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; 
+    max-width: 350px; 
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: rgba(90, 32, 98, 0.354);
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* ==============================
+   Title Styles
+   ============================== */
+
+.title {
+    font-size: 28px; 
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: rgba(90, 32, 98, 0.944);
+}
+
+.title::before, .title::after {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgba(90, 32, 98, 0.944);
+}
+
+.title::after {
+    animation: pulse 1s linear infinite;
+}
+
+/* ==============================
+   Message and Sign-in Styles
+   ============================== */
+
+.message, .signin {
+    font-size: 14.5px; 
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center; 
+}
+
+.signin a {
+    color: rgba(90, 32, 98, 0.944);
+}
+
+.signin a:hover {
+    text-decoration: underline rgba(90, 32, 98, 0.944);
+}
+
+/* ==============================
+   Flexbox Styles
+   ============================== */
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+/* ==============================
+   Input Styles
+   ============================== */
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 5px 5px 10px; /* Ajusta el padding */
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: rgb(75, 0, 85);
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+/* ==============================
+   Submit Button Styles
+   ============================== */
+
+.input {
+    font-size: medium;
+}
+
+.submitButton {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transition: transform .3s ease;
+    background-color: rgba(121, 10, 136, 0.944);
+}
+
+.submitButton:hover {
+    background-color: rgba(87, 6, 98, 0.944);
+}
+
+/* ==============================
+   Keyframes for Animation
+   ============================== */
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9); /* Ending scale for pulsing effect */
+        opacity: 1; /* Starting opacity */
+    }
+    to {
+        transform: scale(1.8); /* Ending scale for pulsing effect */
+        opacity: 0; /* Starting opacity */
+    }
+}
+
+/* ==============================
+   Image Styles
+   ============================== */
+
+img {
+    width: 120px; 
+    height: 120px; 
+    display: block; 
+    margin: 0 auto 20px auto; 
+    border-radius: 50%; 
+}
+
+/* ==============================
+   Media Queries for Responsiveness
+   ============================== */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px; /* Decreases title size on tablets and mobiles */
+    }
+
+    .form {
+        max-width: 90%; /* Allows more width on mobile devices */
+        padding: 15px; /* Reduces padding */
+    }
+
+    .submitButton {
+        font-size: 14px; /* Decreases button font size on mobile devices */
+    }
+
+    img {
+        width: 100px; /* Changes image size on mobile devices */
+        height: 100px; /* Changes image height on mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px; /* Decreases title size further on smaller mobiles */
+    }
+
+    .form {
+        padding: 10px; /* Further reduces padding on smaller mobiles */
+    }
+
+    .submitButton {
+        font-size: 12px; /* Changes button font size for smaller mobiles */
+    }
+
+    img {
+        width: 80px; /* Adjusts image size on smaller mobiles */
+        height: 80px; /* Adjusts image height on smaller mobiles */
+    }
+}
+
+/* ==============================
+   Link Styles
+   ============================== */
+
+a {
+    text-decoration: none;
+}
+
+/* ==============================
+   Menu Link Styles
+   ============================== */
+
+.menu__link {
+    color: #fff;
+    line-height: 2;
+    position: relative;
+    font-size: 20px;
+}
+  
+.menu__link::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    transition: transform .4s, opacity .4s;
+    opacity: 0;
+}
+  
+.menu__link:hover::before {
+    transform: translateY(-.25rem);
+    opacity: 1;
+}
+
+/* ==============================
+   Error Mensage Style
+   ============================== */
+
+.form label .error {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(248, 18, 18, 0.8); 
+    border-radius: 10px;
+}
+  
+.form label .error + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+  
+.form label .error:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+  
+.form label .error:focus + span,
+.form label .error:valid + span {
+    color: #00bfff;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+  
+.error {
+    font-size: medium;
+}
+  
+.mensageError, 
+.signin {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.mensageErrorRegister, 
+.signin {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
+}

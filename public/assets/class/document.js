@@ -1,50 +1,50 @@
 class Document {
     constructor(documentData) {
-        this._document_id = documentData.document_id;
-        this._task_id = documentData.task_id;
-        this._file_path = documentData.file_path;
-        this._type = documentData.type;
-        this._uploaded_at = new Date(documentData.uploaded_at);  
-        this._status = documentData.status;
+        this.document_id = documentData.document_id;
+        this.task_id = documentData.task_id;
+        this.file_path = documentData.file_path;
+        this.type = documentData.type;
+        this.uploaded_at = new Date(documentData.uploaded_at);  
+        this.status = documentData.status;
     }
 
     // Getters
     getDocument_id() {
-        return this._document_id;
+        return this.document_id;
     }
     getTask_id() {
-        return this._task_id;
+        return this.task_id;
     }
     getFile_path() {
-        return this._file_path;
+        return this.file_path;
     }
     getType() {
-        return this._type;
+        return this.type;
     }
     getUploaded_at() {
-        return this._uploaded_at;
+        return this.uploaded_at;
     }
     getStatus() {
-        return this._status;
+        return this.status;
     }
 
     // Setters
     setDocument_id(value) {
-        this._document_id = value;
+        this.document_id = value;
     }
     setTask_id(value) {
-        this._task_id = value;
+        this.task_id = value;
     }
     setFile_path(value) {
-        this._file_path = value;
+        this.file_path = value;
     }
     setType(value) {
-        this._type = value;
+        this.type = value;
     }
     setUploaded_at(value) {
-        this._uploaded_at = new Date(value);
+        this.uploaded_at = new Date(value);
     }
     setStatus(value) {
-        this._status = value;
+        this.status = value;
     }
 }

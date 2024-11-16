@@ -28,37 +28,39 @@ function insertIntoJsonFile($object, $delete = false) {
         $data = json_decode(file_get_contents($filePath), true);
 
         switch($type) {
-            case 'documents':
+            case 'coursesTask':
                 if ($delete) {
-                    // Delete document if delete flag is true
-                    $taskIndex = array_search($object['task_id'], array_column($data, 'task_id'));
-                    if ($taskIndex !== false) {
-                        $docIndex = array_search($object['document_id'], array_column($data[$taskIndex]['documents'], 'document_id'));
-                        if ($docIndex !== false) {
-                            // Remove the document
-                            unset($data[$taskIndex]['documents'][$docIndex]);
-                            // Reindex the documents array
-                            $data[$taskIndex]['documents'] = array_values($data[$taskIndex]['documents']);
-                        }
+                    // Delete task if delete flag is true
+                    $index = array_search($object['task_id'], array_column($data, 'task_id'));
+                    if ($index !== false) {
+                        unset($data[$index]);
+                        $data = array_values($data); // Reindex the array
                     }
                 } else {
-                    // Add or update document
-                    $taskIndex = array_search($object['task_id'], array_column($data, 'task_id'));
-                    if ($taskIndex !== false) {
-                        $docIndex = array_search($object['document_id'], array_column($data[$taskIndex]['documents'], 'document_id'));
-                        if ($docIndex !== false) {
-                            $data[$taskIndex]['documents'][$docIndex] = $object; // Update if document exists
-                        } else {
-                            $data[$taskIndex]['documents'][] = $object; // Add if document does not exist
-                        }
-                    } else {
-                        $data[] = [
-                            'task_id' => $object['task_id'],
-                            'documents' => [$object]
-                        ];
-                    }
+                    // Add or update task
+                    $index = array_search($object['task_id'], array_column($data, 'task_id'));
+                    if ($index !== false) $data[$index] = $object; // Update if task exists
+                    else $data[] = $object; // Add if task does not exist
+                    
                 }
                 break;
+
+            case 'documents':
+                if ($delete) {
+                    // Delete the document if the delete flag is set to true
+                    $docIndex = array_search($object['document_id'], array_column($data, 'document_id'));
+                    if ($docIndex !== false) {
+                        unset($data[$docIndex]); // Remove the document
+                        $data = array_values($data); // Reindex the array
+                    }
+                } else {
+                    // Add or update the document
+                    $docIndex = array_search($object['document_id'], array_column($data, 'document_id'));
+                    if ($docIndex !== false) $data[$docIndex] = $object; // Update the document if it already exists
+                    else $data[] = $object; // Add the document if it doesn't exist
+                        
+                }
+                break;                
 
             case 'users':
                 if ($delete) {
@@ -73,11 +75,9 @@ function insertIntoJsonFile($object, $delete = false) {
                 } else {
                     // Add or update user
                     $userIndex = array_search($object['UserName'], array_column($data, 'UserName'));
-                    if ($userIndex !== false) {
-                        $data[$userIndex] = $object; // Update if user exists
-                    } else {
-                        $data[] = $object; // Add if user does not exist
-                    }
+                    if ($userIndex !== false) $data[$userIndex] = $object; // Update if user exists
+                    else $data[] = $object; // Add if user does not exist
+                    
                 }
                 break;
 
@@ -94,40 +94,9 @@ function insertIntoJsonFile($object, $delete = false) {
                 } else {
                     // Add or update course
                     $courseIndex = array_search($object['id'], array_column($data, 'id'));
-                    if ($courseIndex !== false) {
-                        $data[$courseIndex] = $object; // Update if course exists
-                    } else {
-                        $data[] = $object; // Add if course does not exist
-                    }
-                }
-                break;
-
-            case 'coursesTask':
-                if ($delete) {
-                    // Delete task from course if delete flag is true
-                    $courseIndex = array_search($object['course_id'], array_column($data, 'course_id'));
-                    if ($courseIndex !== false) {
-                        $taskIndex = array_search($object['tasks'][0]['task_id'], array_column($data[$courseIndex]['tasks'], 'task_id'));
-                        if ($taskIndex !== false) {
-                            // Remove the task
-                            unset($data[$courseIndex]['tasks'][$taskIndex]);
-                            // Reindex the tasks array
-                            $data[$courseIndex]['tasks'] = array_values($data[$courseIndex]['tasks']);
-                        }
-                    }
-                } else {
-                    // Add or update task in course
-                    $courseIndex = array_search($object['course_id'], array_column($data, 'course_id'));
-                    if ($courseIndex !== false) {
-                        $taskIndex = array_search($object['tasks'][0]['task_id'], array_column($data[$courseIndex]['tasks'], 'task_id'));
-                        if ($taskIndex !== false) {
-                            $data[$courseIndex]['tasks'][$taskIndex] = $object['tasks'][0]; // Update if task exists
-                        } else {
-                            $data[$courseIndex]['tasks'][] = $object['tasks'][0]; // Add if task does not exist
-                        }
-                    } else {
-                        $data[] = $object;
-                    }
+                    if ($courseIndex !== false) $data[$courseIndex] = $object; // Update if course exists
+                    else $data[] = $object; // Add if course does not exist
+                    
                 }
                 break;
         }

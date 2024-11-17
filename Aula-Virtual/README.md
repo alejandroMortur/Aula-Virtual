@@ -38,5 +38,5 @@ docker run --name miservidor -d -p 8080:80 -v ${pwd}:/var/www/html php:7.0-apach
 After running the above commands, you can access the web application by opening a browser and navigating to the following address:
 
 ```bash
-http://localhost:8080/login/login.html
+http://localhost:8080/Aula-Virtual/login/login.html
 ```

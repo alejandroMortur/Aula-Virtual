@@ -71,9 +71,6 @@ function clickCard(event){
             // Store the task object in sessionStorage so it can be used on the next page
             sessionStorage.setItem("task", JSON.stringify(element));
 
-            // Indicate that this is not a new task
-            sessionStorage.setItem("newTask", JSON.stringify("notNew"));
-
             // Redirect to the task detail page
             window.location.href = "/Aula-Virtual/public/view/commonViews/tasks/task.html";
 

@@ -53,15 +53,5 @@
         "id": 6,
         "type": "course",
         "description": "Aprende los fundamentos del emprendimiento y la creaci\u00f3n de empresas, incluyendo la planificaci\u00f3n y gesti\u00f3n empresarial."
-    },
-    {
-        "image": "\/Aula-Virtual\/public\/assets\/img\/courses\/default-header.jpg",
-        "title": "hola",
-        "description": "waedwaewaewa",
-        "workDone": "% completado",
-        "porcent": 20,
-        "id": 20,
-        "type": "course",
-        "coursesTask": []
     }
 ]

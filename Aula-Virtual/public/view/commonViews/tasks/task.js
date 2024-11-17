@@ -16,7 +16,7 @@ function createTaskHeader(task,documents,status){
     let divHeader = document.getElementById('taskHeader');
 
     // If the task is done, display its details
-    if(status == 'done'){
+    if(status == 'done' || status == 'pending'){
 
         // Create and append the task name as an <h1> element
         let title  = document.createElement('h1');
@@ -43,57 +43,160 @@ function createTaskHeader(task,documents,status){
 
     }else{ // If the task is not done, provide a form to submit files
 
-        // Create the form for file submission
-        let form = document.createElement('form');
-        form.id = "file__form";
-        form.action="/Aula-Virtual/server/main.php";
-        form.method="post"
-        form.enctype="multipart/form-data";
-        form.target="uploadTarget";
-        divHeader.appendChild(form);
+        // Get divs for inject html
+        let divHeader = document.getElementById("taskHeader");
+        let divBody = document.getElementById("taskBody");
+a
+        let fieldset = document.createElement('fieldset');
+        divHeader.appendChild(fieldset);
 
-        // Create and append a <p> element for hidden input elements
-        let parrafo = document.createElement('p');
-        form.appendChild(parrafo);
+        let legend = document.createElement('legend');
+        legend.innerHTML = "Datos nueva Tarea";
+        fieldset.appendChild(legend);
 
-        // Add a hidden input for the file type (Enunciado)
+        // Input for Task ID
+        let taskLabel = document.createElement('label');
+        taskLabel.htmlFor = "task_id";
+        taskLabel.innerHTML = "Task ID:";
+        fieldset.appendChild(taskLabel);
+
+        let taskInput = document.createElement('input');
+        taskInput.type = "number";
+        taskInput.id = "task_id";
+        taskInput.name = "task_id";
+        taskInput.required = true;
+        fieldset.appendChild(taskInput);
+
+        // Input for Task Name
+        let nameLabel = document.createElement('label');
+        nameLabel.htmlFor = "name";
+        nameLabel.innerHTML = "Task Name:";
+        fieldset.appendChild(nameLabel);
+
+        let nameInput = document.createElement('input');
+        nameInput.type = "text";
+        nameInput.id = "name";
+        nameInput.name = "name";
+        nameInput.required = true;
+        fieldset.appendChild(nameInput);
+
+        // Input for description
+        let descLabel = document.createElement('label');
+        descLabel.htmlFor = "description";
+        descLabel.innerHTML = "Description:";
+        fieldset.appendChild(descLabel);
+
+        let descInput = document.createElement('textarea');
+        descInput.id = "description";
+        descInput.name = "description";
+        descInput.required = true;
+        fieldset.appendChild(descInput);
+
+        // Input to Upload Date
+        let dateLabel = document.createElement('label');
+        dateLabel.htmlFor = "upload_date";
+        dateLabel.innerHTML = "Upload Date:";
+        fieldset.appendChild(dateLabel);
+
+        let dateInput = document.createElement('input');
+        dateInput.type = "date";
+        dateInput.id = "upload_date";
+        dateInput.name = "upload_date";
+        dateInput.required = true;
+        fieldset.appendChild(dateInput);
+
+        // Form title
+        let fileSectionHeader = document.createElement('h2');
+        fileSectionHeader.innerHTML = "Upload Associated File";
+        divBody.appendChild(fileSectionHeader);
+
+        // Form to upload files
+        let formBody = document.createElement('form');
+        formBody.id = "fileForm";
+        formBody.action = "/Aula-Virtual/server/main.php";
+        formBody.method = "post";
+        formBody.enctype = "multipart/form-data";  
+        divBody.appendChild(formBody);
+
+        // Add a hidden input for the file type (Solucion)
         let inputType = document.createElement('input');
         inputType.type = "hidden";
         inputType.name = "type";
         inputType.value = "Enunciado";
-        parrafo.appendChild(inputType);
+        formBody.appendChild(inputType);
 
         // Add a hidden input for the max file size
         let inputSize = document.createElement('input');
         inputSize.type = "hidden";
         inputSize.name = "MAX_FILE_SIZE";
         inputSize.value = "70000000";
-        parrafo.appendChild(inputSize);
+        formBody.appendChild(inputSize);
 
-        // Add a file input element for uploading files
-        let inputFile = document.createElement('input');
-        inputFile.type = "file";
-        inputFile.id="file_uploader";
-        inputFile.name = "Ficheros[]"; 
-        inputFile.multiple = "multiple"; // Allow multiple file uploads
-        parrafo.appendChild(inputFile);
+        // Input of file
+        let fileInput = document.createElement('input');
+        fileInput.type = "file";
+        fileInput.name = "Files[]";
+        fileInput.id = "file_uploader";
+        fileInput.required = true;
+        formBody.appendChild(fileInput);
 
-        // Create and append a second <p> element for the submit and reset buttons
-        let parrafo2 = document.createElement('p');
-        form.appendChild(parrafo2);
-
-        // Add a submit button to the form
-        let submitButton = document.createElement('button');
+        // Button to send file
+        let submitButton = document.createElement('input');
         submitButton.type = "submit";
-        submitButton.name = "Enviar";
         submitButton.innerHTML = "Enviar";
-        parrafo2.appendChild(submitButton);
+        submitButton.name = "Enviar";
+        submitButton.value = "Enviar";
+        formBody.appendChild(submitButton);
 
-        // Add a reset button to the form
         let resetButton = document.createElement('button');
         resetButton.type = "reset";
         resetButton.innerHTML = "Limpiar";
-        parrafo2.appendChild(resetButton);
+        formBody.appendChild(resetButton);
+
+        // Event listener for form submission (file upload)
+        formBody.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            // Create a new task object with the form data
+            const taskData = {
+                "course_id": parseInt(currentCourse.getId()),
+                "task_id": parseInt(document.getElementById('task_id').value),
+                "name": document.getElementById('name').value,
+                "description": document.getElementById('description').value,
+                "upload_date":  new Date()
+            };
+            
+            // Create a new CoursesTask instance with the task data
+            let newTask = new CoursesTask(taskData);
+            
+            // Send the modified task data for saving (false indicates this is not a removal)
+            sendData(newTask,false);
+
+            //Generate document date of the task
+            const fileInput = document.getElementById('file_uploader'); // Get file input
+            const file = fileInput.files[0]; // Reads First file
+
+            sessionStorage.setItem("newTask", JSON.stringify("pending")); 
+
+            if (!file) {
+                alert("Por favor selecciona un archivo antes de enviar.");
+                return;
+            }
+
+            const documentData = {
+                document_id: 1, // ID of document
+                task_id: parseInt(document.getElementById('task_id').value), // Id of task
+                file_path: "\/Aula-Virtual\/public\/assets\/media\/enunciados\/"+file.name, // File Name
+                type: "Enunciado",
+                uploaded_at: new Date(),
+                status: "done"
+            };
+
+            let newDocument = new Document(documentData);
+
+            sendData(newDocument,false);
+            formBody.submit(); // Submit the form programmatically
+        });
 
     }
 
@@ -133,57 +236,79 @@ function createTaskBody(documents,status){
 
     }else{ // If the task is not done, provide a form to submit files
 
-        // Create the form for file submission
-        let form = document.createElement('form');
-        form.id = "file__form";
-        form.action="/Aula-Virtual/server/main.php";
-        form.method="post"
-        form.enctype="multipart/form-data";
-        form.target="uploadTarget";
-        divBody.appendChild(form);
-
-        // Create and append a <p> element for hidden input elements
-        let parrafo = document.createElement('p');
-        form.appendChild(parrafo);
+        // Creates a form for load file
+        let formBody = document.createElement('form');
+        formBody.id = "fileForm";
+        formBody.action = "/Aula-Virtual/server/main.php";
+        formBody.method = "post";
+        formBody.enctype = "multipart/form-data"; 
+        divBody.appendChild(formBody);
 
         // Add a hidden input for the file type (Solucion)
         let inputType = document.createElement('input');
         inputType.type = "hidden";
         inputType.name = "type";
         inputType.value = "Solucion";
-        parrafo.appendChild(inputType);
+        formBody.appendChild(inputType);
 
         // Add a hidden input for the max file size
         let inputSize = document.createElement('input');
         inputSize.type = "hidden";
         inputSize.name = "MAX_FILE_SIZE";
         inputSize.value = "70000000";
-        parrafo.appendChild(inputSize);
+        formBody.appendChild(inputSize);
 
-        // Add a file input element for uploading files
-        let inputFile = document.createElement('input');
-        inputFile.type = "file";
-        inputFile.id="file_uploader";
-        inputFile.name = "Ficheros[]";
-        parrafo.appendChild(inputFile);
+        // Input para el archivo
+        let fileInput = document.createElement('input');
+        fileInput.type = "file";
+        fileInput.name = "Files[]";
+        fileInput.id = "file_uploader";
+        fileInput.required = true;
+        formBody.appendChild(fileInput);
 
-        // Create and append a second <p> element for the submit and reset buttons
-        let parrafo2 = document.createElement('p');
-        form.appendChild(parrafo2);
-
-        // Add a submit button to the form
-        let submitButton = document.createElement('button');
+        // Button to send file
+        let submitButton = document.createElement('input');
         submitButton.type = "submit";
-        submitButton.name = "Enviar";
         submitButton.innerHTML = "Enviar";
-        parrafo2.appendChild(submitButton);
-        
-        // Add a reset button to the form
+        submitButton.name = "Enviar";
+        submitButton.value = "Enviar";
+        formBody.appendChild(submitButton);
+
         let resetButton = document.createElement('button');
         resetButton.type = "reset";
         resetButton.innerHTML = "Limpiar";
-        parrafo2.appendChild(resetButton);
+        formBody.appendChild(resetButton);
 
+        // Event listener for form submission (file upload)
+        formBody.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            //Generate document date of the task
+            const fileInput = document.getElementById('file_uploader'); // Get file input
+            const file = fileInput.files[0]; // Reads First file
+
+            sessionStorage.setItem("newTask", JSON.stringify("notNew")); 
+
+            if (!file) {
+                alert("Por favor selecciona un archivo antes de enviar.");
+                return;
+            }
+
+            const documentData = {
+                "document_id": 2, // ID for solution
+                "task_id": parseInt(currentTask.getTaskId()), // Id of task
+                "file_path": "\/Aula-Virtual\/public\/assets\/media\/soluciones\/"+file.name, // File name
+                "type": "Solucion",
+                "uploaded_at": new Date(),
+                "status": "done"
+            };
+
+            let newDocument = new Document(documentData);
+
+            sendData(newDocument,false);
+            formBody.submit(); // Submit the form programmatically
+        });
+        
     }
 
 }

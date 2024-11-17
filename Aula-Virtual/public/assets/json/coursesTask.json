@@ -36,13 +36,6 @@
     },
     {
         "course_id": 4,
-        "task_id": 7,
-        "name": "REST API",
-        "description": "Create a simple REST API using PHP.",
-        "upload_date": "2024-11-18"
-    },
-    {
-        "course_id": 4,
         "task_id": 8,
         "name": "Final Server Project",
         "description": "Develop a project that integrates everything learned in the course.",

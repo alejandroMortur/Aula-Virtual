@@ -1,34 +1,32 @@
 <?php
 
-    include 'externalFunctions.php';
+    include 'externalFunctions.php'; 
 
-    if(isset($_POST['Enviar'])){
+    if(isset($_POST['type'])){
 
-        if (isset($_POST['type'])) {
+        // Clean and validate input to prevent code injection
+        $uploadType = htmlspecialchars(trim(strip_tags($_POST['type'])), ENT_QUOTES, 'UTF-8');
 
-            // Clean and validate input to prevent code injection
-            $uploadType = htmlspecialchars(trim(strip_tags($_POST['type'])), ENT_QUOTES, 'UTF-8');
+        // Add a semicolon after the variable definition
+        // Add ':' after each 'case' and correct the syntax of the 'switch'
+        switch ($uploadType) {
 
-             // Add a semicolon after the variable definition
-            // Add ':' after each 'case' and correct the syntax of the 'switch'
-            switch ($uploadType) {
+            case "Enunciado":
+                $destination = "../public/assets/media/enunciados/";
+                break;
 
-                case "Enunciado":
-                    $destination = "../public/assets/media/enunciados/";
-                    break;
+            case "Solucion":
+                $destination = "../public/assets/media/soluciones/";
+                break;
 
-                case "Solucion":
-                    $destination = "../public/assets/media/soluciones/";
-                    break;
+            default:
+                // If the type does not match the allowed values, you can redirect or handle the error here
+                die("Upload type not allowed.");
 
-                default:
-                    // If the type does not match the allowed values, you can redirect or handle the error here
-                    die("Upload type not allowed.");
+        }
 
-            }
-
-            // Check if a destination path has been defined
-            if (!empty($destination)) {
+        // Check if a destination path has been defined
+        if (!empty($destination)) {
 
                 $fileNames = $_FILES['Files']['name'];
                 $temporaryFileNames = $_FILES['Files']['tmp_name'];
@@ -45,14 +43,13 @@
 
                 }
 
-            }
-
         }
 
-        header("Location: " . $_SERVER['HTTP_REFERER']);
+        header("Location: /Aula-Virtual/public/view/commonViews/coursesTasks/coursesTask.html");
         exit;
         
     } else if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
         // Get the JSON content from the request body
         $json = file_get_contents('php://input');
         // Decode the JSON into an associative array

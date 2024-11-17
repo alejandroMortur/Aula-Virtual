@@ -104,9 +104,7 @@
             // Save the updated JSON file
             file_put_contents($filePath, json_encode($data, JSON_PRETTY_PRINT));
             echo "Record " . ($delete ? "deleted" : "added or updated") . " successfully in $type.\n";
-        } else {
-            echo "Unrecognized object type. Object structure:\n";
-        }
+        } 
     }
 
     // Retrieve data sent by POST (use this when sending JSON data)

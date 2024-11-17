@@ -33,13 +33,13 @@ function loadFooter(){
 
     // Create an image for the Spanish government logo
     let EsImg = document.createElement('img');
-    EsImg.src = "/public/assets/img/footer/educationLogo.png"
+    EsImg.src = "/Aula-Virtual/public/assets/img/footer/educationLogo.png"
     EsImg.id = "gob__card__es"; // Set the ID of the image for Css (diferent Id because of the width of de img)
     div.appendChild(EsImg);
 
     // Create an image for the bilingual school logo
     let BilImg = document.createElement('img');
-    BilImg.src = "/public/assets/img/footer/colegio-bilingue.png";
+    BilImg.src = "/Aula-Virtual/public/assets/img/footer/colegio-bilingue.png";
     BilImg.id = "gob__card"; // Set the ID of the image for Css
     div.appendChild(BilImg);
 

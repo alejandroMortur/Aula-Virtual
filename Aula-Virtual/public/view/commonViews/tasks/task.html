@@ -11,10 +11,12 @@
     <title>Tarea</title>
     <script src="/Aula-Virtual/public/assets/class/user.js"></script>
     <script src="/Aula-Virtual/public/assets/class/coursesTask.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/courses.js"></script>
     <script src="/Aula-Virtual/public/assets/class/document.js"></script>
     <script src="/Aula-Virtual/public/assets/js/menu.js"></script>
     <script src="/Aula-Virtual/public/assets/js/loader.js"></script>
     <script src="/Aula-Virtual/public/assets/js/footer.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/sendData.js"></script>
     <script src="task.js"></script>
     <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="task.css" />
@@ -26,13 +28,20 @@
          * Asynchronous function to initialize the task page, load task data and handle document status.
          * It updates the page layout based on the task and document status.
          */
+
+        let currentTask = "";
+        let currentCourse = "";
+        let newTask  = "";
         async function init() {
 
             // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
 
             // Retrieve the newTask status from sessionStorage
-            let newTask = JSON.parse(sessionStorage.getItem("newTask"));
+            newTask = "notNew";
+            newTask = JSON.parse(sessionStorage.getItem("newTask"));
+
+            currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
 
             // Create a new Loader object to fetch task and document data
             let loader = new Loader();
@@ -42,7 +51,6 @@
 
             // Initialize variables for task status and document data
             let statusSolution = "";
-            let currentTask = "";
             let document = "";
             let statusHeader = newTask;
 
@@ -60,22 +68,40 @@
                 statusSolution = document[0].getStatus();
                 statusHeader = document[1].getStatus();
 
+            }else if(newTask == "pending"){
+
+                // Retrieve the existing task from sessionStorage and create a new CoursesTask object
+                currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
+            
+                // Load the documents related to the current task asynchronously and map them to Document objects
+                const documentDataArray = await loader.loadDocumentCoursesTasks(currentTask.getTaskId()); 
+                document = documentDataArray.map(documentData => new Document(documentData));
+
+                // Set the solution status and header status based on the document data
+                statusHeader = document[0].getStatus();
+                if(currentUser.getIsTeacher())
+                    statusSolution = "";
+                else 
+                    createTaskBody(document,statusSolution);
             }
 
             // If both task and solution status are 'done', display the task header and body
             if(statusHeader == 'done' && statusSolution == 'done'){
                 createTaskHeader(currentTask,document,statusHeader);
                 createTaskBody(document,statusSolution);
-            }else
+            }else if(statusHeader == 'Peding'){
+                createTaskHeader(currentTask,document,"done");
+            }else{
                 // If the solution is not done, only display the task header
                 createTaskHeader(currentTask,document,statusHeader);
+            }
 
             // Load the menu for the current user and specify the location as "task"
             loadMenu(currentUser,loc);
 
             // Load the footer section of the page
             loadFooter();
-
+            
         }
 
         // Initialize the page when it is loaded

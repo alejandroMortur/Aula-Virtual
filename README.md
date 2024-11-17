@@ -9,7 +9,6 @@ Aula-Virtual is a web project designed to facilitate online learning, providing 
 - **Intuitive Interface** 🌐: A user-friendly interface that allows users to navigate through courses and materials with ease.
 - **Course Management** 📚: Teachers can create, edit, and manage courses, as well as upload multimedia resources.
 - **Multimedia Resources** 🎥: Integration of images, videos, and audio to enrich the course content.
-- **Interaction** 💬: A section for forums and comments where students and teachers can interact.
 - **Accessibility** 📱: A responsive design that adapts to different devices and screen sizes.
 
 ## Instructions to Create Containers and Run the Web Page

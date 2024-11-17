@@ -9,7 +9,7 @@
     },
     {
         "document_id": 2,
-        "task_id": 3,
+        "task_id": 1,
         "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/server_deployment_solution.zip",
         "type": "Solucion",
         "uploaded_at": "2024-11-12T11:00:00.000Z",
@@ -29,14 +29,6 @@
         "file_path": "\/..\/..\/public\/assets\/media\/soluciones\/css_project_solution.zip",
         "type": "Solucion",
         "uploaded_at": "2024-11-15T11:00:00",
-        "status": "done"
-    },
-    {
-        "document_id": 1,
-        "task_id": 2,
-        "file_path": "\/..\/..\/public\/assets\/media\/enunciados\/tema1a. repaso redes y tcpip.Oct2020.pdf",
-        "type": "Enunciado",
-        "uploaded_at": "2024-11-11T18:07:53.908Z",
         "status": "done"
     },
     {

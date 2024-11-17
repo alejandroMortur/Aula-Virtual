@@ -126,7 +126,7 @@ class Loader{
 
         // Filters documents based on the task ID
         documents.forEach(element => {
-            if(element['document_id'] == userTaskId)
+            if(element['task_id'] == userTaskId)
                 documentsData.push(element);
         });
 

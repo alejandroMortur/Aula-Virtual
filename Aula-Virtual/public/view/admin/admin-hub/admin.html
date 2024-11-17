@@ -25,65 +25,88 @@
 </head>
 <script>
         
+     // Initialize empty arrays to hold lists of courses, users, tasks, and documents    
     let coursesList = [];
     let usersList = [];
     let taskList = [];
     let documentList = [];
 
+    // Asynchronous function to initialize data and setup event listeners
     async function init() {
 
+        // Retrieve the current user from sessionStorage and create a new User object
         let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+        // Create a new Loader object to handle data loading
         let loader = new Loader(currentUser);  
 
+        // Load all course data asynchronously and map it to Course objects
         const coursesDataArray = await loader.loadAllDataCourses(); 
         coursesList = coursesDataArray.map(courseData => new Course(courseData));
 
+        // Set the location for the dashboard for Nav menu
         let loc = "adminDashboard";
+
+        // Load user data asynchronously and map it to User objects
         const userDataArray = await loader.loadDataUser();
         usersList = userDataArray.map(userData => new User(userData));
 
+        // Load all task data asynchronously and map it to CoursesTask objects
         const taskDataArray = await loader.loadAllDataCoursesTasks();
         taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
 
+        // Load document data asynchronously and map it to Document objects
         const documentDataArray = await loader.loadAllDocumentCoursesTasks();
         documentList = documentDataArray.map(documentData => new Document(documentData));
 
+        // Call functions to build UI elements for users, courses, tasks, and documents
         allUsersCardBuilder(usersList);
         allCoursesCardBuilder(coursesList);
         allTaskCardBuilder(taskList);
         allDocumentCardBuilder(documentList);
+
+        /*
+          - Load the menu for the current user and specify the location as "adminDashboard"
+          - Initialize filter event listeners for inputs and select dropdowns
+          - Load the footer section of the page
+        */
         loadMenu(currentUser,loc);
         filterEventCreator();
         loadFooter();
 
+        // Event listeners for creating new users, courses, tasks, and documents
         $('#newUser').on('click',clickNewElement);
         $('#newCourse').on('click',clickNewElement);
         $('#newTask').on('click',clickNewElement);
         $('#newDocument').on('click',clickNewElement);
 
-        // Event listeners para cada select
+        // Event listeners for select dropdowns to reorder the lists based on selected values
         $('#realignmentCourses').on('change', function() {
+            // Get the selected value and reorder the courses list
             const selectedValue = $(this).val();
             reorderList(coursesList, selectedValue, 'courses');
         });
 
         $('#realignmentUsers').on('change', function() {
+            // Get the selected value and reorder the users list
             const selectedValue = $(this).val();
             reorderList(usersList, selectedValue, 'users');
         });
 
         $('#realignmentTasks').on('change', function() {
+            // Get the selected value and reorder the tasks list
             const selectedValue = $(this).val();
             reorderList(taskList, selectedValue, 'tasks');
         });
 
         $('#realignmentDocuments').on('change', function() {
+            // Get the selected value and reorder the documents list
             const selectedValue = $(this).val();
             reorderList(documentList, selectedValue, 'documents');
         });
 
     }
 
+    // Initialize the page when it is loaded
     window.onload = init;
 
 </script>
@@ -109,13 +132,13 @@
         <button id="newTask">Nueva Tarea</button>
         <button id="newDocument">Nuevo Documento</button>
         <div>
-            <!-- Filtro de Cursos -->
+            <!-- Filter for Courses -->
             <div class="filter">
                 <label for="course-title">Filtrar por título del curso</label>
                 <input type="text" id="course-title" placeholder="Título del curso">
             </div>
 
-            <!-- Filtro de Usuarios -->
+            <!-- Filter for Users -->
             <div class="filter">
                 <label for="user-username">Filtrar por nombre de usuario</label>
                 <input type="text" id="user-username" placeholder="Nombre de usuario">
@@ -129,13 +152,13 @@
                 <input type="text" id="user-surname" placeholder="Apellidos">
             </div>
 
-            <!-- Filtro de Tareas -->
+            <!-- Filter for Task -->
             <div class="filter">
                 <label for="task-name">Filtrar por nombre de tarea</label>
                 <input type="text" id="task-name" placeholder="Nombre de la tarea">
             </div>
 
-            <!-- Filtro de Documentos -->
+            <!-- Filter for Documents -->
             <div class="filter">
                 <label for="document-type">Filtrar por tipo de documento</label>
                 <select id="document-type">

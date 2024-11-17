@@ -23,38 +23,55 @@
     <title>CRUD User</title>
     <script>
         
+        // Initialize variables to hold task data, state, and target course information
         let taskList = [];
         let state = "";
         let targetCourse = "";
 
+        // Asynchronous function to initialize data and set up the page
         async function init(){
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+            // Retrieve the target course from sessionStorage and create a new Course object
             targetCourse= new Course(JSON.parse(sessionStorage.getItem("targetCourse")));
 
+            // Create a new Loader object to handle data loading
             let loader = new Loader();
+
+             // Load tasks for the target course asynchronously and map the data to CoursesTask objects
             const taskDataArray = await loader.loadDataCoursesTasks(targetCourse.getId());
             taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
 
+            // Set the location for the current page as "CRUD"
             let loc = "CRUD";
+            // Retrieve the state from sessionStorage (whether the object is new or not)
             state = sessionStorage.getItem("state");
 
+            // If the state is "notNewObject", load existing data for the course and tasks
             if(state == "notNewObject"){
-                loadCourseData(state);
-                loadTaskData();
+                loadCourseData(state); // Load course data
+                loadTaskData(); // Load task data
             }else{
+                // If it's a new object, set up default values for course creation
                 $('#course_Img').attr("src","/Aula-Virtual/public/assets/img/courses/default-header.jpg");
                 $('.sidebar').append('<h3>Creación de un Nuevo Curso</h3>')
                 $('.sidebar').append('<p>Esta usted creando un Nuevo Curso tenga cuidado a la hora de indicar la Id, porque de exister se sobre escribira</p>')
             }
             
+            /*
+                - Load the menu for the current user and specify the location as "CRUD"
+                - Load the footer section of the page
+            */
             loadMenu(currentUser,loc);
             loadFooter();
     
+            // Event listener for deleting the course when the "delCourse" button is clicked
             $('#delCourse').on('click',removeElement)
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
 
     </script>

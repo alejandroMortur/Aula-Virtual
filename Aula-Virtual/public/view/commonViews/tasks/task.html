@@ -21,47 +21,66 @@
     <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
 </head>
 <body class="grid-container">
-
     <script> 
+        /**
+         * Asynchronous function to initialize the task page, load task data and handle document status.
+         * It updates the page layout based on the task and document status.
+         */
         async function init() {
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the newTask status from sessionStorage
             let newTask = JSON.parse(sessionStorage.getItem("newTask"));
 
+            // Create a new Loader object to fetch task and document data
             let loader = new Loader();
-            let loc = "task";
-            loadMenu(currentUser,loc);
 
+            // Set the location for the current page as "task"
+            let loc = "task";
+
+            // Initialize variables for task status and document data
             let statusSolution = "";
             let currentTask = "";
             let document = "";
             let statusHeader = newTask;
 
+            // Check if the task is an existing task or a new one
             if(newTask == "notNew"){    
 
+                // Retrieve the existing task from sessionStorage and create a new CoursesTask object
                 currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
             
+                // Load the documents related to the current task asynchronously and map them to Document objects
                 const documentDataArray = await loader.loadDocumentCoursesTasks(currentTask.getTaskId()); 
                 document = documentDataArray.map(documentData => new Document(documentData));
 
+                // Set the solution status and header status based on the document data
                 statusSolution = document[0].getStatus();
                 statusHeader = document[1].getStatus();
 
             }
 
+            // If both task and solution status are 'done', display the task header and body
             if(statusHeader == 'done' && statusSolution == 'done'){
                 createTaskHeader(currentTask,document,statusHeader);
                 createTaskBody(document,statusSolution);
             }else
+                // If the solution is not done, only display the task header
                 createTaskHeader(currentTask,document,statusHeader);
 
+            // Load the menu for the current user and specify the location as "task"
+            loadMenu(currentUser,loc);
+
+            // Load the footer section of the page
             loadFooter();
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
     </script>
-
     <header class="header" id="header"> </header>
     <aside class="sidebar">
         <div id="sideBar">

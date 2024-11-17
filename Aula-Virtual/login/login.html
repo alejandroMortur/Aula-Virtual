@@ -18,18 +18,21 @@
 
     <script>
 
+        // Array to store a list of User objects
         let usersList = []; 
 
+        // Asynchronous function to initialize the page
         async function init() {
-            let loader = new Loader();  
-            const userDataArray = await loader.loadDataUser(); // Asumiendo que devuelve un array de objetos JSON
+            let loader = new Loader();  // Create a new Loader instance
+            const userDataArray = await loader.loadDataUser(); 
 
-            // Itera sobre cada objeto en el array y crea una instancia de User
+            // Iterate through the array and create User instances for each object
             usersList = userDataArray.map(userData => new User(userData));
 
             console.log(usersList)
         }
 
+        // Call the init function once the page is fully loaded
         window.onload = init;
 
     </script>

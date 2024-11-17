@@ -1,3 +1,9 @@
+/**
+ * Class: Course
+ * Description:
+ * Represents a course in the system. The class is initialized with data representing the course attributes
+ * and provides methods to get and set these attributes. It also manages tasks associated with the course.
+ */
 class Course {
     constructor(coursesData) {
         this.image = coursesData.image;

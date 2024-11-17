@@ -1,3 +1,9 @@
+/**
+ * Class: Document
+ * Description:
+ * Represents a document associated with a specific task. This class encapsulates
+ * the document's attributes and provides methods to retrieve and modify its properties.
+ */
 class Document {
     constructor(documentData) {
         this.document_id = documentData.document_id;

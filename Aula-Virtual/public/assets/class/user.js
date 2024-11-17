@@ -1,3 +1,9 @@
+/**
+ * Class: User
+ * Description:
+ * Represents a user in the system, either a student or a teacher, with relevant
+ * attributes like name, DNI (ID number), password, and registration information.
+ */
 class User {
     constructor(UserData) {
         this.UserName = UserData.UserName;

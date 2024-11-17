@@ -21,28 +21,40 @@
     <title>CRUD</title>
     <script>
         
-        let state = "";
-        let targetDocument = "";
+        // Initialize variables for the document state and target document
+        let state = ""; // Holds the state of the document (whether it's a new or existing document)
+        let targetDocument = ""; // Stores the target document object
 
+        // Asynchronous function to initialize data for the document page
         async function init(){
 
+             // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the target document from sessionStorage and create a new Document object
             targetDocument = new Document(JSON.parse(sessionStorage.getItem("targetDocument")));
 
+            // Set the location for the current page as "CRUD" (Create, Read, Update, Delete)
             let loc = "CRUD";
+
+            // Retrieve the state from sessionStorage (whether the document is new or not)
             state = sessionStorage.getItem("state");
 
+            // If the state is "notNewObject", load existing data for the document
             if(state == "notNewObject"){
-                loadDocumentData();
+                loadDocumentData(); // Load document data if it's an existing document
             }
             
+            // Load the menu for the current user and specify the location as "CRUD"
             loadMenu(currentUser,loc);
             loadFooter();
     
+            // Event listener for deleting the document when the "delDocument" button is clicked
             $('#delDocument').on('click',removeElement)
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
 
     </script>

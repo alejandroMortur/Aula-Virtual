@@ -23,30 +23,51 @@
 <body class="grid-container">
     <script> 
 
+        // Initialize an empty array to store the list of tasks for the current course
         let taskList = [];
 
+        /**
+         * Asynchronous function to initialize the page by loading task data for the current course 
+         * and setting up the layout with the sidebar, task list, and footer.
+         */
         async function init() {
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the current course from sessionStorage and create a new Course object
             let currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
             
+             // Set the location for the current page as "coursesTask"
             let loc = "coursesTask";
-            loadMenu(currentUser,loc);
 
+            // Create a new Loader object to fetch the task data for the current course
             let loader = new Loader();
+
+            // Load the task data for the current course asynchronously and map the data to CoursesTask objects
+            // Store the mapped task data in the taskList array
             const taskDataArray = await loader.loadDataCoursesTasks(currentCourse.getId());
             taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
 
+            // Retrieve the boolean value indicating if the current user is a teacher
             let isTeacher = currentUser.getIsTeacher();
 
-            buildSideBar(currentCourse,taskList,isTeacher);
+            // Load the menu for the current user and specify the location as "coursesTask"
+            loadMenu(currentUser,loc);
+
+            // Build the sidebar with course information and teacher-specific options
+            buildSideBar(currentCourse,isTeacher);
+
+            // Display the list of tasks for the course
             printTask(taskList);
+
+            // Load the footer section of the page
             loadFooter();
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
-
     </script>
     <header class="header" id="header"></header>
     <aside class="sidebar">

@@ -23,30 +23,52 @@
 
     <script>
         
+        // Initialize an empty array to store the list of courses for the current user
         let coursesList = [];
 
+        /**
+         * Asynchronous function to initialize the page by loading courses and exams data
+         * and setting up the page layout with relevant menu, sidebar, and footer.
+         */
         async function init() {
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-            let loader = new Loader(currentUser);  
+
+            // Create a new Loader object to fetch the courses and exam data for the current user
+            let loader = new Loader();  
+
+            // Load the courses data for the current user by using the registration ID
+            // Map the retrieved data into Course objects and store them in the coursesList array
             const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
             coursesList = coursesDataArray.map(courseData => new Course(courseData));
+
+            // Load the exam data for the current user
             let exams = await loader.loadExams();
 
+            // Set the location for the current page as "courses"
             let loc = "courses";
 
+            // Load the menu for the current user and specify the location as "courses"
             loadMenu(currentUser,loc);
+
+            // Create and display the exam table
             createExamTable(exams);
+
+            // Print the list of courses to the page
             printCourses();
+
+            // Build the sidebar with course options
             buildSideBar(coursesList);
+
+            // Load the footer section of the page
             loadFooter();
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
-
     </script>
-
     <header class="header" id="header"> </header>
     <aside class="sidebar">
         <div id="sideBar">

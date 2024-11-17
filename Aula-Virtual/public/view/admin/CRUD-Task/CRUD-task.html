@@ -22,34 +22,53 @@
     <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
     <title>CRUD</title>
     <script>
-        
-        let state = "";
-        let targetTask = "";
-        let documentList = [];
 
+        // Initialize variables to hold task data, document list, and the state of the current object
+        let state = "";         // Holds the state of the task (whether it's new or not)
+        let targetTask = "";    // Stores the target task object
+        let documentList = [];  // List of documents related to the target task
+
+        // Asynchronous function to initialize the task p
         async function init(){
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the target task from sessionStorage and create a new CoursesTask object
             targetTask = new CoursesTask(JSON.parse(sessionStorage.getItem("targetTask")));
 
+            // Create a new Loader object to handle loading task-related documents
             let loader = new Loader();
+
+            // Load documents related to the target task asynchronously
+            // Map the document data to Document objects and store them in the documentList
             const documentDataArray = await loader.loadDocumentCoursesTasks(targetTask.getTaskId());
             documentList = documentDataArray .map(documentData => new Document(documentData));
 
+            // Set the location for the current page as "CRUD" (Create, Read, Update, Delete)
             let loc = "CRUD";
+
+            // Retrieve the state from sessionStorage (whether the task is new or not)
             state = sessionStorage.getItem("state");
 
+            // If the state is "notNewObject", load existing task and document data
             if(state == "notNewObject"){
-                loadTaskData();
-                loadDocumentData();
+                loadTaskData(); // Load task data if it's an existing task
+                loadDocumentData(); // Load document data of the target task
             }
+
+            // Load the menu for the current user and specify the location as "CRUD"
             loadMenu(currentUser,loc);
+
+            // Load the footer section of the page
             loadFooter();
     
+            // Event listener for deleting the task when the "delCourse" button is clicked
             $('#delCourse').on('click',removeElement)
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
 
     </script>

@@ -20,30 +20,46 @@
     <title>CRUD User</title>
     <script>
         
-        let targetUser = "";
+        // Initialize variables to hold user data and the state of the current user object
+        let targetUser = "";  // Stores the target user object
+        let state = "";       // Holds the state of the user (whether it's new or not)
 
+        // Function to initialize the user data page
         function init(){
 
+            // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
-            targetUser= new User(JSON.parse(sessionStorage.getItem("targetUser")));
 
+            // Retrieve the target user from sessionStorage and create a new User object
+            targetUser = new User(JSON.parse(sessionStorage.getItem("targetUser")));
+
+            // Set the location for the current page as "CRUD"
             let loc = "CRUD";
-            let state = sessionStorage.getItem("state");
+
+            // Retrieve the state from sessionStorage (whether the user object is new or not)
+            state = sessionStorage.getItem("state");
+
+            // Load the menu for the current user and specify the location as "CRUD"
             loadMenu(currentUser,loc);
 
-            if(state == "notNewObject"){
-                loadUserData(state);
-            }else{
+            // If the state is "notNewObject", load existing user data
+            if(state == "notNewObject")
+                loadUserData(); // Load the user data if it's an existing user
+            else{
+                // If it's a new user, set up default values for user creation
                 $('#user_Img').attr("src","/public/assets/img/users/default.jpg");
                 $('#userName_text').html("Create new User");
             }
 
+            // Load the footer section of the page
             loadFooter();
-    
+
+            // Event listener for deleting the user when the "delUser" button is clicked
             $('#delUser').on('click',removeElement)
 
         }
 
+        // Initialize the page when it is loaded
         window.onload = init;
 
     </script>

@@ -1,3 +1,9 @@
+/**
+ * Class: CoursesTask
+ * Description:
+ * Represents a task associated with a course. This class encapsulates the attributes and behaviors
+ * for tasks and provides methods to get and set their properties.
+ */
 class CoursesTask {
     constructor(coursesTaskData) {
         this.course_id = coursesTaskData.course_id;

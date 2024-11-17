@@ -58,7 +58,6 @@
         // Decode the JSON into an associative array
         $object = json_decode($json, true);
 
-        echo $object;
         // Call the function to insert the object into the JSON file
         insertIntoJsonFile($object);
     } else 

@@ -46,7 +46,7 @@ function createTaskHeader(task,documents,status){
         // Get divs for inject html
         let divHeader = document.getElementById("taskHeader");
         let divBody = document.getElementById("taskBody");
-a
+
         let fieldset = document.createElement('fieldset');
         divHeader.appendChild(fieldset);
 
@@ -176,7 +176,7 @@ a
             const fileInput = document.getElementById('file_uploader'); // Get file input
             const file = fileInput.files[0]; // Reads First file
 
-            sessionStorage.setItem("newTask", JSON.stringify("pending")); 
+            sessionStorage.setItem("status", JSON.stringify("pending")); 
 
             if (!file) {
                 alert("Por favor selecciona un archivo antes de enviar.");
@@ -287,7 +287,7 @@ function createTaskBody(documents,status){
             const fileInput = document.getElementById('file_uploader'); // Get file input
             const file = fileInput.files[0]; // Reads First file
 
-            sessionStorage.setItem("newTask", JSON.stringify("notNew")); 
+            sessionStorage.setItem("status", JSON.stringify("notNew")); 
 
             if (!file) {
                 alert("Por favor selecciona un archivo antes de enviar.");

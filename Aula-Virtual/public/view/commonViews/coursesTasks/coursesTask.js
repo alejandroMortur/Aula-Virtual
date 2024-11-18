@@ -70,6 +70,7 @@ function clickCard(event){
 
             // Store the task object in sessionStorage so it can be used on the next page
             sessionStorage.setItem("task", JSON.stringify(element));
+            sessionStorage.setItem("status", JSON.stringify("notNew"));
 
             // Redirect to the task detail page
             window.location.href = "/Aula-Virtual/public/view/commonViews/tasks/task.html";
@@ -121,7 +122,7 @@ function orderTasks(selectedValue) {
  */
 function newTask(){
 
-    sessionStorage.setItem("newTask", JSON.stringify("new")); // Mark this as a new task
+    sessionStorage.setItem("status", JSON.stringify("new")); // Mark this as a new task
     window.location.href = "/Aula-Virtual/public/view/commonViews/tasks/task.html"; // Redirect to the task creation page
 
 }

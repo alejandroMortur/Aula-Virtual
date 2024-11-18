@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <link rel="icon" href="/Aula-Virtual/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
+    <script src="CRUD-task.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/user.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/coursesTask.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/document.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/menu.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/footer.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/loader.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/sendData.js"></script>
+    <link rel="stylesheet" type="text/css" href="CRUD-task.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
+    <title>CRUD</title>
+    <script>
+
+        // Initialize variables to hold task data, document list, and the state of the current object
+        let state = "";         // Holds the state of the task (whether it's new or not)
+        let targetTask = "";    // Stores the target task object
+        let documentList = [];  // List of documents related to the target task
+
+        // Asynchronous function to initialize the task p
+        async function init(){
+
+            // Retrieve the current user from sessionStorage and create a new User object
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the target task from sessionStorage and create a new CoursesTask object
+            targetTask = new CoursesTask(JSON.parse(sessionStorage.getItem("targetTask")));
+
+            // Create a new Loader object to handle loading task-related documents
+            let loader = new Loader();
+
+            // Load documents related to the target task asynchronously
+            // Map the document data to Document objects and store them in the documentList
+            const documentDataArray = await loader.loadDocumentCoursesTasks(targetTask.getTaskId());
+            documentList = documentDataArray .map(documentData => new Document(documentData));
+
+            // Set the location for the current page as "CRUD" (Create, Read, Update, Delete)
+            let loc = "CRUD";
+
+            // Retrieve the state from sessionStorage (whether the task is new or not)
+            state = sessionStorage.getItem("state");
+
+            // If the state is "notNewObject", load existing task and document data
+            if(state == "notNewObject"){
+                loadTaskData(); // Load task data if it's an existing task
+                loadDocumentData(); // Load document data of the target task
+            }
+
+            // Load the menu for the current user and specify the location as "CRUD"
+            loadMenu(currentUser,loc);
+
+            // Load the footer section of the page
+            loadFooter();
+    
+            // Event listener for deleting the task when the "delCourse" button is clicked
+            $('#delCourse').on('click',removeElement)
+
+        }
+
+        // Initialize the page when it is loaded
+        window.onload = init;
+
+    </script>
+</head>
+<body class="grid-container">
+    <header class="header" id="header"></header>
+    <article class="main">
+        <form class="form" method="post" action="" onsubmit="saveChanges(event)">
+            <p id="messageError">Error algunos de los campos no cumple los requisitos necesarios para enviarlo</p>
+
+            <label for="course_id">Course ID:</label>
+            <input type="number" id="course_id" name="course_id" required><br><br>
+        
+            <label for="task_id">Task ID:</label>
+            <input type="number" id="task_id" name="task_id" required><br><br>
+        
+            <label for="name">Task Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br><br>
+        
+            <label for="upload_date">Upload Date:</label>
+            <input type="date" id="upload_date" name="upload_date" required><br><br>
+
+            <button type="submit" onclick="saveChanges(state)">Guardar Cambios</button>
+        </form>
+        <button id="delCourse">Borrar esta tarea</button>
+    </article>
+    <aside class="sidebar">
+        <div id="document_list"></div> 
+    </aside>
+    <footer class="footer" id="footer"></footer>
+</body>
+</html>

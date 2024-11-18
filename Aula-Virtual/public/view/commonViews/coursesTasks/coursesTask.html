@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Aula-Virtual/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <title>Curso</title>
+    <script src="/Aula-Virtual/public/assets/js/menu.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/loader.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/courses.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/coursesTask.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/user.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/footer.js"></script>
+    <script src="coursesTask.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="coursesTask.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
+</head>
+<body class="grid-container">
+    <script> 
+
+        // Initialize an empty array to store the list of tasks for the current course
+        let taskList = [];
+
+        /**
+         * Asynchronous function to initialize the page by loading task data for the current course 
+         * and setting up the layout with the sidebar, task list, and footer.
+         */
+        async function init() {
+
+            // Retrieve the current user from sessionStorage and create a new User object
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Retrieve the current course from sessionStorage and create a new Course object
+            let currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
+            
+             // Set the location for the current page as "coursesTask"
+            let loc = "coursesTask";
+
+            // Create a new Loader object to fetch the task data for the current course
+            let loader = new Loader();
+
+            // Load the task data for the current course asynchronously and map the data to CoursesTask objects
+            // Store the mapped task data in the taskList array
+            const taskDataArray = await loader.loadDataCoursesTasks(currentCourse.getId());
+            taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
+
+            // Retrieve the boolean value indicating if the current user is a teacher
+            let isTeacher = currentUser.getIsTeacher();
+
+            // Load the menu for the current user and specify the location as "coursesTask"
+            loadMenu(currentUser,loc);
+
+            // Build the sidebar with course information and teacher-specific options
+            buildSideBar(currentCourse,isTeacher);
+
+            // Display the list of tasks for the course
+            printTask(taskList);
+
+            // Load the footer section of the page
+            loadFooter();
+
+        }
+
+        // Initialize the page when it is loaded
+        window.onload = init;
+    </script>
+    <header class="header" id="header"></header>
+    <aside class="sidebar">
+        <div id="sideBar">
+            <hr>
+            <h1 id="bar__title">not see</h1>
+            <div id="bar__p">not see</div>
+            <hr>
+            <h3 id="bar__SecTitle">Opciones:</h3>
+            <div id="bar__utilities">
+            </div>
+            <hr>
+        </div>
+    </aside>
+    <article class="main">
+        <div id="taskContainer">
+        </div>
+    </article>
+    <footer class="footer" id="footer"></footer>
+    
+</body>
+</html>

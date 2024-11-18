@@ -1,0 +1,178 @@
+[
+    {
+        "document_id": 1,
+        "task_id": 1,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/html_intro_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 2,
+        "task_id": 2,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/css_project_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 3,
+        "task_id": 6,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/business_plan_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 4,
+        "task_id": 8,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/Final-Server-Project.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 5,
+        "task_id": 9,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/glossary.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 6,
+        "task_id": 10,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/presentation.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 7,
+        "task_id": 11,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/business_plan_solution2.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 8,
+        "task_id": 12,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/market-research.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 9,
+        "task_id": 6,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/REST-API.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 10,
+        "task_id": 5,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/server_deployment_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 11,
+        "task_id": 2,
+        "file_path": "/Aula-Virtual/public/assets/media/soluciones/css_project_solution.zip",
+        "type": "Solucion",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 1,
+        "task_id": 1,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 2,
+        "task_id": 2,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 3,
+        "task_id": 6,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 4,
+        "task_id": 8,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 5,
+        "task_id": 9,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 6,
+        "task_id": 10,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 7,
+        "task_id": 11,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 8,
+        "task_id": 12,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 9,
+        "task_id": 6,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 10,
+        "task_id": 5,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    },
+    {
+        "document_id": 11,
+        "task_id": 2,
+        "file_path": "/Aula-Virtual/public/assets/media/enunciados/example.pdf",
+        "type": "Enunciado",
+        "uploaded_at": "2024-11-16T15:00:00",
+        "status": "done"
+    }
+]

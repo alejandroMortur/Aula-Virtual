@@ -1,0 +1,89 @@
+body{
+    color: white;
+}
+
+.grid-container > * {
+    box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.grid-container {
+    display: grid;
+    gap: 25px;
+    grid-template: 
+        "header" 90px
+        "main" auto
+        "footer" 70px;
+        background: #000000;
+        --gap: 5em;
+        --line: 1px;
+        --color: rgba(255, 255, 255, 0.2);
+    
+    /*Background Pattern*/
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)),
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap) - var(--line)),
+            var(--color) calc(var(--gap) - var(--line) + 1px),
+            var(--color) var(--gap)
+        );
+    background-size: var(--gap) var(--gap);
+
+    .header {
+        grid-area: header;
+        background-color: rgba(90, 32, 98, 0.944);
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    }
+    .main {
+        grid-area: main;
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    }
+    .sidebar{
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    }
+
+    .footer {
+        grid-area: footer;
+        height: max-content;
+        background-color: rgba(20, 20, 26, 0.532); /* Semi-transparent background */
+        box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25); /* Adds shadow for depth */
+    }
+
+    @media (min-width: 768px) {
+        grid-template: 
+            "header header" 90px
+            "sidebar main" auto
+            "footer footer" 70px / 30% auto;
+    }
+
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+p{
+
+    color: white;
+}
+
+
+.error {
+    font-size: medium;
+    border: 6px solid red;
+}
+  
+#messageError {
+  display: none;
+  font-size: 17.5px;
+  color: rgba(255, 0, 0, 0.7);
+}

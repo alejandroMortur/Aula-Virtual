@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Aula-Virtual/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <title>Cursos</title>
+    <script src="courses.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/menu.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/loader.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/footer.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/courses.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/user.js"></script>
+    <link rel="stylesheet" type="text/css" href="courses.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
+</head>
+<body class="grid-container">
+
+    <script>
+        
+        // Initialize an empty array to store the list of courses for the current user
+        let coursesList = [];
+
+        /**
+         * Asynchronous function to initialize the page by loading courses and exams data
+         * and setting up the page layout with relevant menu, sidebar, and footer.
+         */
+        async function init() {
+
+            // Retrieve the current user from sessionStorage and create a new User object
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+
+            // Create a new Loader object to fetch the courses and exam data for the current user
+            let loader = new Loader();  
+
+            // Load the courses data for the current user by using the registration ID
+            // Map the retrieved data into Course objects and store them in the coursesList array
+            const coursesDataArray = await loader.loadDataCourses(currentUser.getRegistration()); 
+            coursesList = coursesDataArray.map(courseData => new Course(courseData));
+
+            // Load the exam data for the current user
+            let exams = await loader.loadExams();
+
+            // Set the location for the current page as "courses"
+            let loc = "courses";
+
+            // Load the menu for the current user and specify the location as "courses"
+            loadMenu(currentUser,loc);
+
+            // Create and display the exam table
+            createExamTable(exams);
+
+            // Print the list of courses to the page
+            printCourses();
+
+            // Build the sidebar with course options
+            buildSideBar(coursesList);
+
+            // Load the footer section of the page
+            loadFooter();
+
+        }
+
+        // Initialize the page when it is loaded
+        window.onload = init;
+    </script>
+    <header class="header" id="header"> </header>
+    <aside class="sidebar">
+        <div id="sideBar">
+            <div id="table-container">
+            </div> 
+            <h3 id="bar__SecTitle">Opciones:</h3>
+            <div id="bar__utilities">
+                <div id="bar__utilOp">
+                    <img id="bar__img" src="/Aula-Virtual/public/assets/icons/media-icons/pencil-32px.png">Ordenar de forma:
+                    <select id="realignment">
+                        <option>Ascendente</option>
+                        <option>Descendente</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </aside>
+    <article class="main">
+        <div id="courses">
+        </div>
+    </article>
+    <footer class="footer" id="footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+[
+    {
+        "course_id": 1,
+        "task_id": 1,
+        "name": "Introduction to HTML",
+        "description": "Create a simple HTML page with your personal information.",
+        "upload_date": "2024-11-10"
+    },
+    {
+        "course_id": 1,
+        "task_id": 2,
+        "name": "CSS Project",
+        "description": "Design a webpage using CSS to style it.",
+        "upload_date": "2024-11-20"
+    },
+    {
+        "course_id": 2,
+        "task_id": 4,
+        "name": "UI Mockup",
+        "description": "Design a mockup for a user interface of an application.",
+        "upload_date": "2024-11-25"
+    },
+    {
+        "course_id": 3,
+        "task_id": 5,
+        "name": "Server Deployment",
+        "description": "Upload a web application to a server using FTP.",
+        "upload_date": "2024-11-12"
+    },
+    {
+        "course_id": 3,
+        "task_id": 6,
+        "name": "Development Environment Setup",
+        "description": "Set up a development environment for a web application.",
+        "upload_date": "2024-11-22"
+    },
+    {
+        "course_id": 4,
+        "task_id": 8,
+        "name": "Final Server Project",
+        "description": "Develop a project that integrates everything learned in the course.",
+        "upload_date": "2024-12-01"
+    },
+    {
+        "course_id": 5,
+        "task_id": 9,
+        "name": "Technical Vocabulary",
+        "description": "Create a glossary of technical vocabulary in English.",
+        "upload_date": "2024-11-14"
+    },
+    {
+        "course_id": 5,
+        "task_id": 10,
+        "name": "Oral Presentation",
+        "description": "Prepare and deliver a presentation in English on a technical topic.",
+        "upload_date": "2024-11-28"
+    },
+    {
+        "course_id": 6,
+        "task_id": 11,
+        "name": "Business Plan",
+        "description": "Develop a business plan for an entrepreneurial idea.",
+        "upload_date": "2024-11-16"
+    },
+    {
+        "course_id": 6,
+        "task_id": 12,
+        "name": "Market Research",
+        "description": "Conduct market research on a business idea.",
+        "upload_date": "2024-11-30"
+    }
+]

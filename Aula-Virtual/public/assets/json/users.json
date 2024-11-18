@@ -1,0 +1,144 @@
+[
+    {
+        "UserName": "Yaiza.Araujo1",
+        "Name": "Yaiza",
+        "DNI": "89847291E",
+        "password": "Clave$1",
+        "SureName": "Araujo",
+        "IsTeacher": 1,
+        "registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "Mail": "Yaiza@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/teachers\/Yaiza.jpg"
+    },
+    {
+        "UserName": "Jose.Jesus1",
+        "Name": "Jose Jesus",
+        "DNI": "22958717W",
+        "password": "Clave$1",
+        "SureName": "Jesus Cordon",
+        "IsTeacher": false,
+        "registration": [
+            1,
+            2,
+            5
+        ],
+        "Mail": "JoseJesus@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Jose-Jesus.jpg"
+    },
+    {
+        "UserName": "Nadia.Talavera1",
+        "Name": "Nadia",
+        "DNI": "20350525X",
+        "password": "Clave$1",
+        "SureName": "Talavera",
+        "IsTeacher": false,
+        "registration": [
+            3,
+            4,
+            6
+        ],
+        "Mail": "Nadia@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Nadia.jpg"
+    },
+    {
+        "UserName": "Ibai.Heras1",
+        "Name": "Ibai",
+        "DNI": "93652987T",
+        "password": "Clave$1",
+        "SureName": "Heras",
+        "IsTeacher": false,
+        "registration": [
+            3,
+            4,
+            6
+        ],
+        "Mail": "Ibai@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Ibai.jpg"
+    },
+    {
+        "UserName": "Almudena.Becerra1",
+        "Name": "Almudena",
+        "DNI": "44982855F",
+        "password": "Clave$1",
+        "SureName": "Becerra",
+        "IsTeacher": true,
+        "registration": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "Mail": "Almudena@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Almudena.jpg"
+    },
+    {
+        "UserName": "Joaquin.Valencia1",
+        "Name": "Joaquin",
+        "DNI": "64022210P",
+        "password": "Clave$1",
+        "SureName": "Valencia",
+        "IsTeacher": false,
+        "registration": [
+            3,
+            2,
+            1
+        ],
+        "Mail": "Joaquin@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Joaquin.jpeg"
+    },
+    {
+        "UserName": "Lucio.Fernandez1",
+        "Name": "Lucios",
+        "DNI": "51589677X",
+        "password": "Clave$1",
+        "SureName": "Fernandez",
+        "IsTeacher": false,
+        "registration": [
+            1,
+            2,
+            5
+        ],
+        "Mail": "Lucio@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/students\/Lucio.jpeg"
+    },
+    {
+        "UserName": "Admin",
+        "Name": "Admin",
+        "DNI": "54712110D",
+        "password": "Admin",
+        "SureName": "",
+        "IsTeacher": true,
+        "registration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "Mail": "Admin@gmail.com",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/admin\/admin.jpg"
+    },
+    {
+        "UserName": "Juanama.1",
+        "Name": "Juanma",
+        "DNI": "44982855F",
+        "password": "clave$1",
+        "SureName": "Ortiz Gomez",
+        "IsTeacher": true,
+        "registration": [
+            2,
+            3,
+            4
+        ],
+        "Mail": "Almudena@educa.academy.org",
+        "Image": "\/Aula-Virtual\/public\/assets\/img\/users\/default.jpg"
+    }
+]

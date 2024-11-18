@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <link rel="icon" href="/Aula-Virtual/public/assets/icons/page-icon/favicon.png" type="image/x-icon">
+    <script src="CRUD-Courses.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/user.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/courses.js"></script>
+    <script src="/Aula-Virtual/public/assets/class/coursesTask.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/menu.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/footer.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/loader.js"></script>
+    <script src="/Aula-Virtual/public/assets/js/sendData.js"></script>
+    <link rel="stylesheet" type="text/css" href="CRUD-Courses.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="/Aula-Virtual/public/assets/css/footer.css" />
+    <title>CRUD User</title>
+    <script>
+        
+        // Initialize variables to hold task data, state, and target course information
+        let taskList = [];
+        let state = "";
+        let targetCourse = "";
+
+        // Asynchronous function to initialize data and set up the page
+        async function init(){
+
+            // Retrieve the current user from sessionStorage and create a new User object
+            let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
+            // Retrieve the target course from sessionStorage and create a new Course object
+            targetCourse= new Course(JSON.parse(sessionStorage.getItem("targetCourse")));
+
+            // Create a new Loader object to handle data loading
+            let loader = new Loader();
+
+             // Load tasks for the target course asynchronously and map the data to CoursesTask objects
+            const taskDataArray = await loader.loadDataCoursesTasks(targetCourse.getId());
+            taskList = taskDataArray.map(taskData => new CoursesTask(taskData));
+
+            // Set the location for the current page as "CRUD"
+            let loc = "CRUD";
+            // Retrieve the state from sessionStorage (whether the object is new or not)
+            state = sessionStorage.getItem("state");
+
+            // If the state is "notNewObject", load existing data for the course and tasks
+            if(state == "notNewObject"){
+                loadCourseData(state); // Load course data
+                loadTaskData(); // Load task data
+            }else{
+                // If it's a new object, set up default values for course creation
+                $('#course_Img').attr("src","/Aula-Virtual/public/assets/img/courses/default-header.jpg");
+                $('.sidebar').append('<h3>Creación de un Nuevo Curso</h3>')
+                $('.sidebar').append('<p>Esta usted creando un Nuevo Curso tenga cuidado a la hora de indicar la Id, porque de exister se sobre escribira</p>')
+            }
+            
+            /*
+                - Load the menu for the current user and specify the location as "CRUD"
+                - Load the footer section of the page
+            */
+            loadMenu(currentUser,loc);
+            loadFooter();
+    
+            // Event listener for deleting the course when the "delCourse" button is clicked
+            $('#delCourse').on('click',removeElement)
+
+        }
+
+        // Initialize the page when it is loaded
+        window.onload = init;
+
+    </script>
+</head>
+<body class="grid-container">
+    <header class="header" id="header"></header>
+    <article class="main">
+        <form class="form" method="post" action="" onsubmit="saveChanges(event)">
+            <p id="messageError">Error algunos de los campos no cumple los requisitos necesarios para enviarlo</p>
+            <img id="course_Img">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+            <label for="porcent">Progress Percentage:</label>
+            <input type="number" id="porcent" name="porcent" min="0" max="100"><br><br>
+
+            <label for="id">Course ID:</label>
+            <input type="text" id="id" name="id" required><br><br>
+
+            <button type="submit" onclick="saveChanges(state)">Guardar Cambios</button>
+        </form>
+        <button id="delCourse">Borrar este curso</button>
+    </article>
+    <aside class="sidebar">
+        <div id="task_list"></div> 
+    </aside>
+    <footer class="footer" id="footer"></footer>
+</body>
+</html>

@@ -31,15 +31,15 @@
 
         let currentTask = "";
         let currentCourse = "";
-        let newTask  = "";
+        let status  = "";
         async function init() {
 
             // Retrieve the current user from sessionStorage and create a new User object
             let currentUser = new User(JSON.parse(sessionStorage.getItem("user")));
 
-            // Retrieve the newTask status from sessionStorage
-            newTask = "notNew";
-            newTask = JSON.parse(sessionStorage.getItem("newTask"));
+            // Retrieve the status status from sessionStorage
+            status = "notNew";
+            status = JSON.parse(sessionStorage.getItem("status"));
 
             currentCourse = new Course(JSON.parse(sessionStorage.getItem("course")));
 
@@ -52,10 +52,10 @@
             // Initialize variables for task status and document data
             let statusSolution = "";
             let document = "";
-            let statusHeader = newTask;
+            let statusHeader = status;
 
             // Check if the task is an existing task or a new one
-            if(newTask == "notNew"){    
+            if(status == "notNew"){    
 
                 // Retrieve the existing task from sessionStorage and create a new CoursesTask object
                 currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
@@ -64,11 +64,13 @@
                 const documentDataArray = await loader.loadDocumentCoursesTasks(currentTask.getTaskId()); 
                 document = documentDataArray.map(documentData => new Document(documentData));
 
+                console.log(document)
+
                 // Set the solution status and header status based on the document data
                 statusSolution = document[0].getStatus();
                 statusHeader = document[1].getStatus();
 
-            }else if(newTask == "pending"){
+            }else if(status == "pending"){
 
                 // Retrieve the existing task from sessionStorage and create a new CoursesTask object
                 currentTask = new CoursesTask(JSON.parse(sessionStorage.getItem("task")));
